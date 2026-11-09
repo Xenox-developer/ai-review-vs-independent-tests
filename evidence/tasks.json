@@ -1,0 +1,1122 @@
+[
+  {
+    "hidden": [
+      {
+        "expect": {
+          "items": [
+            {
+              "id": 1,
+              "timestamp": 1
+            }
+          ],
+          "next": [
+            1,
+            1
+          ]
+        },
+        "input": {
+          "limit": 1,
+          "rows": [
+            {
+              "id": 2,
+              "timestamp": 1
+            },
+            {
+              "id": 1,
+              "timestamp": 1
+            },
+            {
+              "id": 3,
+              "timestamp": 2
+            }
+          ]
+        }
+      },
+      {
+        "expect": {
+          "items": [
+            {
+              "id": 2,
+              "timestamp": 1
+            }
+          ],
+          "next": null
+        },
+        "input": {
+          "after": [
+            1,
+            1
+          ],
+          "limit": 5,
+          "rows": [
+            {
+              "id": 2,
+              "timestamp": 1
+            },
+            {
+              "id": 1,
+              "timestamp": 1
+            }
+          ]
+        }
+      },
+      {
+        "expect": {
+          "items": [
+            {
+              "extra": "v",
+              "id": 1,
+              "timestamp": 0
+            }
+          ],
+          "next": null
+        },
+        "input": {
+          "after": null,
+          "limit": 1,
+          "rows": [
+            {
+              "extra": "v",
+              "id": 1,
+              "timestamp": 0
+            }
+          ]
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "limit": 0,
+          "rows": []
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "limit": -1,
+          "rows": []
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "limit": 101,
+          "rows": []
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "limit": true,
+          "rows": []
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "limit": 1.0,
+          "rows": []
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "limit": "2",
+          "rows": []
+        }
+      },
+      {
+        "expect": {
+          "items": [],
+          "next": null
+        },
+        "input": {
+          "after": [
+            0,
+            1
+          ],
+          "limit": 100,
+          "rows": [
+            {
+              "id": 1,
+              "timestamp": 0
+            }
+          ]
+        }
+      }
+    ],
+    "id": "pagination",
+    "public": [
+      {
+        "expect": {
+          "items": [],
+          "next": null
+        },
+        "input": {
+          "limit": 2,
+          "rows": []
+        }
+      }
+    ],
+    "reference": "def solve(data):\n    limit = data['limit']\n    if type(limit) is not int or not 1 <= limit <= 100:\n        raise ValueError('limit')\n    rows = sorted(data['rows'], key=lambda r: (r['timestamp'], r['id']))\n    after = data.get('after')\n    if after is not None:\n        rows = [r for r in rows if (r['timestamp'], r['id']) > tuple(after)]\n    items = rows[:limit]\n    return {'items': items, 'next': [items[-1]['timestamp'], items[-1]['id']] if len(rows) > limit else None}\n",
+    "spec": "Implement solve(data). data contains rows [{id: integer, timestamp: integer}], limit,\nand optional after=[timestamp,id] (or null). Sort ascending by (timestamp,id), keep\nonly rows strictly greater than after, and return the first limit rows. Preserve all\nrow fields. limit must be an integer 1..100 inclusive; bool is invalid; raise\nValueError for invalid limit. Return {items: [...], next: [timestamp,id] or null}.\nnext is the last returned key ONLY if additional eligible rows remain. Do not\nmutate input. Rows have unique ids; other inputs follow the stated schema.",
+    "starter": "def solve(data):\n    rows = sorted(data['rows'], key=lambda r: r['timestamp'])\n    if data.get('after'):\n        rows = [r for r in rows if r['timestamp'] > data['after'][0]]\n    items = rows[:data['limit']]\n    return {'items': items, 'next': [items[-1]['timestamp'], items[-1]['id']] if items else None}\n"
+  },
+  {
+    "hidden": [
+      {
+        "expect": [],
+        "input": {
+          "base": 1,
+          "budget": 0,
+          "cap": 4,
+          "max_attempts": 0
+        }
+      },
+      {
+        "expect": [
+          0,
+          2,
+          5,
+          8
+        ],
+        "input": {
+          "base": 2,
+          "budget": 8,
+          "cap": 3,
+          "max_attempts": 4
+        }
+      },
+      {
+        "expect": [
+          0,
+          1,
+          2
+        ],
+        "input": {
+          "base": 10,
+          "budget": 2,
+          "cap": 1,
+          "max_attempts": 3
+        }
+      },
+      {
+        "expect": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "input": {
+          "base": 0,
+          "budget": 0,
+          "cap": 5,
+          "max_attempts": 4
+        }
+      },
+      {
+        "expect": [
+          0
+        ],
+        "input": {
+          "base": 1,
+          "budget": 0,
+          "cap": 1,
+          "max_attempts": 1
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "base": 1,
+          "budget": 10,
+          "cap": 4,
+          "max_attempts": 101
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "base": 1,
+          "budget": 10,
+          "cap": 4,
+          "max_attempts": true
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "base": -1,
+          "budget": 10,
+          "cap": 4,
+          "max_attempts": 3
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "base": 1,
+          "budget": 10,
+          "cap": false,
+          "max_attempts": 3
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "base": 1,
+          "budget": 1.5,
+          "cap": 4,
+          "max_attempts": 3
+        }
+      }
+    ],
+    "id": "retry-plan",
+    "public": [
+      {
+        "expect": [
+          0,
+          2,
+          6
+        ],
+        "input": {
+          "base": 2,
+          "budget": 9,
+          "cap": 10,
+          "max_attempts": 3
+        }
+      }
+    ],
+    "reference": "def solve(data):\n    n, base, cap, budget = [data[k] for k in ('max_attempts','base','cap','budget')]\n    if any(type(v) is not int or v < 0 for v in (n,base,cap,budget)) or n > 100:\n        raise ValueError('invalid field')\n    result = []\n    t = 0\n    for i in range(n):\n        if t > budget: break\n        result.append(t)\n        t += min(base * 2**i, cap)\n    return result\n",
+    "spec": "Implement solve(data) returning the integer timestamps of attempts, starting at 0.\nmax_attempts counts the first attempt. Delay before retry k (k starts at 0) is\nmin(base*2**k, cap); cumulative attempt time must be <= budget (inclusive).\nmax_attempts is an integer 0..100, base/cap/budget are nonnegative integers;\nbool is invalid for all four. Invalid fields raise ValueError. base > cap is\nallowed. Zero delay is allowed. Do not mutate input.",
+    "starter": "def solve(data):\n    times = [0]\n    for k in range(data['max_attempts'] - 1):\n        t = times[-1] + data['base'] * 2**k\n        if t >= data['budget']: break\n        times.append(t)\n    return times\n"
+  },
+  {
+    "hidden": [
+      {
+        "expect": [
+          null
+        ],
+        "input": {
+          "capacity": 1,
+          "events": [
+            {
+              "key": "x",
+              "op": "put",
+              "t": 0,
+              "value": 1
+            },
+            {
+              "key": "x",
+              "op": "get",
+              "t": 2
+            }
+          ],
+          "ttl": 2
+        }
+      },
+      {
+        "expect": [
+          1,
+          null,
+          1,
+          null
+        ],
+        "input": {
+          "capacity": 2,
+          "events": [
+            {
+              "key": "a",
+              "op": "put",
+              "t": 0,
+              "value": 1
+            },
+            {
+              "key": "b",
+              "op": "put",
+              "t": 0,
+              "value": 2
+            },
+            {
+              "key": "a",
+              "op": "get",
+              "t": 1
+            },
+            {
+              "key": "c",
+              "op": "put",
+              "t": 1,
+              "value": 3
+            },
+            {
+              "key": "b",
+              "op": "get",
+              "t": 2
+            },
+            {
+              "key": "a",
+              "op": "get",
+              "t": 2
+            },
+            {
+              "key": "a",
+              "op": "get",
+              "t": 10
+            }
+          ],
+          "ttl": 10
+        }
+      },
+      {
+        "expect": [
+          null,
+          3,
+          null
+        ],
+        "input": {
+          "capacity": 2,
+          "events": [
+            {
+              "key": "a",
+              "op": "put",
+              "t": 0,
+              "value": 1
+            },
+            {
+              "key": "b",
+              "op": "put",
+              "t": 1,
+              "value": 2
+            },
+            {
+              "key": "a",
+              "op": "put",
+              "t": 2,
+              "value": 3
+            },
+            {
+              "key": "c",
+              "op": "put",
+              "t": 2,
+              "value": 4
+            },
+            {
+              "key": "b",
+              "op": "get",
+              "t": 2
+            },
+            {
+              "key": "a",
+              "op": "get",
+              "t": 4
+            },
+            {
+              "key": "a",
+              "op": "get",
+              "t": 5
+            }
+          ],
+          "ttl": 3
+        }
+      },
+      {
+        "expect": [
+          null
+        ],
+        "input": {
+          "capacity": 1,
+          "events": [
+            {
+              "key": "a",
+              "op": "put",
+              "t": 0,
+              "value": false
+            },
+            {
+              "key": "a",
+              "op": "get",
+              "t": 0
+            }
+          ],
+          "ttl": 0
+        }
+      },
+      {
+        "expect": [
+          0,
+          0,
+          null
+        ],
+        "input": {
+          "capacity": 1,
+          "events": [
+            {
+              "key": "a",
+              "op": "put",
+              "t": 0,
+              "value": 0
+            },
+            {
+              "key": "a",
+              "op": "get",
+              "t": 1
+            },
+            {
+              "key": "a",
+              "op": "get",
+              "t": 4
+            },
+            {
+              "key": "a",
+              "op": "get",
+              "t": 5
+            }
+          ],
+          "ttl": 5
+        }
+      }
+    ],
+    "id": "ttl-lru",
+    "public": [
+      {
+        "expect": [
+          null
+        ],
+        "input": {
+          "capacity": 1,
+          "events": [
+            {
+              "key": "x",
+              "op": "get",
+              "t": 0
+            }
+          ],
+          "ttl": 10
+        }
+      }
+    ],
+    "reference": "from collections import OrderedDict\ndef solve(data):\n    cache = OrderedDict()\n    out = []\n    for e in data['events']:\n        for key in list(cache):\n            if cache[key][1] <= e['t']: del cache[key]\n        key = e['key']\n        if e['op'] == 'put':\n            cache.pop(key, None)\n            cache[key] = (e['value'], e['t'] + data['ttl'])\n            if len(cache) > data['capacity']: cache.popitem(last=False)\n        elif key in cache:\n            out.append(cache[key][0]); cache.move_to_end(key)\n        else: out.append(None)\n    return out\n",
+    "spec": "Implement solve(data) for a TTL/LRU cache. capacity is a positive integer and ttl\nis a nonnegative integer. Events in nondecreasing integer time order are\n{op:'put',t,key,value} or {op:'get',t,key}. Before EVERY event remove entries with\nexpiry <= t. put sets/replaces value, expiry=t+ttl, and makes key most recent;\nif over capacity evict least recent. get returns value or null and, on a hit,\nmakes key most recent WITHOUT extending expiry. Return a list of get results.\nValues are JSON primitives; keys are strings. Do not mutate input.",
+    "starter": "def solve(data):\n    cache = {}\n    out = []\n    for e in data['events']:\n        if e['op'] == 'put':\n            cache[e['key']] = (e['value'], e['t'] + data['ttl'])\n            if len(cache) > data['capacity']: cache.pop(next(iter(cache)))\n        else:\n            v = cache.get(e['key'])\n            out.append(v[0] if v and v[1] >= e['t'] else None)\n    return out\n"
+  },
+  {
+    "hidden": [
+      {
+        "expect": {
+          "applied": 1,
+          "statuses": [
+            "failed",
+            "applied",
+            "conflict"
+          ]
+        },
+        "input": {
+          "requests": [
+            {
+              "key": "k",
+              "ok": false,
+              "payload": 1
+            },
+            {
+              "key": "k",
+              "ok": true,
+              "payload": 2
+            },
+            {
+              "key": "k",
+              "ok": true,
+              "payload": 1
+            }
+          ]
+        }
+      },
+      {
+        "expect": {
+          "applied": 1,
+          "statuses": [
+            "applied",
+            "duplicate",
+            "conflict"
+          ]
+        },
+        "input": {
+          "requests": [
+            {
+              "key": "k",
+              "ok": true,
+              "payload": {
+                "a": 1,
+                "b": [
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "key": "k",
+              "ok": false,
+              "payload": {
+                "a": 1.0,
+                "b": [
+                  2,
+                  3
+                ]
+              }
+            },
+            {
+              "key": "k",
+              "ok": true,
+              "payload": {
+                "a": 1,
+                "b": [
+                  3,
+                  2
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "expect": {
+          "applied": 1,
+          "statuses": [
+            "applied",
+            "conflict"
+          ]
+        },
+        "input": {
+          "requests": [
+            {
+              "key": "k",
+              "ok": true,
+              "payload": true
+            },
+            {
+              "key": "k",
+              "ok": true,
+              "payload": 1
+            }
+          ]
+        }
+      },
+      {
+        "expect": {
+          "applied": 2,
+          "statuses": [
+            "applied",
+            "applied",
+            "duplicate"
+          ]
+        },
+        "input": {
+          "requests": [
+            {
+              "key": "a",
+              "ok": true,
+              "payload": null
+            },
+            {
+              "key": "b",
+              "ok": true,
+              "payload": null
+            },
+            {
+              "key": "a",
+              "ok": false,
+              "payload": null
+            }
+          ]
+        }
+      }
+    ],
+    "id": "idempotency",
+    "public": [
+      {
+        "expect": {
+          "applied": 0,
+          "statuses": []
+        },
+        "input": {
+          "requests": []
+        }
+      }
+    ],
+    "reference": "def tagged(v):\n    if v is None: return ('null',)\n    if isinstance(v, bool): return ('bool', v)\n    if isinstance(v, (int,float)): return ('number', v)\n    if isinstance(v,str): return ('string',v)\n    if isinstance(v,list): return ('array',tuple(tagged(x) for x in v))\n    return ('object',tuple(sorted((k,tagged(x)) for k,x in v.items())))\ndef solve(data):\n    seen = {}; statuses = []; count = 0\n    for r in data['requests']:\n        key, payload = r['key'], tagged(r['payload'])\n        if key in seen: status = 'duplicate' if seen[key] == payload else 'conflict'\n        elif not r['ok']: status = 'failed'\n        else: seen[key] = payload; status = 'applied'; count += 1\n        statuses.append(status)\n    return {'statuses':statuses,'applied':count}\n",
+    "spec": "Implement solve(data), processing requests {key, payload, ok}. payload is any JSON\nvalue. Equal JSON objects ignore key order; arrays preserve order; booleans are\ndifferent from numbers; numeric 1 equals 1.0. Successful requests are persisted\nby key. A later equal payload returns 'duplicate' even if ok is false. A later\ndifferent payload returns 'conflict'. A new key with ok=false returns 'failed'\nand stores nothing; with ok=true returns 'applied' and stores payload. Return\n{statuses: [...], applied: count}. Failed requests must be retryable. No mutation.",
+    "starter": "def solve(data):\n    seen = {}\n    out = []\n    applied = 0\n    for r in data['requests']:\n        if r['key'] in seen: out.append('duplicate'); continue\n        seen[r['key']] = r['payload']\n        out.append('applied' if r['ok'] else 'failed')\n        applied += bool(r['ok'])\n    return {'statuses':out,'applied':applied}\n"
+  },
+  {
+    "hidden": [
+      {
+        "expect": {
+          "2026-03-07": 1,
+          "2026-03-08": 2
+        },
+        "input": {
+          "events": [
+            "2026-03-08T04:59:59Z",
+            "2026-03-08T05:00:00Z",
+            "2026-03-08T07:00:00Z"
+          ],
+          "zone": "America/New_York"
+        }
+      },
+      {
+        "expect": {
+          "2026-11-01": 3,
+          "2026-11-02": 1
+        },
+        "input": {
+          "events": [
+            "2026-11-01T05:30:00Z",
+            "2026-11-01T06:30:00Z",
+            "2026-11-02T04:59:59Z",
+            "2026-11-02T05:00:00Z"
+          ],
+          "zone": "America/New_York"
+        }
+      },
+      {
+        "expect": {
+          "2026-01-01": 1,
+          "2026-01-02": 1
+        },
+        "input": {
+          "events": [
+            "2026-01-01T18:15:00Z",
+            "2026-01-02T00:30:00+06:30"
+          ],
+          "zone": "Asia/Kathmandu"
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "events": [
+            "2026-01-01T12:00:00"
+          ],
+          "zone": "UTC"
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "events": [
+            "2026-02-30T12:00:00Z"
+          ],
+          "zone": "UTC"
+        }
+      },
+      {
+        "expect": {},
+        "input": {
+          "events": [],
+          "zone": "UTC"
+        }
+      }
+    ],
+    "id": "timezone-days",
+    "public": [
+      {
+        "expect": {
+          "2026-01-01": 1
+        },
+        "input": {
+          "events": [
+            "2026-01-01T12:00:00Z"
+          ],
+          "zone": "UTC"
+        }
+      }
+    ],
+    "reference": "from datetime import datetime\nfrom zoneinfo import ZoneInfo\ndef solve(data):\n    result = {}; zone = ZoneInfo(data['zone'])\n    for value in data['events']:\n        stamp = datetime.fromisoformat(value.replace('Z','+00:00'))\n        if stamp.tzinfo is None or stamp.utcoffset() is None: raise ValueError('naive timestamp')\n        key = stamp.astimezone(zone).date().isoformat()\n        result[key] = result.get(key,0) + 1\n    return result\n",
+    "spec": "Implement solve(data): given zone (IANA timezone) and events (ISO8601 timestamps),\nreturn {local YYYY-MM-DD: count} after converting each timestamp to that zone.\nAccept Z or numeric UTC offsets; timestamps without an offset must raise\nValueError, even if other events are valid. Invalid dates raise ValueError.\nUse standard-library zoneinfo, account for daylight saving time. Empty events\nreturns {}. Input zone is valid. Do not mutate input.",
+    "starter": "def solve(data):\n    result = {}\n    for value in data['events']:\n        key = value[:10]\n        result[key] = result.get(key,0) + 1\n    return result\n"
+  },
+  {
+    "hidden": [
+      {
+        "error": "ValueError",
+        "input": {
+          "path": "a/%2e%2e/b"
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "path": "%2fetc/passwd"
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "path": "a%5cb"
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "path": "a%00b"
+        }
+      },
+      {
+        "expect": "a/b",
+        "input": {
+          "path": "a//./b/"
+        }
+      },
+      {
+        "expect": "a/.../b+z",
+        "input": {
+          "path": "a/.../b+z"
+        }
+      },
+      {
+        "expect": "%2e%2e/x",
+        "input": {
+          "path": "%252e%252e/x"
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "path": "./"
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "path": "%ff"
+        }
+      },
+      {
+        "error": "ValueError",
+        "input": {
+          "path": ""
+        }
+      }
+    ],
+    "id": "safe-path",
+    "public": [
+      {
+        "expect": "docs/a.txt",
+        "input": {
+          "path": "docs/a.txt"
+        }
+      }
+    ],
+    "reference": "from urllib.parse import unquote\ndef solve(data):\n    try: value = unquote(data['path'], errors='strict')\n    except UnicodeError as e: raise ValueError('encoding') from e\n    if not value or value.startswith('/') or '\\\\' in value or '\\0' in value:\n        raise ValueError('path')\n    parts = value.split('/')\n    if '..' in parts: raise ValueError('traversal')\n    result = '/'.join(p for p in parts if p not in ('','.'))\n    if not result: raise ValueError('empty')\n    return result\n",
+    "spec": "Implement solve(data) returning a canonical relative POSIX path. data.path is a\nURL-encoded string: percent-decode EXACTLY ONCE with urllib.parse.unquote using\nstrict UTF-8 errors. Reject by raising ValueError: empty result; leading slash;\nbackslash; NUL; any decoded component exactly '..'. Remove empty components\nand '.' components, joining with '/'; reject if nothing remains. Dots inside\nordinary names are allowed. A percent sequence remaining after one decode is\nliteral (do not decode recursively). '+' stays '+'. Do not access filesystem\nor mutate input. No requirement to reject malformed percent escapes themselves.",
+    "starter": "def solve(data):\n    value = data['path']\n    if value.startswith('/') or '..' in value: raise ValueError('path')\n    return value.strip('/')\n"
+  },
+  {
+    "hidden": [
+      {
+        "expect": {
+          "a": {
+            "y": 2,
+            "z": 4
+          }
+        },
+        "input": {
+          "base": {
+            "a": {
+              "x": 1,
+              "y": 2
+            },
+            "b": 3
+          },
+          "patch": {
+            "a": {
+              "x": null,
+              "z": 4
+            },
+            "b": null
+          }
+        }
+      },
+      {
+        "expect": {
+          "a": [
+            null
+          ],
+          "b": {}
+        },
+        "input": {
+          "base": {
+            "a": [
+              1,
+              2
+            ],
+            "b": 1
+          },
+          "patch": {
+            "a": [
+              null
+            ],
+            "b": {}
+          }
+        }
+      },
+      {
+        "expect": {
+          "a": {
+            "b": 1
+          }
+        },
+        "input": {
+          "base": {
+            "a": {
+              "b": 1
+            }
+          },
+          "patch": {
+            "a": {}
+          }
+        }
+      },
+      {
+        "expect": {
+          "a": {
+            "c": 2
+          }
+        },
+        "input": {
+          "base": {},
+          "patch": {
+            "a": {
+              "b": null,
+              "c": 2
+            }
+          }
+        }
+      },
+      {
+        "expect": {
+          "a": {
+            "x": 3
+          }
+        },
+        "input": {
+          "base": {
+            "a": [
+              1
+            ]
+          },
+          "patch": {
+            "a": {
+              "x": 3
+            }
+          }
+        }
+      },
+      {
+        "expect": {
+          "a": {
+            "b": {
+              "c": 3,
+              "d": 2
+            }
+          }
+        },
+        "input": {
+          "base": {
+            "a": {
+              "b": {
+                "c": 1,
+                "d": 2
+              }
+            }
+          },
+          "patch": {
+            "a": {
+              "b": {
+                "c": 3
+              }
+            }
+          }
+        }
+      }
+    ],
+    "id": "deep-merge",
+    "public": [
+      {
+        "expect": {
+          "x": 2
+        },
+        "input": {
+          "base": {
+            "x": 1
+          },
+          "patch": {
+            "x": 2
+          }
+        }
+      }
+    ],
+    "reference": "from copy import deepcopy\ndef merge(base, patch):\n    result = deepcopy(base) if isinstance(base, dict) else {}\n    for key, value in patch.items():\n        if value is None: result.pop(key, None)\n        elif isinstance(value, dict): result[key] = merge(result.get(key),value)\n        else: result[key] = deepcopy(value)\n    return result\ndef solve(data):\n    return merge(data['base'], data['patch'])\n",
+    "spec": "Implement solve(data), merging patch into base (both JSON objects). Object-valued\npatches recursively merge into the corresponding object or into {} if the old\nvalue is not an object. A null member in a patch object deletes that key if\npresent. Arrays replace in full, including null array elements; all other values\nreplace. Empty patch objects preserve an existing object, but replace a scalar\nor array with {}. Return merged object. Do not mutate base or patch.",
+    "starter": "def solve(data):\n    result = dict(data['base'])\n    result.update(data['patch'])\n    return result\n"
+  },
+  {
+    "hidden": [
+      {
+        "expect": [
+          {
+            "allowed": true,
+            "retry_after": 0
+          },
+          {
+            "allowed": false,
+            "retry_after": 1
+          },
+          {
+            "allowed": true,
+            "retry_after": 0
+          },
+          {
+            "allowed": false,
+            "retry_after": 9
+          }
+        ],
+        "input": {
+          "events": [
+            {
+              "key": "a",
+              "t": 0
+            },
+            {
+              "key": "a",
+              "t": 9
+            },
+            {
+              "key": "a",
+              "t": 10
+            },
+            {
+              "key": "a",
+              "t": 11
+            }
+          ],
+          "limit": 1,
+          "window": 10
+        }
+      },
+      {
+        "expect": [
+          {
+            "allowed": true,
+            "retry_after": 0
+          },
+          {
+            "allowed": true,
+            "retry_after": 0
+          },
+          {
+            "allowed": false,
+            "retry_after": 5
+          },
+          {
+            "allowed": true,
+            "retry_after": 0
+          }
+        ],
+        "input": {
+          "events": [
+            {
+              "key": "a",
+              "t": 1
+            },
+            {
+              "key": "b",
+              "t": 1
+            },
+            {
+              "key": "a",
+              "t": 1
+            },
+            {
+              "key": "b",
+              "t": 6
+            }
+          ],
+          "limit": 1,
+          "window": 5
+        }
+      },
+      {
+        "expect": [
+          {
+            "allowed": true,
+            "retry_after": 0
+          },
+          {
+            "allowed": true,
+            "retry_after": 0
+          },
+          {
+            "allowed": false,
+            "retry_after": 3
+          },
+          {
+            "allowed": true,
+            "retry_after": 0
+          },
+          {
+            "allowed": true,
+            "retry_after": 0
+          },
+          {
+            "allowed": false,
+            "retry_after": 3
+          }
+        ],
+        "input": {
+          "events": [
+            {
+              "key": "a",
+              "t": 0
+            },
+            {
+              "key": "a",
+              "t": 1
+            },
+            {
+              "key": "a",
+              "t": 2
+            },
+            {
+              "key": "a",
+              "t": 5
+            },
+            {
+              "key": "a",
+              "t": 6
+            },
+            {
+              "key": "a",
+              "t": 7
+            }
+          ],
+          "limit": 2,
+          "window": 5
+        }
+      }
+    ],
+    "id": "rate-limit",
+    "public": [
+      {
+        "expect": [],
+        "input": {
+          "events": [],
+          "limit": 1,
+          "window": 10
+        }
+      }
+    ],
+    "reference": "from collections import defaultdict, deque\ndef solve(data):\n    seen = defaultdict(deque); out = []\n    for event in data['events']:\n        t = event['t']; q = seen[event['key']]\n        while q and q[0] <= t - data['window']: q.popleft()\n        allowed = len(q) < data['limit']\n        out.append({'allowed':allowed,'retry_after':0 if allowed else q[0]+data['window']-t})\n        if allowed: q.append(t)\n    return out\n",
+    "spec": "Implement solve(data), a per-key sliding-window limiter. positive integer window\nand limit; events {t: nonnegative integer, key: string} in nondecreasing time\norder (different keys may share timestamps). At time t discard accepted events\nwith timestamp <= t-window for that key. If fewer than limit remain, accept\nand record t; otherwise reject WITHOUT recording. Return a list of\n{allowed: bool, retry_after: integer}: accepted gives 0; rejected gives\noldest retained timestamp + window - t. No sleeping, no mutation.",
+    "starter": "def solve(data):\n    times = []; out = []\n    for e in data['events']:\n        times = [t for t in times if t >= e['t'] - data['window']]\n        allowed = len(times) < data['limit']\n        out.append({'allowed':allowed,'retry_after':0 if allowed else data['window']})\n        times.append(e['t'])\n    return out\n"
+  }
+]

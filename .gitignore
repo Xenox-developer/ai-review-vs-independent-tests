@@ -1,0 +1,6 @@
+.invariant/
+__pycache__/
+*.pyc
+.DS_Store
+execution/
+.venv/
