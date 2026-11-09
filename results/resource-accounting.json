@@ -1,0 +1,67 @@
+{
+  "groups": {
+    "initial": {
+      "sessions": 8,
+      "known_usage": {
+        "inputTokens": 302793,
+        "cachedInputTokens": 184704,
+        "outputTokens": 4401,
+        "reasoningOutputTokens": 470,
+        "totalTokens": 307194
+      },
+      "missing_fields": {
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningOutputTokens": 0,
+        "totalTokens": 0
+      },
+      "observed_responses": 33,
+      "complete_response_accounting_sessions": 8
+    },
+    "tests": {
+      "sessions": 16,
+      "known_usage": {
+        "inputTokens": 573006,
+        "cachedInputTokens": 379392,
+        "outputTokens": 17905,
+        "reasoningOutputTokens": 2237,
+        "totalTokens": 590911
+      },
+      "missing_fields": {
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningOutputTokens": 0,
+        "totalTokens": 0
+      },
+      "observed_responses": 52,
+      "complete_response_accounting_sessions": 16
+    },
+    "review": {
+      "sessions": 16,
+      "known_usage": {
+        "inputTokens": 497026,
+        "cachedInputTokens": 298624,
+        "outputTokens": 10402,
+        "reasoningOutputTokens": 674,
+        "totalTokens": 507428
+      },
+      "missing_fields": {
+        "inputTokens": 0,
+        "cachedInputTokens": 0,
+        "outputTokens": 0,
+        "reasoningOutputTokens": 0,
+        "totalTokens": 0
+      },
+      "observed_responses": 54,
+      "complete_response_accounting_sessions": 16
+    }
+  },
+  "outer_caller_usage": null,
+  "notes": [
+    "Cached input and reasoning output are subsets, not additional tokens.",
+    "Initial baseline has fewer sessions than either complete feedback+repair treatment.",
+    "Unknown outer/shared setup usage is excluded; no dollar cost inferred from tokens."
+  ]
+}

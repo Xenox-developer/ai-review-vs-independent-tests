@@ -1,0 +1,1389 @@
+{
+  "id": "study-710222efaf57439aa030b4c3c5b84fd3",
+  "name": "code-verification-repair",
+  "state": "queued",
+  "created_at": 1794237141.5688827,
+  "baseline_id": "baseline-db9b2797ea394b7461d5c1805d81965948ac8afc38686315db18ee00f8f0c2d8",
+  "definition_hash": "c92a4f8a02f643040506f74016ad1021cc073be77225c7284966317010d5e52e",
+  "selection_revision": 0,
+  "kind": "study",
+  "dispatch": {
+    "state": "not_requested"
+  },
+  "frozen": {
+    "baseline_content_digest": "d806e878b4c2add0c742a326376c0a09f4d5cb1680db2b75526684fc986b0701",
+    "baseline_id": "baseline-db9b2797ea394b7461d5c1805d81965948ac8afc38686315db18ee00f8f0c2d8",
+    "capacity_at_creation": {
+      "cpus": 10,
+      "memory_bytes": 8217968640
+    },
+    "capture_limits": {
+      "artifact_bytes": null,
+      "definition_bytes": 1048576,
+      "entries": null,
+      "event_bytes": null,
+      "log_bytes": null,
+      "source_bytes": null,
+      "trials": 1000
+    },
+    "definition": {
+      "artifacts": [
+        "solution.py",
+        "feedback.json"
+      ],
+      "cases": [
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/deep-merge--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/deep-merge--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/deep-merge--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/deep-merge--tests/feedback.json"
+            }
+          ],
+          "id": "deep-merge--tests",
+          "input_file": "inputs/deep-merge--tests/case.json",
+          "prompt_file": "inputs/deep-merge--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/deep-merge--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/deep-merge--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/deep-merge--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/deep-merge--review/feedback.json"
+            }
+          ],
+          "id": "deep-merge--review",
+          "input_file": "inputs/deep-merge--review/case.json",
+          "prompt_file": "inputs/deep-merge--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/timezone-days--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/timezone-days--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/timezone-days--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/timezone-days--tests/feedback.json"
+            }
+          ],
+          "id": "timezone-days--tests",
+          "input_file": "inputs/timezone-days--tests/case.json",
+          "prompt_file": "inputs/timezone-days--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/timezone-days--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/timezone-days--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/timezone-days--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/timezone-days--review/feedback.json"
+            }
+          ],
+          "id": "timezone-days--review",
+          "input_file": "inputs/timezone-days--review/case.json",
+          "prompt_file": "inputs/timezone-days--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/safe-path--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/safe-path--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/safe-path--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/safe-path--review/feedback.json"
+            }
+          ],
+          "id": "safe-path--review",
+          "input_file": "inputs/safe-path--review/case.json",
+          "prompt_file": "inputs/safe-path--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/safe-path--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/safe-path--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/safe-path--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/safe-path--tests/feedback.json"
+            }
+          ],
+          "id": "safe-path--tests",
+          "input_file": "inputs/safe-path--tests/case.json",
+          "prompt_file": "inputs/safe-path--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/retry-plan--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/retry-plan--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/retry-plan--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/retry-plan--tests/feedback.json"
+            }
+          ],
+          "id": "retry-plan--tests",
+          "input_file": "inputs/retry-plan--tests/case.json",
+          "prompt_file": "inputs/retry-plan--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/retry-plan--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/retry-plan--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/retry-plan--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/retry-plan--review/feedback.json"
+            }
+          ],
+          "id": "retry-plan--review",
+          "input_file": "inputs/retry-plan--review/case.json",
+          "prompt_file": "inputs/retry-plan--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/rate-limit--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/rate-limit--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/rate-limit--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/rate-limit--tests/feedback.json"
+            }
+          ],
+          "id": "rate-limit--tests",
+          "input_file": "inputs/rate-limit--tests/case.json",
+          "prompt_file": "inputs/rate-limit--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/rate-limit--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/rate-limit--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/rate-limit--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/rate-limit--review/feedback.json"
+            }
+          ],
+          "id": "rate-limit--review",
+          "input_file": "inputs/rate-limit--review/case.json",
+          "prompt_file": "inputs/rate-limit--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/idempotency--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/idempotency--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/idempotency--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/idempotency--review/feedback.json"
+            }
+          ],
+          "id": "idempotency--review",
+          "input_file": "inputs/idempotency--review/case.json",
+          "prompt_file": "inputs/idempotency--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/idempotency--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/idempotency--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/idempotency--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/idempotency--tests/feedback.json"
+            }
+          ],
+          "id": "idempotency--tests",
+          "input_file": "inputs/idempotency--tests/case.json",
+          "prompt_file": "inputs/idempotency--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/pagination--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/pagination--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/pagination--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/pagination--tests/feedback.json"
+            }
+          ],
+          "id": "pagination--tests",
+          "input_file": "inputs/pagination--tests/case.json",
+          "prompt_file": "inputs/pagination--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/pagination--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/pagination--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/pagination--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/pagination--review/feedback.json"
+            }
+          ],
+          "id": "pagination--review",
+          "input_file": "inputs/pagination--review/case.json",
+          "prompt_file": "inputs/pagination--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/ttl-lru--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/ttl-lru--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/ttl-lru--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/ttl-lru--review/feedback.json"
+            }
+          ],
+          "id": "ttl-lru--review",
+          "input_file": "inputs/ttl-lru--review/case.json",
+          "prompt_file": "inputs/ttl-lru--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/ttl-lru--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/ttl-lru--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/ttl-lru--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/ttl-lru--tests/feedback.json"
+            }
+          ],
+          "id": "ttl-lru--tests",
+          "input_file": "inputs/ttl-lru--tests/case.json",
+          "prompt_file": "inputs/ttl-lru--tests/prompt.md"
+        }
+      ],
+      "evaluator": {
+        "argv": [
+          "python3",
+          "-B",
+          "check.py"
+        ],
+        "source_paths": [
+          "check.py"
+        ],
+        "timeout_seconds": 15
+      },
+      "execution": {
+        "max_parallel": 1,
+        "trial_cpus": 2,
+        "trial_memory_mib": 2048,
+        "trial_timeout_seconds": 180
+      },
+      "external_dependencies": [],
+      "name": "code-verification-repair",
+      "repetitions": 1,
+      "runner": {
+        "completion": "validated",
+        "type": "codex"
+      },
+      "schema_version": 1,
+      "secret_refs": {},
+      "variants": [
+        {
+          "effort": "medium",
+          "id": "medium",
+          "model": "gpt-6.1-sol"
+        }
+      ],
+      "workspace": {
+        "exclude": [],
+        "include": [
+          "check.py"
+        ]
+      }
+    },
+    "definition_digest": "a240b261a52e013359fc7b584f9f9da87ecafd2c092f34abd8860fce6c621404",
+    "definition_path": "experiment.json",
+    "delivery": {
+      "ignore_files": {},
+      "policy": {}
+    },
+    "effective_policy": {
+      "agent": "codex",
+      "command_network": "none",
+      "duration_seconds": 180,
+      "host_access": false,
+      "limits": {
+        "cpus": 2,
+        "extra_swap_mib": 0,
+        "file_descriptors": 1024,
+        "memory_mib": 2048,
+        "processes": 256,
+        "scratch_mib": 256
+      },
+      "model_access": "openai",
+      "profile": "codex-environment-v2",
+      "resource_mode": "manual",
+      "restrictions_enabled": false,
+      "schema": 1,
+      "tool_profile": "coding",
+      "workspace_access": "read-write"
+    },
+    "execution": {
+      "cpu_budget": 7.5,
+      "headroom_fraction": 0.25,
+      "max_parallel": 1,
+      "memory_budget_mib": 5824,
+      "requested_max_parallel": 1,
+      "trial_cpus": 2,
+      "trial_memory_mib": 2048,
+      "trial_policy": {
+        "agent": "codex",
+        "command_network": "none",
+        "duration_seconds": 180,
+        "host_access": false,
+        "limits": {
+          "cpus": 2,
+          "extra_swap_mib": 0,
+          "file_descriptors": 1024,
+          "memory_mib": 2048,
+          "processes": 256,
+          "scratch_mib": 256
+        },
+        "model_access": "openai",
+        "profile": "codex-environment-v2",
+        "resource_mode": "manual",
+        "restrictions_enabled": false,
+        "schema": 1,
+        "tool_profile": "coding",
+        "workspace_access": "read-write"
+      },
+      "trial_timeout_seconds": 180
+    },
+    "external_state_notice": false,
+    "image": {
+      "architecture": "arm64",
+      "base_reference": "invariant-codex-environment:0.163.0-v1",
+      "id": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+      "os": "linux",
+      "repo_digests": [
+        "invariant-codex-environment@sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01"
+      ]
+    },
+    "input_checks": {
+      "variant_changed_paths": {
+        "medium": []
+      }
+    },
+    "inputs": {
+      "check.py": "ff9deedb1ea4f1dafec9b3518700084130ecc67c59139ef8f86fd08c6a4d032c",
+      "experiment.json": "d3b9c861e5377ecb585875746f66e441a53cc3fc609253603b0df04820c0651f",
+      "inputs/deep-merge--review/case.json": "af8732948928b88b8b32abb722038bfe13f641b2656aa217c5efd94267a9702b",
+      "inputs/deep-merge--review/feedback.json": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38",
+      "inputs/deep-merge--review/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/deep-merge--review/public.json": "d178ca47d42645139c2e0486a2c07693fa14220555206859b352c8e7a854ed03",
+      "inputs/deep-merge--review/solution.py": "8ce98063fc9a8ffeebf2349226ee9313e1edb0884b49f7ef424618fb076a59ab",
+      "inputs/deep-merge--review/spec.md": "ae568548c4eece00e3340305c82bc848109358712d47ec2c7e290b665f221880",
+      "inputs/deep-merge--tests/case.json": "593418eace9d56cd3da8fa9e712838d2f3fbce37aa1e9cef5c0e575bb75e42c8",
+      "inputs/deep-merge--tests/feedback.json": "0f8aa4b4d86f1b0a4294b62cd59be158114c0fdcf01b17df316397dc2ac132af",
+      "inputs/deep-merge--tests/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/deep-merge--tests/public.json": "d178ca47d42645139c2e0486a2c07693fa14220555206859b352c8e7a854ed03",
+      "inputs/deep-merge--tests/solution.py": "8ce98063fc9a8ffeebf2349226ee9313e1edb0884b49f7ef424618fb076a59ab",
+      "inputs/deep-merge--tests/spec.md": "ae568548c4eece00e3340305c82bc848109358712d47ec2c7e290b665f221880",
+      "inputs/idempotency--review/case.json": "3321f01d866fbe2abe1f7edc383278e36479457d786d9b40ec99f2a71ca3dc16",
+      "inputs/idempotency--review/feedback.json": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38",
+      "inputs/idempotency--review/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/idempotency--review/public.json": "99a55f6fabad911abd07dd0cc2c6ddbabbc344fc87ab273ed36968f9a9867546",
+      "inputs/idempotency--review/solution.py": "cf2be583b7ecd90ec5ce3199e206080308eef8e2e8250e67763d6a9034c647b4",
+      "inputs/idempotency--review/spec.md": "bfd6dcf510c5fb59b7257df3361c4108146a479535a4a319f50d7b4aab12717e",
+      "inputs/idempotency--tests/case.json": "ee5e7bbf2930b6c56d978d864eaa1401a3b3f6c976dd292683f00e967f9bacac",
+      "inputs/idempotency--tests/feedback.json": "8ff54d36fc7d693b0ccd19ab17d70cde836c77a2b9c24704e7bb57cc6663d165",
+      "inputs/idempotency--tests/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/idempotency--tests/public.json": "99a55f6fabad911abd07dd0cc2c6ddbabbc344fc87ab273ed36968f9a9867546",
+      "inputs/idempotency--tests/solution.py": "cf2be583b7ecd90ec5ce3199e206080308eef8e2e8250e67763d6a9034c647b4",
+      "inputs/idempotency--tests/spec.md": "bfd6dcf510c5fb59b7257df3361c4108146a479535a4a319f50d7b4aab12717e",
+      "inputs/pagination--review/case.json": "603804764bfd70b152c2221c37c68d525e1d31c139fa4d25f76eb503d70d86e6",
+      "inputs/pagination--review/feedback.json": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38",
+      "inputs/pagination--review/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/pagination--review/public.json": "0ce625f28c365875e12184a4f3db5f02ef43c80c57b5ab8a59bb7fa91e603e57",
+      "inputs/pagination--review/solution.py": "3aea7112f8da55e6f70827fde7bf7dc5c52fdb8c3778dbbf858ee1d648f93842",
+      "inputs/pagination--review/spec.md": "66bdb9f294b213e35f633362712d9b4e4f66619cbb6f43d5a3ceaaa17dcbdf94",
+      "inputs/pagination--tests/case.json": "fbd41777a44475196b0cb9e6eebb6a14eac750af5a1681f485675770d812b8a6",
+      "inputs/pagination--tests/feedback.json": "a3ae2b6421b03ca5177e401c6c984f1718744c84a93014cf60514cbfffbce01e",
+      "inputs/pagination--tests/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/pagination--tests/public.json": "0ce625f28c365875e12184a4f3db5f02ef43c80c57b5ab8a59bb7fa91e603e57",
+      "inputs/pagination--tests/solution.py": "3aea7112f8da55e6f70827fde7bf7dc5c52fdb8c3778dbbf858ee1d648f93842",
+      "inputs/pagination--tests/spec.md": "66bdb9f294b213e35f633362712d9b4e4f66619cbb6f43d5a3ceaaa17dcbdf94",
+      "inputs/rate-limit--review/case.json": "e19500aaac7c562f754383344de54e69e0f6967c4a69e16f9072f80eae2ce16f",
+      "inputs/rate-limit--review/feedback.json": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38",
+      "inputs/rate-limit--review/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/rate-limit--review/public.json": "139ab4ce1e2be7794af2c89a5ffb242fc97d4f6ba896f35a2aa7eedacd03a9eb",
+      "inputs/rate-limit--review/solution.py": "4864574ba2a7f8b614f6cf838eb2282071c530986bd8ef522ff385f6f2f9f386",
+      "inputs/rate-limit--review/spec.md": "24451539cbb24424bdeb117484ab74b36e57daa57eb4a68ffa5fd08d7f27eb40",
+      "inputs/rate-limit--tests/case.json": "c91fe553a5556b5021262988074e0c6722a7f0dfa1b7742ec7f74b10018f6919",
+      "inputs/rate-limit--tests/feedback.json": "2ff713a486c894fbd80d1722ca102dd39f24fe8f2aecc980d4466c6b1ea0b7fa",
+      "inputs/rate-limit--tests/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/rate-limit--tests/public.json": "139ab4ce1e2be7794af2c89a5ffb242fc97d4f6ba896f35a2aa7eedacd03a9eb",
+      "inputs/rate-limit--tests/solution.py": "4864574ba2a7f8b614f6cf838eb2282071c530986bd8ef522ff385f6f2f9f386",
+      "inputs/rate-limit--tests/spec.md": "24451539cbb24424bdeb117484ab74b36e57daa57eb4a68ffa5fd08d7f27eb40",
+      "inputs/retry-plan--review/case.json": "6f60c1ba5a020fc19ba28e833171646ec9f3deabb3e5d82f4a4b79d30c5db361",
+      "inputs/retry-plan--review/feedback.json": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38",
+      "inputs/retry-plan--review/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/retry-plan--review/public.json": "36850e32ba91c8edc0c39b4ffea01cc786ffb5de0d25e9ece81b824f630fc5b5",
+      "inputs/retry-plan--review/solution.py": "e4f418967fb986d1eb4acfe2c6e7885e78091d9ac03ccbfcf02e892c16c794b8",
+      "inputs/retry-plan--review/spec.md": "f61a978e32a61001919ea042653dbdb0def158bc8fc516fe0b6cc930be7243fb",
+      "inputs/retry-plan--tests/case.json": "986897dfa7eb86dc0bd3d137406e5712dd10ef7cdcfb79f0062aa46f4fdd2b29",
+      "inputs/retry-plan--tests/feedback.json": "483f1a203b16664e6e07b647c264db9a8688029958e89a3c80dce6104fc3d45e",
+      "inputs/retry-plan--tests/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/retry-plan--tests/public.json": "36850e32ba91c8edc0c39b4ffea01cc786ffb5de0d25e9ece81b824f630fc5b5",
+      "inputs/retry-plan--tests/solution.py": "e4f418967fb986d1eb4acfe2c6e7885e78091d9ac03ccbfcf02e892c16c794b8",
+      "inputs/retry-plan--tests/spec.md": "f61a978e32a61001919ea042653dbdb0def158bc8fc516fe0b6cc930be7243fb",
+      "inputs/safe-path--review/case.json": "7e9c92db1957dba2642d0357a34df584f13106b1b62c63cf3bb9b9aabb862a1a",
+      "inputs/safe-path--review/feedback.json": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38",
+      "inputs/safe-path--review/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/safe-path--review/public.json": "81a1454dfb95fde8324b7ce5fdf06fa5847234db1202a9b64e224382f14745b3",
+      "inputs/safe-path--review/solution.py": "94f4f5ee5410be5a732f4600c2b3a617ab54ed8c44381a715c376d2072b1d9a0",
+      "inputs/safe-path--review/spec.md": "d451ef4f911204f95e2535091ce105afd903d99d01cd15cd3b2e85d265bb3c05",
+      "inputs/safe-path--tests/case.json": "c87697c808eabf0eee9ac8d895b55419eabad2477fede09d73aacd05ba6770c9",
+      "inputs/safe-path--tests/feedback.json": "03292d2ea116a42d18b850217e10f47145d72e74a96d7e226f6500c9e16fda9c",
+      "inputs/safe-path--tests/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/safe-path--tests/public.json": "81a1454dfb95fde8324b7ce5fdf06fa5847234db1202a9b64e224382f14745b3",
+      "inputs/safe-path--tests/solution.py": "94f4f5ee5410be5a732f4600c2b3a617ab54ed8c44381a715c376d2072b1d9a0",
+      "inputs/safe-path--tests/spec.md": "d451ef4f911204f95e2535091ce105afd903d99d01cd15cd3b2e85d265bb3c05",
+      "inputs/timezone-days--review/case.json": "e9da2299d3a0f771228d7c59dce5c0dd2f55a169d7db5d63675e95850016d8bf",
+      "inputs/timezone-days--review/feedback.json": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38",
+      "inputs/timezone-days--review/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/timezone-days--review/public.json": "7f412635d96c057c3bd0523ec7207b4f3109f28eb996965e56041a906689ed3f",
+      "inputs/timezone-days--review/solution.py": "76f24718a7a6e2a20e4b6bb2da1335e3acd313a56f24dda90a515f3d5dc44e2d",
+      "inputs/timezone-days--review/spec.md": "dd743b6b355fdbf240668d20725bdd24c86c2c0da724eb50241ff452ab657ec8",
+      "inputs/timezone-days--tests/case.json": "ba725f0d896b3ac257cc6a82b49b0f2db6bebb31aa3193c0b23fc51e8ac5750c",
+      "inputs/timezone-days--tests/feedback.json": "f50426ef6285ce6601b296059005e8c9c38ef7393de549ec236c0caabb6ff495",
+      "inputs/timezone-days--tests/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/timezone-days--tests/public.json": "7f412635d96c057c3bd0523ec7207b4f3109f28eb996965e56041a906689ed3f",
+      "inputs/timezone-days--tests/solution.py": "76f24718a7a6e2a20e4b6bb2da1335e3acd313a56f24dda90a515f3d5dc44e2d",
+      "inputs/timezone-days--tests/spec.md": "dd743b6b355fdbf240668d20725bdd24c86c2c0da724eb50241ff452ab657ec8",
+      "inputs/ttl-lru--review/case.json": "947a626237fe45fc6a7b6ed7f003c60d148cc22e9338a812c6865df23f055887",
+      "inputs/ttl-lru--review/feedback.json": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38",
+      "inputs/ttl-lru--review/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/ttl-lru--review/public.json": "2db621f37a315da5c8f76d07ed87b8a58aa18f9f2f154b4b49dcb23761b00044",
+      "inputs/ttl-lru--review/solution.py": "665aa4dea89de825f0cba635b3be7b5c2f7f93dbce73869e38b94d704de932c0",
+      "inputs/ttl-lru--review/spec.md": "6edbe40c3beeb153b93586f54bd5adc03fda6a9bab7e2dad4e0a328d997f9b1b",
+      "inputs/ttl-lru--tests/case.json": "7059f2fc10cb052a0c7db194d27ce1fe6b4ad9bc2ee39cbd21d053233e4008ff",
+      "inputs/ttl-lru--tests/feedback.json": "4c42de93cd69ebfc1b1e5d32530b75e4ae939fe46bfd79f9c0d9e465ff4cef4a",
+      "inputs/ttl-lru--tests/prompt.md": "cd5adac6ee4cbca29fa954160012d24cfb998d050d0cb1d87804f288dd4af5eb",
+      "inputs/ttl-lru--tests/public.json": "2db621f37a315da5c8f76d07ed87b8a58aa18f9f2f154b4b49dcb23761b00044",
+      "inputs/ttl-lru--tests/solution.py": "665aa4dea89de825f0cba635b3be7b5c2f7f93dbce73869e38b94d704de932c0",
+      "inputs/ttl-lru--tests/spec.md": "6edbe40c3beeb153b93586f54bd5adc03fda6a9bab7e2dad4e0a328d997f9b1b"
+    },
+    "milestone": "M1",
+    "project_policy": {
+      "agent": "codex",
+      "command_network": "none",
+      "duration_seconds": 180,
+      "host_access": false,
+      "limits": {
+        "cpus": 2,
+        "extra_swap_mib": 0,
+        "file_descriptors": 1024,
+        "memory_mib": 2048,
+        "processes": 256,
+        "scratch_mib": 256
+      },
+      "model_access": "openai",
+      "profile": "codex-environment-v2",
+      "resource_mode": "manual",
+      "restrictions_enabled": false,
+      "schema": 1,
+      "tool_profile": "coding",
+      "workspace_access": "read-write"
+    },
+    "requested_definition": {
+      "artifacts": [
+        "solution.py",
+        "feedback.json"
+      ],
+      "cases": [
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/deep-merge--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/deep-merge--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/deep-merge--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/deep-merge--tests/feedback.json"
+            }
+          ],
+          "id": "deep-merge--tests",
+          "input_file": "inputs/deep-merge--tests/case.json",
+          "prompt_file": "inputs/deep-merge--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/deep-merge--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/deep-merge--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/deep-merge--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/deep-merge--review/feedback.json"
+            }
+          ],
+          "id": "deep-merge--review",
+          "input_file": "inputs/deep-merge--review/case.json",
+          "prompt_file": "inputs/deep-merge--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/timezone-days--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/timezone-days--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/timezone-days--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/timezone-days--tests/feedback.json"
+            }
+          ],
+          "id": "timezone-days--tests",
+          "input_file": "inputs/timezone-days--tests/case.json",
+          "prompt_file": "inputs/timezone-days--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/timezone-days--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/timezone-days--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/timezone-days--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/timezone-days--review/feedback.json"
+            }
+          ],
+          "id": "timezone-days--review",
+          "input_file": "inputs/timezone-days--review/case.json",
+          "prompt_file": "inputs/timezone-days--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/safe-path--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/safe-path--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/safe-path--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/safe-path--review/feedback.json"
+            }
+          ],
+          "id": "safe-path--review",
+          "input_file": "inputs/safe-path--review/case.json",
+          "prompt_file": "inputs/safe-path--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/safe-path--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/safe-path--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/safe-path--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/safe-path--tests/feedback.json"
+            }
+          ],
+          "id": "safe-path--tests",
+          "input_file": "inputs/safe-path--tests/case.json",
+          "prompt_file": "inputs/safe-path--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/retry-plan--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/retry-plan--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/retry-plan--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/retry-plan--tests/feedback.json"
+            }
+          ],
+          "id": "retry-plan--tests",
+          "input_file": "inputs/retry-plan--tests/case.json",
+          "prompt_file": "inputs/retry-plan--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/retry-plan--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/retry-plan--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/retry-plan--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/retry-plan--review/feedback.json"
+            }
+          ],
+          "id": "retry-plan--review",
+          "input_file": "inputs/retry-plan--review/case.json",
+          "prompt_file": "inputs/retry-plan--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/rate-limit--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/rate-limit--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/rate-limit--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/rate-limit--tests/feedback.json"
+            }
+          ],
+          "id": "rate-limit--tests",
+          "input_file": "inputs/rate-limit--tests/case.json",
+          "prompt_file": "inputs/rate-limit--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/rate-limit--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/rate-limit--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/rate-limit--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/rate-limit--review/feedback.json"
+            }
+          ],
+          "id": "rate-limit--review",
+          "input_file": "inputs/rate-limit--review/case.json",
+          "prompt_file": "inputs/rate-limit--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/idempotency--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/idempotency--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/idempotency--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/idempotency--review/feedback.json"
+            }
+          ],
+          "id": "idempotency--review",
+          "input_file": "inputs/idempotency--review/case.json",
+          "prompt_file": "inputs/idempotency--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/idempotency--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/idempotency--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/idempotency--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/idempotency--tests/feedback.json"
+            }
+          ],
+          "id": "idempotency--tests",
+          "input_file": "inputs/idempotency--tests/case.json",
+          "prompt_file": "inputs/idempotency--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/pagination--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/pagination--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/pagination--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/pagination--tests/feedback.json"
+            }
+          ],
+          "id": "pagination--tests",
+          "input_file": "inputs/pagination--tests/case.json",
+          "prompt_file": "inputs/pagination--tests/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/pagination--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/pagination--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/pagination--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/pagination--review/feedback.json"
+            }
+          ],
+          "id": "pagination--review",
+          "input_file": "inputs/pagination--review/case.json",
+          "prompt_file": "inputs/pagination--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/ttl-lru--review/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/ttl-lru--review/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/ttl-lru--review/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/ttl-lru--review/feedback.json"
+            }
+          ],
+          "id": "ttl-lru--review",
+          "input_file": "inputs/ttl-lru--review/case.json",
+          "prompt_file": "inputs/ttl-lru--review/prompt.md"
+        },
+        {
+          "fixtures": [
+            {
+              "destination": "solution.py",
+              "source": "inputs/ttl-lru--tests/solution.py"
+            },
+            {
+              "destination": "spec.md",
+              "source": "inputs/ttl-lru--tests/spec.md"
+            },
+            {
+              "destination": "public.json",
+              "source": "inputs/ttl-lru--tests/public.json"
+            },
+            {
+              "destination": "feedback.json",
+              "source": "inputs/ttl-lru--tests/feedback.json"
+            }
+          ],
+          "id": "ttl-lru--tests",
+          "input_file": "inputs/ttl-lru--tests/case.json",
+          "prompt_file": "inputs/ttl-lru--tests/prompt.md"
+        }
+      ],
+      "evaluator": {
+        "argv": [
+          "python3",
+          "-B",
+          "check.py"
+        ],
+        "source_paths": [
+          "check.py"
+        ],
+        "timeout_seconds": 15
+      },
+      "execution": {
+        "max_parallel": 1,
+        "trial_cpus": 2,
+        "trial_memory_mib": 2048,
+        "trial_timeout_seconds": 180
+      },
+      "external_dependencies": [],
+      "name": "code-verification-repair",
+      "repetitions": 1,
+      "runner": {
+        "completion": "validated",
+        "type": "codex"
+      },
+      "schema_version": 1,
+      "secret_refs": {},
+      "variants": [
+        {
+          "effort": "medium",
+          "id": "medium"
+        }
+      ],
+      "workspace": {
+        "exclude": [],
+        "include": [
+          "check.py"
+        ]
+      }
+    },
+    "resource_sizing": {
+      "limits": {
+        "cpus": 2,
+        "extra_swap_mib": 0,
+        "file_descriptors": 1024,
+        "memory_mib": 2048,
+        "processes": 256,
+        "scratch_mib": 256
+      },
+      "mode": "manual"
+    },
+    "runtime": {
+      "adapter_version": 1,
+      "docker_version": "27.4.0",
+      "host_os": "Docker Desktop",
+      "kernel": "6.10.14-linuxkit"
+    },
+    "schema_version": 1,
+    "storage_layout": 2
+  },
+  "dispatch_available": true,
+  "selection": {
+    "attempt_id": null,
+    "revision": 0
+  },
+  "execution_notice": "Command and native Codex trials share detached execution, recovery and selection.",
+  "trials": [
+    {
+      "id": "trial-41df298564024c88ffd7d23a545aa10a",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "deep-merge--tests",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-6b7f665472f8931544423d7a80325690",
+          "trial_id": "trial-41df298564024c88ffd7d23a545aa10a",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-f4a64476e471bdf94095ed3af611e226",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "deep-merge--review",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-d2aaaccefad64e4446e8401b852d0b92",
+          "trial_id": "trial-f4a64476e471bdf94095ed3af611e226",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-6c9283991397fab82bf6cc3a6bc90174",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "timezone-days--tests",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-d9278acdb9bb0b8a6e1a127fc71b17a0",
+          "trial_id": "trial-6c9283991397fab82bf6cc3a6bc90174",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-94aaf30a493126a2e9d3614a8f53ce0c",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "timezone-days--review",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-60d010550c5ab108fb6427d40b6a9c0e",
+          "trial_id": "trial-94aaf30a493126a2e9d3614a8f53ce0c",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-570a1deebdeeba6fae962aa62307c56c",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "safe-path--review",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-f4b9b9a904fc167797dbf128cf64008a",
+          "trial_id": "trial-570a1deebdeeba6fae962aa62307c56c",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-f1dd79df5b727b0914cf878e9664829d",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "safe-path--tests",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-65a296c8fd6375201bd9cdadb2789d9d",
+          "trial_id": "trial-f1dd79df5b727b0914cf878e9664829d",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-e6040c1a8397d325633b1605ae152e1c",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "retry-plan--tests",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-82d3a29e40549512917f8c65f44a7217",
+          "trial_id": "trial-e6040c1a8397d325633b1605ae152e1c",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-f2a9553ec2dc3fd5f1f56647bcc4a167",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "retry-plan--review",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-66a95f084a7456efc49c731c5b4e8189",
+          "trial_id": "trial-f2a9553ec2dc3fd5f1f56647bcc4a167",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-61c5f1285c916aa0b9a7a7865d6b3615",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "rate-limit--tests",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-7b796ddcfe0c91b9efa0e9827728a2ad",
+          "trial_id": "trial-61c5f1285c916aa0b9a7a7865d6b3615",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-c001d7bc402e22a53fdca0d3833b9d41",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "rate-limit--review",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-57c9ad07992164670c24fd8a470ffbb3",
+          "trial_id": "trial-c001d7bc402e22a53fdca0d3833b9d41",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-050d106fdd2d0a457888878e110569d7",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "idempotency--review",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-46397e34241cf7611b6aefc359c3bd07",
+          "trial_id": "trial-050d106fdd2d0a457888878e110569d7",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-60d25538896e4d5677d93360fec46821",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "idempotency--tests",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-a76cff72a7b92db6747de549e73a4d0c",
+          "trial_id": "trial-60d25538896e4d5677d93360fec46821",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-b12a597069754e7c560ed922370daa26",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "pagination--tests",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-7a252029ba723f6b5d46e145ea8b39a0",
+          "trial_id": "trial-b12a597069754e7c560ed922370daa26",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-27c57ce256d92959a0fe0a0f44799ce0",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "pagination--review",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-80de04c574b87dde6efd94ca84c637cf",
+          "trial_id": "trial-27c57ce256d92959a0fe0a0f44799ce0",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-0800db88acc6baf70e2b84e1f16cd0f5",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "ttl-lru--review",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-5a6bc59175d931f1d9ff657200619012",
+          "trial_id": "trial-0800db88acc6baf70e2b84e1f16cd0f5",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    },
+    {
+      "id": "trial-8a7c4fd6acfbb7d3bc639b8a41ea91be",
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "variant_id": "medium",
+      "case_id": "ttl-lru--tests",
+      "repetition": 1,
+      "state": "queued",
+      "attempts": [
+        {
+          "id": "attempt-2036651bdf38756e9d8e1018649dfad9",
+          "trial_id": "trial-8a7c4fd6acfbb7d3bc639b8a41ea91be",
+          "number": 1,
+          "state": "queued",
+          "reason": "AWAITING_EXECUTION",
+          "record": {}
+        }
+      ]
+    }
+  ],
+  "request_id": "repair-freeze-v1",
+  "events": [
+    {
+      "sequence": 1,
+      "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+      "time": 1794237141.5688827,
+      "kind": "study_created",
+      "facts": {
+        "dispatch_available": false,
+        "trial_count": 16
+      }
+    }
+  ],
+  "capture_integrity": "metadata_verified",
+  "baseline_files_notice": "Full content was verified at capture; status verifies metadata, not every saved file.",
+  "controller_lease": null,
+  "idempotent_replay": false,
+  "exported_logs": "/Users/nikchin/Documents/Codex/2026-11-09/x20/outputs/research-pipeline/repos/ai-review-vs-independent-tests/execution/repair/.invariant/logs/export-d5792b9fb8e74b4581263c7be3f99d43",
+  "exported_results": [],
+  "host_delivery": []
+}

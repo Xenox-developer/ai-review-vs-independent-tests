@@ -1,0 +1,76 @@
+{
+  "study_id": "study-766e4325812640fdb7cea40f8d041920",
+  "trial_id": "trial-db203883f14e1ba1dafe90fc45c1720b",
+  "attempt_id": "attempt-dd6a98776d6c4766979485db2f8b921e",
+  "baseline_id": "baseline-64c9ac65d17484c8f49a91f9f1d65cea9ea2cfe77401a9dc1b342dd4b4cc9e14",
+  "result_digest": "b13d4e857086c070a33e8573f5b9435c728e7e143ca63d9adf454671c9c35182",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 47,
+        "mode": 420,
+        "sha256": "6b9fc709e287fba50d7dc610b1b8ad6623075f50840c9e74f95c2aead5535ca7"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/feedback.json\n+++ after/feedback.json\n@@ -0,0 +1 @@\n+{\"assessment\": \"likely_correct\", \"issues\": []}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 213,
+        "mode": 384,
+        "sha256": "2db621f37a315da5c8f76d07ed87b8a58aa18f9f2f154b4b49dcb23761b00044"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,18 @@\n+[\n+  {\n+    \"expect\": [\n+      null\n+    ],\n+    \"input\": {\n+      \"capacity\": 1,\n+      \"events\": [\n+        {\n+          \"key\": \"x\",\n+          \"op\": \"get\",\n+          \"t\": 0\n+        }\n+      ],\n+      \"ttl\": 10\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 1130,
+        "mode": 384,
+        "sha256": "665aa4dea89de825f0cba635b3be7b5c2f7f93dbce73869e38b94d704de932c0"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,38 @@\n+from collections import OrderedDict\n+\n+\n+def solve(data):\n+    \"\"\"Process cache events without modifying the input.\"\"\"\n+    capacity = data['capacity']\n+    ttl = data['ttl']\n+    cache = OrderedDict()\n+    # Fixed TTL and nondecreasing event times keep this in expiry order.\n+    expirations = OrderedDict()\n+    results = []\n+\n+    for event in data['events']:\n+        now = event['t']\n+        while expirations:\n+            oldest = next(iter(expirations))\n+            if expirations[oldest] > now:\n+                break\n+            del expirations[oldest]\n+            del cache[oldest]\n+\n+        key = event['key']\n+        if event['op'] == 'put':\n+            cache[key] = event['value']\n+            cache.move_to_end(key)\n+            expirations[key] = now + ttl\n+            expirations.move_to_end(key)\n+            if len(cache) > capacity:\n+                evicted, _ = cache.popitem(last=False)\n+                del expirations[evicted]\n+        else:\n+            if key in cache:\n+                results.append(cache[key])\n+                cache.move_to_end(key)\n+            else:\n+                results.append(None)\n+\n+    return results\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 540,
+        "mode": 384,
+        "sha256": "6edbe40c3beeb153b93586f54bd5adc03fda6a9bab7e2dad4e0a328d997f9b1b"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,7 @@\n+Implement solve(data) for a TTL/LRU cache. capacity is a positive integer and ttl\n+is a nonnegative integer. Events in nondecreasing integer time order are\n+{op:'put',t,key,value} or {op:'get',t,key}. Before EVERY event remove entries with\n+expiry <= t. put sets/replaces value, expiry=t+ttl, and makes key most recent;\n+if over capacity evict least recent. get returns value or null and, on a hit,\n+makes key most recent WITHOUT extending expiry. Return a list of get results.\n+Values are JSON primitives; keys are strings. Do not mutate input.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:3bc8b8d739b8e34b5bc741b1686dbc39991d51ad15ab4a98e37e1dea90724f4c",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

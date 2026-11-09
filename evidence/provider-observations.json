@@ -1,0 +1,3163 @@
+{
+  "journals": [
+    {
+      "phase": "initial",
+      "path": "experiments/attempts/attempt-fccd21a60ff2fdb9135fee63536c9ad0/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794235961.8970616,
+          "usage": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8312
+          },
+          "cumulative": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8312
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794235964.788303,
+          "usage": {
+            "input_tokens": 8716,
+            "cached_input_tokens": 8192,
+            "output_tokens": 39,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8755
+          },
+          "cumulative": {
+            "input_tokens": 16951,
+            "cached_input_tokens": 8192,
+            "output_tokens": 116,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17067
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794235970.8581023,
+          "usage": {
+            "input_tokens": 9658,
+            "cached_input_tokens": 8576,
+            "output_tokens": 225,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 9883
+          },
+          "cumulative": {
+            "input_tokens": 26609,
+            "cached_input_tokens": 16768,
+            "output_tokens": 341,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 26950
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794235981.7793515,
+          "usage": {
+            "input_tokens": 9940,
+            "cached_input_tokens": 9728,
+            "output_tokens": 88,
+            "reasoning_output_tokens": 12,
+            "total_tokens": 10028
+          },
+          "cumulative": {
+            "input_tokens": 36549,
+            "cached_input_tokens": 26496,
+            "output_tokens": 429,
+            "reasoning_output_tokens": 12,
+            "total_tokens": 36978
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "initial",
+      "path": "experiments/attempts/attempt-64b75564d1b96ef0466baebb0bc0cc4c/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794235673.9106925,
+          "usage": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "cumulative": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794235676.250249,
+          "usage": {
+            "input_tokens": 8689,
+            "cached_input_tokens": 8064,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8722
+          },
+          "cumulative": {
+            "input_tokens": 16924,
+            "cached_input_tokens": 8064,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17028
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794235682.6507204,
+          "usage": {
+            "input_tokens": 9557,
+            "cached_input_tokens": 8576,
+            "output_tokens": 232,
+            "reasoning_output_tokens": 68,
+            "total_tokens": 9789
+          },
+          "cumulative": {
+            "input_tokens": 26481,
+            "cached_input_tokens": 16640,
+            "output_tokens": 336,
+            "reasoning_output_tokens": 68,
+            "total_tokens": 26817
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794235706.667166,
+          "usage": {
+            "input_tokens": 9847,
+            "cached_input_tokens": 9600,
+            "output_tokens": 94,
+            "reasoning_output_tokens": 33,
+            "total_tokens": 9941
+          },
+          "cumulative": {
+            "input_tokens": 36328,
+            "cached_input_tokens": 26240,
+            "output_tokens": 430,
+            "reasoning_output_tokens": 101,
+            "total_tokens": 36758
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "initial",
+      "path": "experiments/attempts/attempt-237dfadec0bf256e6fbf73c580293adf/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794235831.3200245,
+          "usage": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "cumulative": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794235833.8241723,
+          "usage": {
+            "input_tokens": 8710,
+            "cached_input_tokens": 8064,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8743
+          },
+          "cumulative": {
+            "input_tokens": 16945,
+            "cached_input_tokens": 8064,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17049
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794235844.943643,
+          "usage": {
+            "input_tokens": 9617,
+            "cached_input_tokens": 8576,
+            "output_tokens": 494,
+            "reasoning_output_tokens": 39,
+            "total_tokens": 10111
+          },
+          "cumulative": {
+            "input_tokens": 26562,
+            "cached_input_tokens": 16640,
+            "output_tokens": 598,
+            "reasoning_output_tokens": 39,
+            "total_tokens": 27160
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794235854.108364,
+          "usage": {
+            "input_tokens": 10135,
+            "cached_input_tokens": 9984,
+            "output_tokens": 18,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10153
+          },
+          "cumulative": {
+            "input_tokens": 36697,
+            "cached_input_tokens": 26624,
+            "output_tokens": 616,
+            "reasoning_output_tokens": 39,
+            "total_tokens": 37313
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "initial",
+      "path": "experiments/attempts/attempt-c622d2cf38e8345885671ae64594d74c/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794235737.5082836,
+          "usage": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "cumulative": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794235739.8524733,
+          "usage": {
+            "input_tokens": 8699,
+            "cached_input_tokens": 8064,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8732
+          },
+          "cumulative": {
+            "input_tokens": 16934,
+            "cached_input_tokens": 8064,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17038
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794235748.05003,
+          "usage": {
+            "input_tokens": 9586,
+            "cached_input_tokens": 8576,
+            "output_tokens": 347,
+            "reasoning_output_tokens": 78,
+            "total_tokens": 9933
+          },
+          "cumulative": {
+            "input_tokens": 26520,
+            "cached_input_tokens": 16640,
+            "output_tokens": 451,
+            "reasoning_output_tokens": 78,
+            "total_tokens": 26971
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794235763.585039,
+          "usage": {
+            "input_tokens": 9989,
+            "cached_input_tokens": 9728,
+            "output_tokens": 76,
+            "reasoning_output_tokens": 12,
+            "total_tokens": 10065
+          },
+          "cumulative": {
+            "input_tokens": 36509,
+            "cached_input_tokens": 26368,
+            "output_tokens": 527,
+            "reasoning_output_tokens": 90,
+            "total_tokens": 37036
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "initial",
+      "path": "experiments/attempts/attempt-c1cc77cd4094d12f55331bde072791b3/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794235996.9435577,
+          "usage": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "cumulative": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794235999.804508,
+          "usage": {
+            "input_tokens": 8743,
+            "cached_input_tokens": 0,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8776
+          },
+          "cumulative": {
+            "input_tokens": 16978,
+            "cached_input_tokens": 0,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17082
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236011.6040494,
+          "usage": {
+            "input_tokens": 9704,
+            "cached_input_tokens": 8064,
+            "output_tokens": 429,
+            "reasoning_output_tokens": 110,
+            "total_tokens": 10133
+          },
+          "cumulative": {
+            "input_tokens": 26682,
+            "cached_input_tokens": 8064,
+            "output_tokens": 533,
+            "reasoning_output_tokens": 110,
+            "total_tokens": 27215
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236021.6053154,
+          "usage": {
+            "input_tokens": 10190,
+            "cached_input_tokens": 9984,
+            "output_tokens": 81,
+            "reasoning_output_tokens": 9,
+            "total_tokens": 10271
+          },
+          "cumulative": {
+            "input_tokens": 36872,
+            "cached_input_tokens": 18048,
+            "output_tokens": 614,
+            "reasoning_output_tokens": 119,
+            "total_tokens": 37486
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "initial",
+      "path": "experiments/attempts/attempt-16baa024116375c01c43642218770346/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794235791.9718525,
+          "usage": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "cumulative": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794235795.04337,
+          "usage": {
+            "input_tokens": 8691,
+            "cached_input_tokens": 8064,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8724
+          },
+          "cumulative": {
+            "input_tokens": 16926,
+            "cached_input_tokens": 8064,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17030
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794235802.180769,
+          "usage": {
+            "input_tokens": 9571,
+            "cached_input_tokens": 8576,
+            "output_tokens": 179,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 9750
+          },
+          "cumulative": {
+            "input_tokens": 26497,
+            "cached_input_tokens": 16640,
+            "output_tokens": 283,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 26780
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794235812.0037558,
+          "usage": {
+            "input_tokens": 9808,
+            "cached_input_tokens": 0,
+            "output_tokens": 89,
+            "reasoning_output_tokens": 12,
+            "total_tokens": 9897
+          },
+          "cumulative": {
+            "input_tokens": 36305,
+            "cached_input_tokens": 16640,
+            "output_tokens": 372,
+            "reasoning_output_tokens": 12,
+            "total_tokens": 36677
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "initial",
+      "path": "experiments/attempts/attempt-0b87d6e0887849726709539dd6ef6f1e/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794235867.4062412,
+          "usage": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "cumulative": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8306
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794235869.7089882,
+          "usage": {
+            "input_tokens": 8685,
+            "cached_input_tokens": 8064,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8718
+          },
+          "cumulative": {
+            "input_tokens": 16920,
+            "cached_input_tokens": 8064,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17024
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794235875.8567615,
+          "usage": {
+            "input_tokens": 9622,
+            "cached_input_tokens": 8576,
+            "output_tokens": 229,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 9851
+          },
+          "cumulative": {
+            "input_tokens": 26542,
+            "cached_input_tokens": 16640,
+            "output_tokens": 333,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 26875
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794235885.0880628,
+          "usage": {
+            "input_tokens": 9907,
+            "cached_input_tokens": 9728,
+            "output_tokens": 370,
+            "reasoning_output_tokens": 10,
+            "total_tokens": 10277
+          },
+          "cumulative": {
+            "input_tokens": 36449,
+            "cached_input_tokens": 26368,
+            "output_tokens": 703,
+            "reasoning_output_tokens": 10,
+            "total_tokens": 37152
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 5,
+          "response_id": "5",
+          "phase": "worker",
+          "timestamp": 1794235895.7089772,
+          "usage": {
+            "input_tokens": 10350,
+            "cached_input_tokens": 0,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10421
+          },
+          "cumulative": {
+            "input_tokens": 46799,
+            "cached_input_tokens": 26368,
+            "output_tokens": 774,
+            "reasoning_output_tokens": 10,
+            "total_tokens": 47573
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "initial",
+      "path": "experiments/attempts/attempt-52066b304a1e0f52e3c271c7df839c26/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794235917.7702925,
+          "usage": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 67,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8302
+          },
+          "cumulative": {
+            "input_tokens": 8235,
+            "cached_input_tokens": 0,
+            "output_tokens": 67,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8302
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794235920.6351738,
+          "usage": {
+            "input_tokens": 8701,
+            "cached_input_tokens": 8064,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8734
+          },
+          "cumulative": {
+            "input_tokens": 16936,
+            "cached_input_tokens": 8064,
+            "output_tokens": 100,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17036
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794235930.9879327,
+          "usage": {
+            "input_tokens": 9645,
+            "cached_input_tokens": 0,
+            "output_tokens": 450,
+            "reasoning_output_tokens": 69,
+            "total_tokens": 10095
+          },
+          "cumulative": {
+            "input_tokens": 26581,
+            "cached_input_tokens": 8064,
+            "output_tokens": 550,
+            "reasoning_output_tokens": 69,
+            "total_tokens": 27131
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794235941.9681106,
+          "usage": {
+            "input_tokens": 10153,
+            "cached_input_tokens": 9856,
+            "output_tokens": 89,
+            "reasoning_output_tokens": 18,
+            "total_tokens": 10242
+          },
+          "cumulative": {
+            "input_tokens": 36734,
+            "cached_input_tokens": 17920,
+            "output_tokens": 639,
+            "reasoning_output_tokens": 87,
+            "total_tokens": 37373
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-a54ec639f3f147fd331fff10349ff8a9/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236284.455892,
+          "usage": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 69,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8367
+          },
+          "cumulative": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 69,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8367
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236286.5502813,
+          "usage": {
+            "input_tokens": 8758,
+            "cached_input_tokens": 8192,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8791
+          },
+          "cumulative": {
+            "input_tokens": 17056,
+            "cached_input_tokens": 8192,
+            "output_tokens": 102,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17158
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236296.8084714,
+          "usage": {
+            "input_tokens": 9834,
+            "cached_input_tokens": 8576,
+            "output_tokens": 425,
+            "reasoning_output_tokens": 34,
+            "total_tokens": 10259
+          },
+          "cumulative": {
+            "input_tokens": 26890,
+            "cached_input_tokens": 16768,
+            "output_tokens": 527,
+            "reasoning_output_tokens": 34,
+            "total_tokens": 27417
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236307.7792332,
+          "usage": {
+            "input_tokens": 10319,
+            "cached_input_tokens": 0,
+            "output_tokens": 126,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10445
+          },
+          "cumulative": {
+            "input_tokens": 37209,
+            "cached_input_tokens": 16768,
+            "output_tokens": 653,
+            "reasoning_output_tokens": 34,
+            "total_tokens": 37862
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-c9cf14cbad042c21b926243fc475b109/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236360.1082833,
+          "usage": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 7296,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8402
+          },
+          "cumulative": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 7296,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8402
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236362.3636947,
+          "usage": {
+            "input_tokens": 8789,
+            "cached_input_tokens": 0,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8822
+          },
+          "cumulative": {
+            "input_tokens": 17121,
+            "cached_input_tokens": 7296,
+            "output_tokens": 103,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17224
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236388.1434171,
+          "usage": {
+            "input_tokens": 9670,
+            "cached_input_tokens": 8704,
+            "output_tokens": 1179,
+            "reasoning_output_tokens": 206,
+            "total_tokens": 10849
+          },
+          "cumulative": {
+            "input_tokens": 26791,
+            "cached_input_tokens": 16000,
+            "output_tokens": 1282,
+            "reasoning_output_tokens": 206,
+            "total_tokens": 28073
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236396.4177299,
+          "usage": {
+            "input_tokens": 10906,
+            "cached_input_tokens": 10624,
+            "output_tokens": 18,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10924
+          },
+          "cumulative": {
+            "input_tokens": 37697,
+            "cached_input_tokens": 26624,
+            "output_tokens": 1300,
+            "reasoning_output_tokens": 206,
+            "total_tokens": 38997
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-357cb666af76121e1c9fe801d3389a03/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236470.2652962,
+          "usage": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 72,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8370
+          },
+          "cumulative": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 72,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8370
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236472.0643442,
+          "usage": {
+            "input_tokens": 8774,
+            "cached_input_tokens": 0,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8807
+          },
+          "cumulative": {
+            "input_tokens": 17072,
+            "cached_input_tokens": 0,
+            "output_tokens": 105,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17177
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236483.2796466,
+          "usage": {
+            "input_tokens": 9890,
+            "cached_input_tokens": 8576,
+            "output_tokens": 490,
+            "reasoning_output_tokens": 27,
+            "total_tokens": 10380
+          },
+          "cumulative": {
+            "input_tokens": 26962,
+            "cached_input_tokens": 8576,
+            "output_tokens": 595,
+            "reasoning_output_tokens": 27,
+            "total_tokens": 27557
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236493.7448895,
+          "usage": {
+            "input_tokens": 10444,
+            "cached_input_tokens": 8192,
+            "output_tokens": 128,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10572
+          },
+          "cumulative": {
+            "input_tokens": 37406,
+            "cached_input_tokens": 16768,
+            "output_tokens": 723,
+            "reasoning_output_tokens": 27,
+            "total_tokens": 38129
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-4fb17b805e742ec20f0abd3b12b9f02e/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236834.8651016,
+          "usage": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8368
+          },
+          "cumulative": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8368
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236838.0021555,
+          "usage": {
+            "input_tokens": 8767,
+            "cached_input_tokens": 8192,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8800
+          },
+          "cumulative": {
+            "input_tokens": 17065,
+            "cached_input_tokens": 8192,
+            "output_tokens": 103,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17168
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236848.7189448,
+          "usage": {
+            "input_tokens": 9791,
+            "cached_input_tokens": 8576,
+            "output_tokens": 455,
+            "reasoning_output_tokens": 29,
+            "total_tokens": 10246
+          },
+          "cumulative": {
+            "input_tokens": 26856,
+            "cached_input_tokens": 16768,
+            "output_tokens": 558,
+            "reasoning_output_tokens": 29,
+            "total_tokens": 27414
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236859.2184372,
+          "usage": {
+            "input_tokens": 10318,
+            "cached_input_tokens": 10112,
+            "output_tokens": 126,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10444
+          },
+          "cumulative": {
+            "input_tokens": 37174,
+            "cached_input_tokens": 26880,
+            "output_tokens": 684,
+            "reasoning_output_tokens": 29,
+            "total_tokens": 37858
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-b839dc965364841ee50f5c1dd29c653f/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236517.7838562,
+          "usage": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 7296,
+            "output_tokens": 74,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8406
+          },
+          "cumulative": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 7296,
+            "output_tokens": 74,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8406
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236524.1330268,
+          "usage": {
+            "input_tokens": 8784,
+            "cached_input_tokens": 8192,
+            "output_tokens": 39,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8823
+          },
+          "cumulative": {
+            "input_tokens": 17116,
+            "cached_input_tokens": 15488,
+            "output_tokens": 113,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17229
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236571.289846,
+          "usage": {
+            "input_tokens": 9726,
+            "cached_input_tokens": 8704,
+            "output_tokens": 1993,
+            "reasoning_output_tokens": 751,
+            "total_tokens": 11719
+          },
+          "cumulative": {
+            "input_tokens": 26842,
+            "cached_input_tokens": 24192,
+            "output_tokens": 2106,
+            "reasoning_output_tokens": 751,
+            "total_tokens": 28948
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236581.3118696,
+          "usage": {
+            "input_tokens": 11785,
+            "cached_input_tokens": 7296,
+            "output_tokens": 18,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11803
+          },
+          "cumulative": {
+            "input_tokens": 38627,
+            "cached_input_tokens": 31488,
+            "output_tokens": 2124,
+            "reasoning_output_tokens": 751,
+            "total_tokens": 40751
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-dd6a98776d6c4766979485db2f8b921e/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236879.583374,
+          "usage": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 73,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8371
+          },
+          "cumulative": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 73,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8371
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236893.3517194,
+          "usage": {
+            "input_tokens": 9095,
+            "cached_input_tokens": 8192,
+            "output_tokens": 554,
+            "reasoning_output_tokens": 87,
+            "total_tokens": 9649
+          },
+          "cumulative": {
+            "input_tokens": 17393,
+            "cached_input_tokens": 8192,
+            "output_tokens": 627,
+            "reasoning_output_tokens": 87,
+            "total_tokens": 18020
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236898.8197792,
+          "usage": {
+            "input_tokens": 9716,
+            "cached_input_tokens": 9472,
+            "output_tokens": 146,
+            "reasoning_output_tokens": 11,
+            "total_tokens": 9862
+          },
+          "cumulative": {
+            "input_tokens": 27109,
+            "cached_input_tokens": 17664,
+            "output_tokens": 773,
+            "reasoning_output_tokens": 98,
+            "total_tokens": 27882
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236908.7580938,
+          "usage": {
+            "input_tokens": 9919,
+            "cached_input_tokens": 9728,
+            "output_tokens": 18,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 9937
+          },
+          "cumulative": {
+            "input_tokens": 37028,
+            "cached_input_tokens": 27392,
+            "output_tokens": 791,
+            "reasoning_output_tokens": 98,
+            "total_tokens": 37819
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-7a878416c35d95e332df921caff7e1a1/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236686.9666305,
+          "usage": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 0,
+            "output_tokens": 75,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8407
+          },
+          "cumulative": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 0,
+            "output_tokens": 75,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8407
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236689.1631818,
+          "usage": {
+            "input_tokens": 8805,
+            "cached_input_tokens": 8192,
+            "output_tokens": 39,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8844
+          },
+          "cumulative": {
+            "input_tokens": 17137,
+            "cached_input_tokens": 8192,
+            "output_tokens": 114,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17251
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236733.7220714,
+          "usage": {
+            "input_tokens": 9754,
+            "cached_input_tokens": 8704,
+            "output_tokens": 2151,
+            "reasoning_output_tokens": 101,
+            "total_tokens": 11905
+          },
+          "cumulative": {
+            "input_tokens": 26891,
+            "cached_input_tokens": 16896,
+            "output_tokens": 2265,
+            "reasoning_output_tokens": 101,
+            "total_tokens": 29156
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236743.1907966,
+          "usage": {
+            "input_tokens": 11963,
+            "cached_input_tokens": 11776,
+            "output_tokens": 78,
+            "reasoning_output_tokens": 8,
+            "total_tokens": 12041
+          },
+          "cumulative": {
+            "input_tokens": 38854,
+            "cached_input_tokens": 28672,
+            "output_tokens": 2343,
+            "reasoning_output_tokens": 109,
+            "total_tokens": 41197
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-7be0c5ef8dae544c5902fd406960c20e/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236595.6119666,
+          "usage": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 79,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8377
+          },
+          "cumulative": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 79,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8377
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236604.6372263,
+          "usage": {
+            "input_tokens": 8951,
+            "cached_input_tokens": 8192,
+            "output_tokens": 368,
+            "reasoning_output_tokens": 33,
+            "total_tokens": 9319
+          },
+          "cumulative": {
+            "input_tokens": 17249,
+            "cached_input_tokens": 8192,
+            "output_tokens": 447,
+            "reasoning_output_tokens": 33,
+            "total_tokens": 17696
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236616.7833843,
+          "usage": {
+            "input_tokens": 9389,
+            "cached_input_tokens": 9088,
+            "output_tokens": 151,
+            "reasoning_output_tokens": 11,
+            "total_tokens": 9540
+          },
+          "cumulative": {
+            "input_tokens": 26638,
+            "cached_input_tokens": 17280,
+            "output_tokens": 598,
+            "reasoning_output_tokens": 44,
+            "total_tokens": 27236
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-909ad50ae1ead63b2e20cab8409e1225/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236638.849219,
+          "usage": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8368
+          },
+          "cumulative": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8368
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236640.9992964,
+          "usage": {
+            "input_tokens": 8767,
+            "cached_input_tokens": 8192,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8800
+          },
+          "cumulative": {
+            "input_tokens": 17065,
+            "cached_input_tokens": 8192,
+            "output_tokens": 103,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17168
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236653.8538246,
+          "usage": {
+            "input_tokens": 9951,
+            "cached_input_tokens": 8576,
+            "output_tokens": 500,
+            "reasoning_output_tokens": 34,
+            "total_tokens": 10451
+          },
+          "cumulative": {
+            "input_tokens": 27016,
+            "cached_input_tokens": 16768,
+            "output_tokens": 603,
+            "reasoning_output_tokens": 34,
+            "total_tokens": 27619
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236665.2240698,
+          "usage": {
+            "input_tokens": 10518,
+            "cached_input_tokens": 10240,
+            "output_tokens": 130,
+            "reasoning_output_tokens": 9,
+            "total_tokens": 10648
+          },
+          "cumulative": {
+            "input_tokens": 37534,
+            "cached_input_tokens": 27008,
+            "output_tokens": 733,
+            "reasoning_output_tokens": 43,
+            "total_tokens": 38267
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-134d0fbe89097e81577fe6c031cf1ca4/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236328.6489925,
+          "usage": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 76,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8374
+          },
+          "cumulative": {
+            "input_tokens": 8298,
+            "cached_input_tokens": 0,
+            "output_tokens": 76,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8374
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236335.124095,
+          "usage": {
+            "input_tokens": 8905,
+            "cached_input_tokens": 0,
+            "output_tokens": 250,
+            "reasoning_output_tokens": 47,
+            "total_tokens": 9155
+          },
+          "cumulative": {
+            "input_tokens": 17203,
+            "cached_input_tokens": 0,
+            "output_tokens": 326,
+            "reasoning_output_tokens": 47,
+            "total_tokens": 17529
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236346.5818236,
+          "usage": {
+            "input_tokens": 9337,
+            "cached_input_tokens": 8960,
+            "output_tokens": 145,
+            "reasoning_output_tokens": 14,
+            "total_tokens": 9482
+          },
+          "cumulative": {
+            "input_tokens": 26540,
+            "cached_input_tokens": 8960,
+            "output_tokens": 471,
+            "reasoning_output_tokens": 61,
+            "total_tokens": 27011
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-af0355984c0b664d05de3ce2029ce7b6/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236411.4422169,
+          "usage": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 0,
+            "output_tokens": 66,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8398
+          },
+          "cumulative": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 0,
+            "output_tokens": 66,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8398
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236414.1876216,
+          "usage": {
+            "input_tokens": 8803,
+            "cached_input_tokens": 8192,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8836
+          },
+          "cumulative": {
+            "input_tokens": 17135,
+            "cached_input_tokens": 8192,
+            "output_tokens": 99,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17234
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236438.6569693,
+          "usage": {
+            "input_tokens": 9710,
+            "cached_input_tokens": 8704,
+            "output_tokens": 1150,
+            "reasoning_output_tokens": 392,
+            "total_tokens": 10860
+          },
+          "cumulative": {
+            "input_tokens": 26845,
+            "cached_input_tokens": 16896,
+            "output_tokens": 1249,
+            "reasoning_output_tokens": 392,
+            "total_tokens": 28094
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236448.6270666,
+          "usage": {
+            "input_tokens": 10916,
+            "cached_input_tokens": 10624,
+            "output_tokens": 18,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10934
+          },
+          "cumulative": {
+            "input_tokens": 37761,
+            "cached_input_tokens": 27520,
+            "output_tokens": 1267,
+            "reasoning_output_tokens": 392,
+            "total_tokens": 39028
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-1e7aeb26c1e2c88ce3b4c4fe14054262/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236192.6171277,
+          "usage": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 0,
+            "output_tokens": 65,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8397
+          },
+          "cumulative": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 0,
+            "output_tokens": 65,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8397
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236195.0547183,
+          "usage": {
+            "input_tokens": 8788,
+            "cached_input_tokens": 8192,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8821
+          },
+          "cumulative": {
+            "input_tokens": 17120,
+            "cached_input_tokens": 8192,
+            "output_tokens": 98,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17218
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236247.669712,
+          "usage": {
+            "input_tokens": 9674,
+            "cached_input_tokens": 8704,
+            "output_tokens": 2442,
+            "reasoning_output_tokens": 202,
+            "total_tokens": 12116
+          },
+          "cumulative": {
+            "input_tokens": 26794,
+            "cached_input_tokens": 16896,
+            "output_tokens": 2540,
+            "reasoning_output_tokens": 202,
+            "total_tokens": 29334
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236258.238394,
+          "usage": {
+            "input_tokens": 12173,
+            "cached_input_tokens": 11904,
+            "output_tokens": 28,
+            "reasoning_output_tokens": 8,
+            "total_tokens": 12201
+          },
+          "cumulative": {
+            "input_tokens": 38967,
+            "cached_input_tokens": 28800,
+            "output_tokens": 2568,
+            "reasoning_output_tokens": 210,
+            "total_tokens": 41535
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-67b63cf10c31c2a987df03c489ffd4a9/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236765.8584163,
+          "usage": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 8192,
+            "output_tokens": 73,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8405
+          },
+          "cumulative": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 8192,
+            "output_tokens": 73,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8405
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236768.0714242,
+          "usage": {
+            "input_tokens": 8804,
+            "cached_input_tokens": 8192,
+            "output_tokens": 38,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8842
+          },
+          "cumulative": {
+            "input_tokens": 17136,
+            "cached_input_tokens": 16384,
+            "output_tokens": 111,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17247
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236805.8088586,
+          "usage": {
+            "input_tokens": 9746,
+            "cached_input_tokens": 8704,
+            "output_tokens": 1814,
+            "reasoning_output_tokens": 158,
+            "total_tokens": 11560
+          },
+          "cumulative": {
+            "input_tokens": 26882,
+            "cached_input_tokens": 25088,
+            "output_tokens": 1925,
+            "reasoning_output_tokens": 158,
+            "total_tokens": 28807
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236814.571294,
+          "usage": {
+            "input_tokens": 11616,
+            "cached_input_tokens": 11392,
+            "output_tokens": 18,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11634
+          },
+          "cumulative": {
+            "input_tokens": 38498,
+            "cached_input_tokens": 36480,
+            "output_tokens": 1943,
+            "reasoning_output_tokens": 158,
+            "total_tokens": 40441
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-e14e94365a1a3e3d86048ca9c4f3aeb5/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236928.172097,
+          "usage": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 7296,
+            "output_tokens": 68,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8400
+          },
+          "cumulative": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 7296,
+            "output_tokens": 68,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8400
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236930.1209688,
+          "usage": {
+            "input_tokens": 8836,
+            "cached_input_tokens": 8192,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8869
+          },
+          "cumulative": {
+            "input_tokens": 17168,
+            "cached_input_tokens": 15488,
+            "output_tokens": 101,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17269
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236975.091534,
+          "usage": {
+            "input_tokens": 9798,
+            "cached_input_tokens": 8704,
+            "output_tokens": 2173,
+            "reasoning_output_tokens": 120,
+            "total_tokens": 11971
+          },
+          "cumulative": {
+            "input_tokens": 26966,
+            "cached_input_tokens": 24192,
+            "output_tokens": 2274,
+            "reasoning_output_tokens": 120,
+            "total_tokens": 29240
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236986.1511073,
+          "usage": {
+            "input_tokens": 12038,
+            "cached_input_tokens": 11776,
+            "output_tokens": 83,
+            "reasoning_output_tokens": 63,
+            "total_tokens": 12121
+          },
+          "cumulative": {
+            "input_tokens": 39004,
+            "cached_input_tokens": 35968,
+            "output_tokens": 2357,
+            "reasoning_output_tokens": 183,
+            "total_tokens": 41361
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-4db2d007daa0c0d50f20ecd6da3d5a77/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236148.896236,
+          "usage": {
+            "input_tokens": 8346,
+            "cached_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8416
+          },
+          "cumulative": {
+            "input_tokens": 8346,
+            "cached_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8416
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236153.3100197,
+          "usage": {
+            "input_tokens": 8799,
+            "cached_input_tokens": 8192,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8832
+          },
+          "cumulative": {
+            "input_tokens": 17145,
+            "cached_input_tokens": 8192,
+            "output_tokens": 103,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17248
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236163.3548937,
+          "usage": {
+            "input_tokens": 9771,
+            "cached_input_tokens": 8704,
+            "output_tokens": 416,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 10187
+          },
+          "cumulative": {
+            "input_tokens": 26916,
+            "cached_input_tokens": 16896,
+            "output_tokens": 519,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 27435
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236174.1553016,
+          "usage": {
+            "input_tokens": 10255,
+            "cached_input_tokens": 9984,
+            "output_tokens": 125,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10380
+          },
+          "cumulative": {
+            "input_tokens": 37171,
+            "cached_input_tokens": 26880,
+            "output_tokens": 644,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 37815
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "feedback",
+      "path": "experiments/attempts/attempt-88bbdd6f8d3a5a09fddcaf1ef27550e4/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794236070.3987875,
+          "usage": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 7296,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8403
+          },
+          "cumulative": {
+            "input_tokens": 8332,
+            "cached_input_tokens": 7296,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8403
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794236073.3316462,
+          "usage": {
+            "input_tokens": 8786,
+            "cached_input_tokens": 8192,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8819
+          },
+          "cumulative": {
+            "input_tokens": 17118,
+            "cached_input_tokens": 15488,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17222
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794236110.5192485,
+          "usage": {
+            "input_tokens": 9655,
+            "cached_input_tokens": 8704,
+            "output_tokens": 1760,
+            "reasoning_output_tokens": 57,
+            "total_tokens": 11415
+          },
+          "cumulative": {
+            "input_tokens": 26773,
+            "cached_input_tokens": 24192,
+            "output_tokens": 1864,
+            "reasoning_output_tokens": 57,
+            "total_tokens": 28637
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794236120.7205908,
+          "usage": {
+            "input_tokens": 11471,
+            "cached_input_tokens": 11264,
+            "output_tokens": 18,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11489
+          },
+          "cumulative": {
+            "input_tokens": 38244,
+            "cached_input_tokens": 35456,
+            "output_tokens": 1882,
+            "reasoning_output_tokens": 57,
+            "total_tokens": 40126
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-60d010550c5ab108fb6427d40b6a9c0e/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237282.6186845,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 76,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8392
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 76,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8392
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237284.9796252,
+          "usage": {
+            "input_tokens": 8825,
+            "cached_input_tokens": 0,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8858
+          },
+          "cumulative": {
+            "input_tokens": 17141,
+            "cached_input_tokens": 0,
+            "output_tokens": 109,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17250
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794237296.0805538,
+          "usage": {
+            "input_tokens": 9901,
+            "cached_input_tokens": 8704,
+            "output_tokens": 453,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 10354
+          },
+          "cumulative": {
+            "input_tokens": 27042,
+            "cached_input_tokens": 8704,
+            "output_tokens": 562,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 27604
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794237306.7881358,
+          "usage": {
+            "input_tokens": 10420,
+            "cached_input_tokens": 10112,
+            "output_tokens": 72,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10492
+          },
+          "cumulative": {
+            "input_tokens": 37462,
+            "cached_input_tokens": 18816,
+            "output_tokens": 634,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 38096
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-a76cff72a7b92db6747de549e73a4d0c/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237605.0568154,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 83,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8399
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 83,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8399
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237616.7290735,
+          "usage": {
+            "input_tokens": 18368,
+            "cached_input_tokens": 8192,
+            "output_tokens": 109,
+            "reasoning_output_tokens": 25,
+            "total_tokens": 18477
+          },
+          "cumulative": {
+            "input_tokens": 26684,
+            "cached_input_tokens": 8192,
+            "output_tokens": 192,
+            "reasoning_output_tokens": 25,
+            "total_tokens": 26876
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-d9278acdb9bb0b8a6e1a127fc71b17a0/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237252.2475126,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 79,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8395
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 79,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8395
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237263.9429088,
+          "usage": {
+            "input_tokens": 14434,
+            "cached_input_tokens": 8192,
+            "output_tokens": 119,
+            "reasoning_output_tokens": 39,
+            "total_tokens": 14553
+          },
+          "cumulative": {
+            "input_tokens": 22750,
+            "cached_input_tokens": 8192,
+            "output_tokens": 198,
+            "reasoning_output_tokens": 39,
+            "total_tokens": 22948
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-46397e34241cf7611b6aefc359c3bd07/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237560.4204123,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 8192,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8387
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 8192,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8387
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237562.4886243,
+          "usage": {
+            "input_tokens": 8827,
+            "cached_input_tokens": 0,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8860
+          },
+          "cumulative": {
+            "input_tokens": 17143,
+            "cached_input_tokens": 8192,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 17247
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794237576.5855336,
+          "usage": {
+            "input_tokens": 10011,
+            "cached_input_tokens": 8192,
+            "output_tokens": 632,
+            "reasoning_output_tokens": 39,
+            "total_tokens": 10643
+          },
+          "cumulative": {
+            "input_tokens": 27154,
+            "cached_input_tokens": 16384,
+            "output_tokens": 736,
+            "reasoning_output_tokens": 39,
+            "total_tokens": 27890
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794237585.816646,
+          "usage": {
+            "input_tokens": 10707,
+            "cached_input_tokens": 10496,
+            "output_tokens": 67,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10774
+          },
+          "cumulative": {
+            "input_tokens": 37861,
+            "cached_input_tokens": 26880,
+            "output_tokens": 803,
+            "reasoning_output_tokens": 39,
+            "total_tokens": 38664
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-65a296c8fd6375201bd9cdadb2789d9d/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237372.940864,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 75,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8391
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 75,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8391
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237375.4445252,
+          "usage": {
+            "input_tokens": 11739,
+            "cached_input_tokens": 8192,
+            "output_tokens": 33,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 11772
+          },
+          "cumulative": {
+            "input_tokens": 20055,
+            "cached_input_tokens": 8192,
+            "output_tokens": 108,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20163
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794237382.32691,
+          "usage": {
+            "input_tokens": 12721,
+            "cached_input_tokens": 11648,
+            "output_tokens": 173,
+            "reasoning_output_tokens": 14,
+            "total_tokens": 12894
+          },
+          "cumulative": {
+            "input_tokens": 32776,
+            "cached_input_tokens": 19840,
+            "output_tokens": 281,
+            "reasoning_output_tokens": 14,
+            "total_tokens": 33057
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794237395.0109162,
+          "usage": {
+            "input_tokens": 12918,
+            "cached_input_tokens": 12672,
+            "output_tokens": 205,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 13123
+          },
+          "cumulative": {
+            "input_tokens": 45694,
+            "cached_input_tokens": 32512,
+            "output_tokens": 486,
+            "reasoning_output_tokens": 14,
+            "total_tokens": 46180
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-80de04c574b87dde6efd94ca84c637cf/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237665.2342536,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237682.4422448,
+          "usage": {
+            "input_tokens": 9021,
+            "cached_input_tokens": 8192,
+            "output_tokens": 451,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 9472
+          },
+          "cumulative": {
+            "input_tokens": 17337,
+            "cached_input_tokens": 8192,
+            "output_tokens": 528,
+            "reasoning_output_tokens": 30,
+            "total_tokens": 17865
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-57c9ad07992164670c24fd8a470ffbb3/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237522.375514,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237539.9917743,
+          "usage": {
+            "input_tokens": 9007,
+            "cached_input_tokens": 8192,
+            "output_tokens": 417,
+            "reasoning_output_tokens": 31,
+            "total_tokens": 9424
+          },
+          "cumulative": {
+            "input_tokens": 17323,
+            "cached_input_tokens": 8192,
+            "output_tokens": 494,
+            "reasoning_output_tokens": 31,
+            "total_tokens": 17817
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-7b796ddcfe0c91b9efa0e9827728a2ad/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237489.8212566,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 81,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8397
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 81,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8397
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237495.4663281,
+          "usage": {
+            "input_tokens": 19336,
+            "cached_input_tokens": 0,
+            "output_tokens": 220,
+            "reasoning_output_tokens": 18,
+            "total_tokens": 19556
+          },
+          "cumulative": {
+            "input_tokens": 27652,
+            "cached_input_tokens": 0,
+            "output_tokens": 301,
+            "reasoning_output_tokens": 18,
+            "total_tokens": 27953
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794237504.9151516,
+          "usage": {
+            "input_tokens": 20805,
+            "cached_input_tokens": 19328,
+            "output_tokens": 71,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 20876
+          },
+          "cumulative": {
+            "input_tokens": 48457,
+            "cached_input_tokens": 19328,
+            "output_tokens": 372,
+            "reasoning_output_tokens": 18,
+            "total_tokens": 48829
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-d2aaaccefad64e4446e8401b852d0b92/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237196.7999582,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237205.8178864,
+          "usage": {
+            "input_tokens": 8948,
+            "cached_input_tokens": 0,
+            "output_tokens": 385,
+            "reasoning_output_tokens": 22,
+            "total_tokens": 9333
+          },
+          "cumulative": {
+            "input_tokens": 17264,
+            "cached_input_tokens": 0,
+            "output_tokens": 462,
+            "reasoning_output_tokens": 22,
+            "total_tokens": 17726
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794237218.6802154,
+          "usage": {
+            "input_tokens": 10182,
+            "cached_input_tokens": 8192,
+            "output_tokens": 149,
+            "reasoning_output_tokens": 21,
+            "total_tokens": 10331
+          },
+          "cumulative": {
+            "input_tokens": 27446,
+            "cached_input_tokens": 8192,
+            "output_tokens": 611,
+            "reasoning_output_tokens": 43,
+            "total_tokens": 28057
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-7a252029ba723f6b5d46e145ea8b39a0/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237629.52963,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8386
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 70,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8386
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237634.072333,
+          "usage": {
+            "input_tokens": 19105,
+            "cached_input_tokens": 8192,
+            "output_tokens": 162,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 19267
+          },
+          "cumulative": {
+            "input_tokens": 27421,
+            "cached_input_tokens": 8192,
+            "output_tokens": 232,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 27653
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794237645.2661736,
+          "usage": {
+            "input_tokens": 22133,
+            "cached_input_tokens": 19072,
+            "output_tokens": 96,
+            "reasoning_output_tokens": 10,
+            "total_tokens": 22229
+          },
+          "cumulative": {
+            "input_tokens": 49554,
+            "cached_input_tokens": 27264,
+            "output_tokens": 328,
+            "reasoning_output_tokens": 10,
+            "total_tokens": 49882
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-5a6bc59175d931f1d9ff657200619012/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237713.7396371,
+          "usage": {
+            "input_tokens": 8364,
+            "cached_input_tokens": 0,
+            "output_tokens": 79,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8443
+          },
+          "cumulative": {
+            "input_tokens": 8364,
+            "cached_input_tokens": 0,
+            "output_tokens": 79,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8443
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237737.4827313,
+          "usage": {
+            "input_tokens": 9206,
+            "cached_input_tokens": 8320,
+            "output_tokens": 780,
+            "reasoning_output_tokens": 61,
+            "total_tokens": 9986
+          },
+          "cumulative": {
+            "input_tokens": 17570,
+            "cached_input_tokens": 8320,
+            "output_tokens": 859,
+            "reasoning_output_tokens": 61,
+            "total_tokens": 18429
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-82d3a29e40549512917f8c65f44a7217/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237418.5291705,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 76,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8392
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 76,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8392
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237431.2094648,
+          "usage": {
+            "input_tokens": 14147,
+            "cached_input_tokens": 8192,
+            "output_tokens": 104,
+            "reasoning_output_tokens": 29,
+            "total_tokens": 14251
+          },
+          "cumulative": {
+            "input_tokens": 22463,
+            "cached_input_tokens": 8192,
+            "output_tokens": 180,
+            "reasoning_output_tokens": 29,
+            "total_tokens": 22643
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-2036651bdf38756e9d8e1018649dfad9/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237755.1554923,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 8192,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 8192,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237765.3863406,
+          "usage": {
+            "input_tokens": 18170,
+            "cached_input_tokens": 8192,
+            "output_tokens": 108,
+            "reasoning_output_tokens": 17,
+            "total_tokens": 18278
+          },
+          "cumulative": {
+            "input_tokens": 26486,
+            "cached_input_tokens": 16384,
+            "output_tokens": 185,
+            "reasoning_output_tokens": 17,
+            "total_tokens": 26671
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-6b7f665472f8931544423d7a80325690/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237168.3352764,
+          "usage": {
+            "input_tokens": 8364,
+            "cached_input_tokens": 0,
+            "output_tokens": 73,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8437
+          },
+          "cumulative": {
+            "input_tokens": 8364,
+            "cached_input_tokens": 0,
+            "output_tokens": 73,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8437
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237182.9361122,
+          "usage": {
+            "input_tokens": 14902,
+            "cached_input_tokens": 8320,
+            "output_tokens": 107,
+            "reasoning_output_tokens": 19,
+            "total_tokens": 15009
+          },
+          "cumulative": {
+            "input_tokens": 23266,
+            "cached_input_tokens": 8320,
+            "output_tokens": 180,
+            "reasoning_output_tokens": 19,
+            "total_tokens": 23446
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-66a95f084a7456efc49c731c5b4e8189/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237447.7180254,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 7296,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 7296,
+            "output_tokens": 77,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8393
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237450.507619,
+          "usage": {
+            "input_tokens": 9117,
+            "cached_input_tokens": 8192,
+            "output_tokens": 45,
+            "reasoning_output_tokens": 14,
+            "total_tokens": 9162
+          },
+          "cumulative": {
+            "input_tokens": 17433,
+            "cached_input_tokens": 15488,
+            "output_tokens": 122,
+            "reasoning_output_tokens": 14,
+            "total_tokens": 17555
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794237462.4358985,
+          "usage": {
+            "input_tokens": 9968,
+            "cached_input_tokens": 8960,
+            "output_tokens": 518,
+            "reasoning_output_tokens": 17,
+            "total_tokens": 10486
+          },
+          "cumulative": {
+            "input_tokens": 27401,
+            "cached_input_tokens": 24448,
+            "output_tokens": 640,
+            "reasoning_output_tokens": 31,
+            "total_tokens": 28041
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 4,
+          "response_id": "4",
+          "phase": "worker",
+          "timestamp": 1794237474.646507,
+          "usage": {
+            "input_tokens": 10554,
+            "cached_input_tokens": 10368,
+            "output_tokens": 72,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10626
+          },
+          "cumulative": {
+            "input_tokens": 37955,
+            "cached_input_tokens": 34816,
+            "output_tokens": 712,
+            "reasoning_output_tokens": 31,
+            "total_tokens": 38667
+          },
+          "attribution": "one_response"
+        }
+      ]
+    },
+    {
+      "phase": "repair",
+      "path": "experiments/attempts/attempt-f4b9b9a904fc167797dbf128cf64008a/runner.usage.jsonl",
+      "observations": [
+        {
+          "sequence": 1,
+          "response_id": "1",
+          "phase": "worker",
+          "timestamp": 1794237339.0285196,
+          "usage": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 76,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8392
+          },
+          "cumulative": {
+            "input_tokens": 8316,
+            "cached_input_tokens": 0,
+            "output_tokens": 76,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 8392
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 2,
+          "response_id": "2",
+          "phase": "worker",
+          "timestamp": 1794237348.4785056,
+          "usage": {
+            "input_tokens": 8961,
+            "cached_input_tokens": 8192,
+            "output_tokens": 319,
+            "reasoning_output_tokens": 43,
+            "total_tokens": 9280
+          },
+          "cumulative": {
+            "input_tokens": 17277,
+            "cached_input_tokens": 8192,
+            "output_tokens": 395,
+            "reasoning_output_tokens": 43,
+            "total_tokens": 17672
+          },
+          "attribution": "one_response"
+        },
+        {
+          "sequence": 3,
+          "response_id": "3",
+          "phase": "worker",
+          "timestamp": 1794237359.1084108,
+          "usage": {
+            "input_tokens": 10095,
+            "cached_input_tokens": 9088,
+            "output_tokens": 69,
+            "reasoning_output_tokens": 0,
+            "total_tokens": 10164
+          },
+          "cumulative": {
+            "input_tokens": 27372,
+            "cached_input_tokens": 17280,
+            "output_tokens": 464,
+            "reasoning_output_tokens": 43,
+            "total_tokens": 27836
+          },
+          "attribution": "one_response"
+        }
+      ]
+    }
+  ]
+}

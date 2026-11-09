@@ -1,0 +1,827 @@
+{
+  "tests": [
+    {
+      "input": {
+        "max_attempts": 0,
+        "base": 2,
+        "cap": 10,
+        "budget": 9
+      },
+      "expect": []
+    },
+    {
+      "input": {
+        "max_attempts": 1,
+        "base": 100,
+        "cap": 1,
+        "budget": 0
+      },
+      "expect": [
+        0
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 100,
+        "base": 0,
+        "cap": 0,
+        "budget": 0
+      },
+      "expect": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 5,
+        "base": 2,
+        "cap": 10,
+        "budget": 2
+      },
+      "expect": [
+        0,
+        2
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 10,
+        "base": 2,
+        "cap": 10,
+        "budget": 24
+      },
+      "expect": [
+        0,
+        2,
+        6,
+        14,
+        24
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 10,
+        "base": 3,
+        "cap": 5,
+        "budget": 23
+      },
+      "expect": [
+        0,
+        3,
+        8,
+        13,
+        18,
+        23
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 8,
+        "base": 9,
+        "cap": 4,
+        "budget": 12
+      },
+      "expect": [
+        0,
+        4,
+        8,
+        12
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 5,
+        "base": 5,
+        "cap": 0,
+        "budget": 0
+      },
+      "expect": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 5,
+        "base": 1,
+        "cap": 10,
+        "budget": 0
+      },
+      "expect": [
+        0
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 10,
+        "base": 2,
+        "cap": 10,
+        "budget": 13
+      },
+      "expect": [
+        0,
+        2,
+        6
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 6,
+        "base": 0,
+        "cap": 10,
+        "budget": 9
+      },
+      "expect": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 2,
+        "base": 3,
+        "cap": 100,
+        "budget": 100
+      },
+      "expect": [
+        0,
+        3
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 4,
+        "base": 9007199254740993,
+        "cap": 18014398509481986,
+        "budget": 27021597764222979
+      },
+      "expect": [
+        0,
+        9007199254740993,
+        27021597764222979
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": 7,
+        "base": 1,
+        "cap": 100,
+        "budget": 1000
+      },
+      "expect": [
+        0,
+        1,
+        3,
+        7,
+        15,
+        31,
+        63
+      ]
+    },
+    {
+      "input": {
+        "max_attempts": true,
+        "base": 2,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": true,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": 2,
+        "cap": false,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": 2,
+        "cap": 10,
+        "budget": false
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": -1,
+        "base": 2,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 101,
+        "base": 2,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": -1,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": 2,
+        "cap": -1,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": 2,
+        "cap": 10,
+        "budget": -1
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3.0,
+        "base": 2,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": 2.0,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": 2,
+        "cap": 10.0,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": 2,
+        "cap": 10,
+        "budget": 9.0
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": null,
+        "base": 2,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": null,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": 2,
+        "cap": null,
+        "budget": 9
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": 3,
+        "base": 2,
+        "cap": 10,
+        "budget": null
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "max_attempts": "3",
+        "base": 2,
+        "cap": 10,
+        "budget": 9
+      },
+      "error": "ValueError"
+    }
+  ],
+  "submitted": 32,
+  "rejected": 0,
+  "format_valid": true,
+  "initial_candidate_execution": {
+    "available": true,
+    "passed": true,
+    "checks": [
+      {
+        "index": 0,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": []
+      },
+      {
+        "index": 1,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0
+        ]
+      },
+      {
+        "index": 2,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "index": 3,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          2
+        ]
+      },
+      {
+        "index": 4,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          2,
+          6,
+          14,
+          24
+        ]
+      },
+      {
+        "index": 5,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          3,
+          8,
+          13,
+          18,
+          23
+        ]
+      },
+      {
+        "index": 6,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          4,
+          8,
+          12
+        ]
+      },
+      {
+        "index": 7,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "index": 8,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0
+        ]
+      },
+      {
+        "index": 9,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          2,
+          6
+        ]
+      },
+      {
+        "index": 10,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "index": 11,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          3
+        ]
+      },
+      {
+        "index": 12,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          9007199254740993,
+          27021597764222979
+        ]
+      },
+      {
+        "index": 13,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": [
+          0,
+          1,
+          3,
+          7,
+          15,
+          31,
+          63
+        ]
+      },
+      {
+        "index": 14,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "max_attempts must be a nonnegative integer"
+      },
+      {
+        "index": 15,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "base must be a nonnegative integer"
+      },
+      {
+        "index": 16,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "cap must be a nonnegative integer"
+      },
+      {
+        "index": 17,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "budget must be a nonnegative integer"
+      },
+      {
+        "index": 18,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "max_attempts must be a nonnegative integer"
+      },
+      {
+        "index": 19,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "max_attempts must be at most 100"
+      },
+      {
+        "index": 20,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "base must be a nonnegative integer"
+      },
+      {
+        "index": 21,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "cap must be a nonnegative integer"
+      },
+      {
+        "index": 22,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "budget must be a nonnegative integer"
+      },
+      {
+        "index": 23,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "max_attempts must be a nonnegative integer"
+      },
+      {
+        "index": 24,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "base must be a nonnegative integer"
+      },
+      {
+        "index": 25,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "cap must be a nonnegative integer"
+      },
+      {
+        "index": 26,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "budget must be a nonnegative integer"
+      },
+      {
+        "index": 27,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "max_attempts must be a nonnegative integer"
+      },
+      {
+        "index": 28,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "base must be a nonnegative integer"
+      },
+      {
+        "index": 29,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "cap must be a nonnegative integer"
+      },
+      {
+        "index": 30,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "budget must be a nonnegative integer"
+      },
+      {
+        "index": 31,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "max_attempts must be a nonnegative integer"
+      }
+    ]
+  }
+}

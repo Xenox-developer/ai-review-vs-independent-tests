@@ -1,0 +1,1318 @@
+{
+  "tests": [
+    {
+      "input": {
+        "window": 10,
+        "limit": 1,
+        "events": []
+      },
+      "expect": []
+    },
+    {
+      "input": {
+        "window": 1,
+        "limit": 1,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 1,
+        "limit": 1,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 10,
+        "limit": 1,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 9,
+            "key": "a"
+          },
+          {
+            "t": 10,
+            "key": "a"
+          },
+          {
+            "t": 11,
+            "key": "a"
+          },
+          {
+            "t": 19,
+            "key": "a"
+          },
+          {
+            "t": 20,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 9
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 10,
+        "limit": 2,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 3,
+            "key": "a"
+          },
+          {
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "t": 9,
+            "key": "a"
+          },
+          {
+            "t": 10,
+            "key": "a"
+          },
+          {
+            "t": 10,
+            "key": "a"
+          },
+          {
+            "t": 12,
+            "key": "a"
+          },
+          {
+            "t": 13,
+            "key": "a"
+          },
+          {
+            "t": 13,
+            "key": "a"
+          },
+          {
+            "t": 20,
+            "key": "a"
+          },
+          {
+            "t": 23,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 6
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 3
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 7
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 7,
+        "limit": 3,
+        "events": [
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 11,
+            "key": "a"
+          },
+          {
+            "t": 12,
+            "key": "a"
+          },
+          {
+            "t": 12,
+            "key": "a"
+          },
+          {
+            "t": 12,
+            "key": "a"
+          },
+          {
+            "t": 12,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 7
+        },
+        {
+          "allowed": false,
+          "retry_after": 7
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 7
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 5,
+        "limit": 1,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "t": 3,
+            "key": "a"
+          },
+          {
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 6,
+            "key": "a"
+          },
+          {
+            "t": 10,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 4
+        },
+        {
+          "allowed": false,
+          "retry_after": 3
+        },
+        {
+          "allowed": false,
+          "retry_after": 2
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 4
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 10,
+        "limit": 1,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 0,
+            "key": "b"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "b"
+          },
+          {
+            "t": 1,
+            "key": "c"
+          },
+          {
+            "t": 10,
+            "key": "a"
+          },
+          {
+            "t": 10,
+            "key": "b"
+          },
+          {
+            "t": 10,
+            "key": "c"
+          },
+          {
+            "t": 11,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 9
+        },
+        {
+          "allowed": false,
+          "retry_after": 9
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 4,
+        "limit": 2,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 0,
+            "key": "b"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "b"
+          },
+          {
+            "t": 3,
+            "key": "a"
+          },
+          {
+            "t": 3,
+            "key": "b"
+          },
+          {
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "t": 4,
+            "key": "b"
+          },
+          {
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "b"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 6,
+            "key": "b"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 3,
+        "limit": 2,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "t": 100,
+            "key": "a"
+          },
+          {
+            "t": 100,
+            "key": "a"
+          },
+          {
+            "t": 100,
+            "key": "a"
+          },
+          {
+            "t": 103,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 3
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 10,
+        "limit": 3,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 10,
+            "key": "a"
+          },
+          {
+            "t": 11,
+            "key": "a"
+          },
+          {
+            "t": 12,
+            "key": "a"
+          },
+          {
+            "t": 13,
+            "key": "a"
+          },
+          {
+            "t": 14,
+            "key": "a"
+          },
+          {
+            "t": 14,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 5
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 6
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 1,
+        "limit": 2,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 3,
+        "limit": 1,
+        "events": [
+          {
+            "t": 0,
+            "key": ""
+          },
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 0,
+            "key": "A"
+          },
+          {
+            "t": 0,
+            "key": "a "
+          },
+          {
+            "t": 0,
+            "key": "é"
+          },
+          {
+            "t": 0,
+            "key": "é"
+          },
+          {
+            "t": 0,
+            "key": "__proto__"
+          },
+          {
+            "t": 1,
+            "key": ""
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "A"
+          },
+          {
+            "t": 1,
+            "key": "a "
+          },
+          {
+            "t": 1,
+            "key": "é"
+          },
+          {
+            "t": 1,
+            "key": "é"
+          },
+          {
+            "t": 1,
+            "key": "__proto__"
+          },
+          {
+            "t": 3,
+            "key": ""
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 2
+        },
+        {
+          "allowed": false,
+          "retry_after": 2
+        },
+        {
+          "allowed": false,
+          "retry_after": 2
+        },
+        {
+          "allowed": false,
+          "retry_after": 2
+        },
+        {
+          "allowed": false,
+          "retry_after": 2
+        },
+        {
+          "allowed": false,
+          "retry_after": 2
+        },
+        {
+          "allowed": false,
+          "retry_after": 2
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 100000000000000000000,
+        "limit": 1,
+        "events": [
+          {
+            "t": 1000000000000000000000000000000,
+            "key": "a"
+          },
+          {
+            "t": 1000000000000000000000000000001,
+            "key": "a"
+          },
+          {
+            "t": 1000000000099999999999999999999,
+            "key": "a"
+          },
+          {
+            "t": 1000000000100000000000000000000,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 99999999999999999999
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 2,
+        "limit": 100,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "t": 3,
+            "key": "a"
+          },
+          {
+            "t": 100,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 5,
+        "limit": 2,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 6,
+            "key": "a"
+          },
+          {
+            "t": 9,
+            "key": "a"
+          },
+          {
+            "t": 10,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 5
+        },
+        {
+          "allowed": false,
+          "retry_after": 4
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 6,
+        "limit": 2,
+        "events": [
+          {
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "t": 6,
+            "key": "a"
+          },
+          {
+            "t": 6,
+            "key": "a"
+          },
+          {
+            "t": 10,
+            "key": "a"
+          },
+          {
+            "t": 11,
+            "key": "a"
+          },
+          {
+            "t": 11,
+            "key": "a"
+          },
+          {
+            "t": 12,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 5
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    },
+    {
+      "input": {
+        "window": 2,
+        "limit": 1,
+        "events": [
+          {
+            "t": 0,
+            "key": "0"
+          },
+          {
+            "t": 0,
+            "key": "00"
+          },
+          {
+            "t": 0,
+            "key": "1"
+          },
+          {
+            "t": 1,
+            "key": "0"
+          },
+          {
+            "t": 1,
+            "key": "00"
+          },
+          {
+            "t": 1,
+            "key": "1"
+          },
+          {
+            "t": 2,
+            "key": "0"
+          },
+          {
+            "t": 2,
+            "key": "00"
+          },
+          {
+            "t": 2,
+            "key": "1"
+          }
+        ]
+      },
+      "expect": [
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": false,
+          "retry_after": 1
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        },
+        {
+          "allowed": true,
+          "retry_after": 0
+        }
+      ]
+    }
+  ]
+}

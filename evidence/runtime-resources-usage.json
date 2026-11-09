@@ -1,0 +1,4046 @@
+{
+  "resource_limits_match": true,
+  "attempts": [
+    {
+      "phase": "initial",
+      "case_id": "deep-merge",
+      "attempt_id": "attempt-64b75564d1b96ef0466baebb0bc0cc4c",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-2d486b98ed5ebb0a9c47255a"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9600,
+          "inputTokens": 9847,
+          "outputTokens": 94,
+          "reasoningOutputTokens": 33,
+          "totalTokens": 9941
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 26240,
+          "inputTokens": 36328,
+          "outputTokens": 430,
+          "reasoningOutputTokens": 101,
+          "totalTokens": 36758
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 26240,
+          "input_tokens": 36328,
+          "output_tokens": 430,
+          "reasoning_output_tokens": 101,
+          "total_tokens": 36758
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "b5ebcdd9042992b5bcd084b6f48ee4e7b581a9bf7da190918688f816058681fa",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "initial",
+      "case_id": "timezone-days",
+      "attempt_id": "attempt-c622d2cf38e8345885671ae64594d74c",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-15f13f119e1534f4e3ca83dd"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9728,
+          "inputTokens": 9989,
+          "outputTokens": 76,
+          "reasoningOutputTokens": 12,
+          "totalTokens": 10065
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 26368,
+          "inputTokens": 36509,
+          "outputTokens": 527,
+          "reasoningOutputTokens": 90,
+          "totalTokens": 37036
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 26368,
+          "input_tokens": 36509,
+          "output_tokens": 527,
+          "reasoning_output_tokens": 90,
+          "total_tokens": 37036
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "cbfd49e4c72e5b569a7291a7c5b2d8720f2adc0a7c841ed82570f077dc82d6f1",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "initial",
+      "case_id": "safe-path",
+      "attempt_id": "attempt-16baa024116375c01c43642218770346",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-55a1d66836528d1909830d89"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 0,
+          "inputTokens": 9808,
+          "outputTokens": 89,
+          "reasoningOutputTokens": 12,
+          "totalTokens": 9897
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 16640,
+          "inputTokens": 36305,
+          "outputTokens": 372,
+          "reasoningOutputTokens": 12,
+          "totalTokens": 36677
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 16640,
+          "input_tokens": 36305,
+          "output_tokens": 372,
+          "reasoning_output_tokens": 12,
+          "total_tokens": 36677
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "5b37a496142654eff96c2c527a0fa7122733943762ffb32e735e8dd037eea09a",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "initial",
+      "case_id": "retry-plan",
+      "attempt_id": "attempt-237dfadec0bf256e6fbf73c580293adf",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-04a4f349bf40808c45861862"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9984,
+          "inputTokens": 10135,
+          "outputTokens": 18,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10153
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 26624,
+          "inputTokens": 36697,
+          "outputTokens": 616,
+          "reasoningOutputTokens": 39,
+          "totalTokens": 37313
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 26624,
+          "input_tokens": 36697,
+          "output_tokens": 616,
+          "reasoning_output_tokens": 39,
+          "total_tokens": 37313
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "691a90a68e65a708cd3f4af81f89c20c55d957e90283573b0e57b6619e7f5e24",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "initial",
+      "case_id": "rate-limit",
+      "attempt_id": "attempt-0b87d6e0887849726709539dd6ef6f1e",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-e88d0f0b3e8ee873d9bd5a86"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 0,
+          "inputTokens": 10350,
+          "outputTokens": 71,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10421
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 26368,
+          "inputTokens": 46799,
+          "outputTokens": 774,
+          "reasoningOutputTokens": 10,
+          "totalTokens": 47573
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 26368,
+          "input_tokens": 46799,
+          "output_tokens": 774,
+          "reasoning_output_tokens": 10,
+          "total_tokens": 47573
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 5
+      },
+      "command_evidence": {
+        "sha256": "6346080459d2132a0001146c6546be34699e72778824548157c1e3e675d87729",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "initial",
+      "case_id": "idempotency",
+      "attempt_id": "attempt-52066b304a1e0f52e3c271c7df839c26",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-c7fde4d10048703ba31e9d1a"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9856,
+          "inputTokens": 10153,
+          "outputTokens": 89,
+          "reasoningOutputTokens": 18,
+          "totalTokens": 10242
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 17920,
+          "inputTokens": 36734,
+          "outputTokens": 639,
+          "reasoningOutputTokens": 87,
+          "totalTokens": 37373
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 17920,
+          "input_tokens": 36734,
+          "output_tokens": 639,
+          "reasoning_output_tokens": 87,
+          "total_tokens": 37373
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "dda3e6504a7198f721826656e2956569b903b66ba9513abd0b24179969f6d65f",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "initial",
+      "case_id": "pagination",
+      "attempt_id": "attempt-fccd21a60ff2fdb9135fee63536c9ad0",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-6a9526dcf111080b44e4b6f2"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9728,
+          "inputTokens": 9940,
+          "outputTokens": 88,
+          "reasoningOutputTokens": 12,
+          "totalTokens": 10028
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 26496,
+          "inputTokens": 36549,
+          "outputTokens": 429,
+          "reasoningOutputTokens": 12,
+          "totalTokens": 36978
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 26496,
+          "input_tokens": 36549,
+          "output_tokens": 429,
+          "reasoning_output_tokens": 12,
+          "total_tokens": 36978
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "f4ac66474b551828068a33a657a5ec9dae67519b31863c33a7f326d82837f236",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "initial",
+      "case_id": "ttl-lru",
+      "attempt_id": "attempt-c1cc77cd4094d12f55331bde072791b3",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-f845b7b9c6d9c48c3a489bbc"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9984,
+          "inputTokens": 10190,
+          "outputTokens": 81,
+          "reasoningOutputTokens": 9,
+          "totalTokens": 10271
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 18048,
+          "inputTokens": 36872,
+          "outputTokens": 614,
+          "reasoningOutputTokens": 119,
+          "totalTokens": 37486
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 18048,
+          "input_tokens": 36872,
+          "output_tokens": 614,
+          "reasoning_output_tokens": 119,
+          "total_tokens": 37486
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "763a59bb2c5e9e4b499077ce839e78d7f9bbcf9952767339520ce1f8bfbde52c",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "deep-merge--tests",
+      "attempt_id": "attempt-88bbdd6f8d3a5a09fddcaf1ef27550e4",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-c33b7555948f0a3463387623"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 11264,
+          "inputTokens": 11471,
+          "outputTokens": 18,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 11489
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 35456,
+          "inputTokens": 38244,
+          "outputTokens": 1882,
+          "reasoningOutputTokens": 57,
+          "totalTokens": 40126
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 35456,
+          "input_tokens": 38244,
+          "output_tokens": 1882,
+          "reasoning_output_tokens": 57,
+          "total_tokens": 40126
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "c80114cb5cffd233518846e479426fd89819b7e9d7aedc2dd0f764e256b7473e",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "deep-merge--review",
+      "attempt_id": "attempt-4db2d007daa0c0d50f20ecd6da3d5a77",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-68a65b5e8d7ae2b02e300acc"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9984,
+          "inputTokens": 10255,
+          "outputTokens": 125,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10380
+        },
+        "modelContextWindow": 258400,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 26880,
+          "inputTokens": 37171,
+          "outputTokens": 644,
+          "reasoningOutputTokens": 30,
+          "totalTokens": 37815
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 26880,
+          "input_tokens": 37171,
+          "output_tokens": 644,
+          "reasoning_output_tokens": 30,
+          "total_tokens": 37815
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "e5c13ea0bac4f8607bc3a2ffc8fc544ac8eba6fbea99e05ac6b5a973a5ebaf8a",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "timezone-days--tests",
+      "attempt_id": "attempt-1e7aeb26c1e2c88ce3b4c4fe14054262",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-0080ad8a33417a080bdc945c"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 11904,
+          "inputTokens": 12173,
+          "outputTokens": 28,
+          "reasoningOutputTokens": 8,
+          "totalTokens": 12201
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 28800,
+          "inputTokens": 38967,
+          "outputTokens": 2568,
+          "reasoningOutputTokens": 210,
+          "totalTokens": 41535
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 28800,
+          "input_tokens": 38967,
+          "output_tokens": 2568,
+          "reasoning_output_tokens": 210,
+          "total_tokens": 41535
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "a69871fbccc3326e80911736dfc11201478b3b61533b1e619292c6c33ed8b143",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "timezone-days--review",
+      "attempt_id": "attempt-a54ec639f3f147fd331fff10349ff8a9",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-3e642f450aae5fc1c47abb96"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 0,
+          "inputTokens": 10319,
+          "outputTokens": 126,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10445
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 16768,
+          "inputTokens": 37209,
+          "outputTokens": 653,
+          "reasoningOutputTokens": 34,
+          "totalTokens": 37862
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 16768,
+          "input_tokens": 37209,
+          "output_tokens": 653,
+          "reasoning_output_tokens": 34,
+          "total_tokens": 37862
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "0c2a128ff75e556aff650332e0d26a3bf5c307355f2a8533b2a4225ec5ff017f",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "safe-path--review",
+      "attempt_id": "attempt-134d0fbe89097e81577fe6c031cf1ca4",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-0408a6d14eae76fe4d7dda21"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8960,
+          "inputTokens": 9337,
+          "outputTokens": 145,
+          "reasoningOutputTokens": 14,
+          "totalTokens": 9482
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8960,
+          "inputTokens": 26540,
+          "outputTokens": 471,
+          "reasoningOutputTokens": 61,
+          "totalTokens": 27011
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 8960,
+          "input_tokens": 26540,
+          "output_tokens": 471,
+          "reasoning_output_tokens": 61,
+          "total_tokens": 27011
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 3
+      },
+      "command_evidence": {
+        "sha256": "b1f477f3adbf22e5a49deb22574c09e4ce07b01ba980e3e57583b4b22e84b666",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "safe-path--tests",
+      "attempt_id": "attempt-c9cf14cbad042c21b926243fc475b109",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-c24b0f5c7d42c4ffff97016e"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 10624,
+          "inputTokens": 10906,
+          "outputTokens": 18,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10924
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 26624,
+          "inputTokens": 37697,
+          "outputTokens": 1300,
+          "reasoningOutputTokens": 206,
+          "totalTokens": 38997
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 26624,
+          "input_tokens": 37697,
+          "output_tokens": 1300,
+          "reasoning_output_tokens": 206,
+          "total_tokens": 38997
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "0683466ce5a02c8ca9c9f3851a63da404c88a7a3719abe7c69bf05db671c0dd9",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "retry-plan--tests",
+      "attempt_id": "attempt-af0355984c0b664d05de3ce2029ce7b6",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-4eb00f6bd749fd285590b637"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 10624,
+          "inputTokens": 10916,
+          "outputTokens": 18,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10934
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 27520,
+          "inputTokens": 37761,
+          "outputTokens": 1267,
+          "reasoningOutputTokens": 392,
+          "totalTokens": 39028
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 27520,
+          "input_tokens": 37761,
+          "output_tokens": 1267,
+          "reasoning_output_tokens": 392,
+          "total_tokens": 39028
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "260a48b3f8480f7fffac500651c5bac84e9a6584dac72dfa90b0a578b4a6bd10",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "retry-plan--review",
+      "attempt_id": "attempt-357cb666af76121e1c9fe801d3389a03",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-003cf433eae9e128273eda45"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 10444,
+          "outputTokens": 128,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10572
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 16768,
+          "inputTokens": 37406,
+          "outputTokens": 723,
+          "reasoningOutputTokens": 27,
+          "totalTokens": 38129
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 16768,
+          "input_tokens": 37406,
+          "output_tokens": 723,
+          "reasoning_output_tokens": 27,
+          "total_tokens": 38129
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "72ff181f7cd6cd328acb301a2e2686fa47efc150af4f9e674d7be54d02c483dc",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "rate-limit--tests",
+      "attempt_id": "attempt-b839dc965364841ee50f5c1dd29c653f",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-aaa60dd7b4c2fb513e92bbc7"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 7296,
+          "inputTokens": 11785,
+          "outputTokens": 18,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 11803
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 31488,
+          "inputTokens": 38627,
+          "outputTokens": 2124,
+          "reasoningOutputTokens": 751,
+          "totalTokens": 40751
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 31488,
+          "input_tokens": 38627,
+          "output_tokens": 2124,
+          "reasoning_output_tokens": 751,
+          "total_tokens": 40751
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "d08823aa2004cfc61253979bbedd07efe856ffdadc3e423bc569a412d8335ce4",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "rate-limit--review",
+      "attempt_id": "attempt-7be0c5ef8dae544c5902fd406960c20e",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-d4be481e30f94b617fa86d20"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9088,
+          "inputTokens": 9389,
+          "outputTokens": 151,
+          "reasoningOutputTokens": 11,
+          "totalTokens": 9540
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 17280,
+          "inputTokens": 26638,
+          "outputTokens": 598,
+          "reasoningOutputTokens": 44,
+          "totalTokens": 27236
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 17280,
+          "input_tokens": 26638,
+          "output_tokens": 598,
+          "reasoning_output_tokens": 44,
+          "total_tokens": 27236
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 3
+      },
+      "command_evidence": {
+        "sha256": "516b6fc8393f537313fb0f9d944ebf8e174e4af2f1b41c7b6514343e2407b139",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "idempotency--review",
+      "attempt_id": "attempt-909ad50ae1ead63b2e20cab8409e1225",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-e29841fc05174111ad6a6bbe"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 10240,
+          "inputTokens": 10518,
+          "outputTokens": 130,
+          "reasoningOutputTokens": 9,
+          "totalTokens": 10648
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 27008,
+          "inputTokens": 37534,
+          "outputTokens": 733,
+          "reasoningOutputTokens": 43,
+          "totalTokens": 38267
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 27008,
+          "input_tokens": 37534,
+          "output_tokens": 733,
+          "reasoning_output_tokens": 43,
+          "total_tokens": 38267
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "b8c2819409d57e77cff1aa8b33688f38fc5b42c0b7f883bfed4b196e2ee51e36",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "idempotency--tests",
+      "attempt_id": "attempt-7a878416c35d95e332df921caff7e1a1",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-3f3477314eba361a1c5bd4ef"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 11776,
+          "inputTokens": 11963,
+          "outputTokens": 78,
+          "reasoningOutputTokens": 8,
+          "totalTokens": 12041
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 28672,
+          "inputTokens": 38854,
+          "outputTokens": 2343,
+          "reasoningOutputTokens": 109,
+          "totalTokens": 41197
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 28672,
+          "input_tokens": 38854,
+          "output_tokens": 2343,
+          "reasoning_output_tokens": 109,
+          "total_tokens": 41197
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "f4003a3656361f52d4bfbe6b0b7aa0c573d82ec5547ee7e2491bda3071afbe37",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "pagination--tests",
+      "attempt_id": "attempt-67b63cf10c31c2a987df03c489ffd4a9",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-3ca5c206a2f6bfe87ba0caed"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 11392,
+          "inputTokens": 11616,
+          "outputTokens": 18,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 11634
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 36480,
+          "inputTokens": 38498,
+          "outputTokens": 1943,
+          "reasoningOutputTokens": 158,
+          "totalTokens": 40441
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 36480,
+          "input_tokens": 38498,
+          "output_tokens": 1943,
+          "reasoning_output_tokens": 158,
+          "total_tokens": 40441
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "f25d0636a2f9779361a3ed5380678efdbeb6964d43bb4b483e92ea20ae8450b7",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "pagination--review",
+      "attempt_id": "attempt-4fb17b805e742ec20f0abd3b12b9f02e",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-6e7ada817972c4a95d6dbaab"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 10112,
+          "inputTokens": 10318,
+          "outputTokens": 126,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10444
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 26880,
+          "inputTokens": 37174,
+          "outputTokens": 684,
+          "reasoningOutputTokens": 29,
+          "totalTokens": 37858
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 26880,
+          "input_tokens": 37174,
+          "output_tokens": 684,
+          "reasoning_output_tokens": 29,
+          "total_tokens": 37858
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "82b78fb62a5b55561e8177e032862f7f425236b61b662d4745726895eb62ba67",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "ttl-lru--review",
+      "attempt_id": "attempt-dd6a98776d6c4766979485db2f8b921e",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-351ebbe174b12e54ef29fe23"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9728,
+          "inputTokens": 9919,
+          "outputTokens": 18,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 9937
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 27392,
+          "inputTokens": 37028,
+          "outputTokens": 791,
+          "reasoningOutputTokens": 98,
+          "totalTokens": 37819
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 27392,
+          "input_tokens": 37028,
+          "output_tokens": 791,
+          "reasoning_output_tokens": 98,
+          "total_tokens": 37819
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "a65b0aea665c23b07ec125f17e952d3e79edeb31b950a676be6279ded00b67e4",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "feedback",
+      "case_id": "ttl-lru--tests",
+      "attempt_id": "attempt-e14e94365a1a3e3d86048ca9c4f3aeb5",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-0868d080f2f0a00e5a48323c"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 11776,
+          "inputTokens": 12038,
+          "outputTokens": 83,
+          "reasoningOutputTokens": 63,
+          "totalTokens": 12121
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 35968,
+          "inputTokens": 39004,
+          "outputTokens": 2357,
+          "reasoningOutputTokens": 183,
+          "totalTokens": 41361
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 35968,
+          "input_tokens": 39004,
+          "output_tokens": 2357,
+          "reasoning_output_tokens": 183,
+          "total_tokens": 41361
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "f6bf08544ee0af62d96a66d27a4e35ca54183c994dc64d6f9f1809c040186109",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "deep-merge--tests",
+      "attempt_id": "attempt-6b7f665472f8931544423d7a80325690",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-214534f9bc629dcf78d2c345"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8320,
+          "inputTokens": 14902,
+          "outputTokens": 107,
+          "reasoningOutputTokens": 19,
+          "totalTokens": 15009
+        },
+        "modelContextWindow": 258400,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8320,
+          "inputTokens": 23266,
+          "outputTokens": 180,
+          "reasoningOutputTokens": 19,
+          "totalTokens": 23446
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 8320,
+          "input_tokens": 23266,
+          "output_tokens": 180,
+          "reasoning_output_tokens": 19,
+          "total_tokens": 23446
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 2
+      },
+      "command_evidence": {
+        "sha256": "bbb6d2017e9e293d1dfcaaf1f0a590eeda5e9076b8a7a6b8dfd85d9e81752281",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "deep-merge--review",
+      "attempt_id": "attempt-d2aaaccefad64e4446e8401b852d0b92",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-d738224d033987bf787ab052"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 10182,
+          "outputTokens": 149,
+          "reasoningOutputTokens": 21,
+          "totalTokens": 10331
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 27446,
+          "outputTokens": 611,
+          "reasoningOutputTokens": 43,
+          "totalTokens": 28057
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 8192,
+          "input_tokens": 27446,
+          "output_tokens": 611,
+          "reasoning_output_tokens": 43,
+          "total_tokens": 28057
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 3
+      },
+      "command_evidence": {
+        "sha256": "a9249aec7776ac0eb0b5e8406315b68e709d37107edc90121e5a06afc1d9795e",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "timezone-days--tests",
+      "attempt_id": "attempt-d9278acdb9bb0b8a6e1a127fc71b17a0",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-e6e0d6a8071f5a9dae8a98ef"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 14434,
+          "outputTokens": 119,
+          "reasoningOutputTokens": 39,
+          "totalTokens": 14553
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 22750,
+          "outputTokens": 198,
+          "reasoningOutputTokens": 39,
+          "totalTokens": 22948
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 8192,
+          "input_tokens": 22750,
+          "output_tokens": 198,
+          "reasoning_output_tokens": 39,
+          "total_tokens": 22948
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 2
+      },
+      "command_evidence": {
+        "sha256": "7ddd7524cae7a28d1ae9cca0fa8e6634397a9baf0824920c2e807d2e94068739",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "timezone-days--review",
+      "attempt_id": "attempt-60d010550c5ab108fb6427d40b6a9c0e",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-357a1d05542f55d0a4b131b0"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 10112,
+          "inputTokens": 10420,
+          "outputTokens": 72,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10492
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 18816,
+          "inputTokens": 37462,
+          "outputTokens": 634,
+          "reasoningOutputTokens": 30,
+          "totalTokens": 38096
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 18816,
+          "input_tokens": 37462,
+          "output_tokens": 634,
+          "reasoning_output_tokens": 30,
+          "total_tokens": 38096
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "88926d4f364d518a0aa1065d8a89c8e5c54e6721185b8d8e4f7af9c0f0c6f500",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "safe-path--review",
+      "attempt_id": "attempt-f4b9b9a904fc167797dbf128cf64008a",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-70a5442edbb39c0584544ec1"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 9088,
+          "inputTokens": 10095,
+          "outputTokens": 69,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10164
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 17280,
+          "inputTokens": 27372,
+          "outputTokens": 464,
+          "reasoningOutputTokens": 43,
+          "totalTokens": 27836
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 17280,
+          "input_tokens": 27372,
+          "output_tokens": 464,
+          "reasoning_output_tokens": 43,
+          "total_tokens": 27836
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 3
+      },
+      "command_evidence": {
+        "sha256": "ac69d8b55f3e7c7587e6228955dafff4e92abed33489831e14c38d1ae060df34",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "safe-path--tests",
+      "attempt_id": "attempt-65a296c8fd6375201bd9cdadb2789d9d",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-d376ef8cadfbba24c7792166"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 12672,
+          "inputTokens": 12918,
+          "outputTokens": 205,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 13123
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 32512,
+          "inputTokens": 45694,
+          "outputTokens": 486,
+          "reasoningOutputTokens": 14,
+          "totalTokens": 46180
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 32512,
+          "input_tokens": 45694,
+          "output_tokens": 486,
+          "reasoning_output_tokens": 14,
+          "total_tokens": 46180
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "a5e4a1cdd2999c81e0123d0f888f599a3b7505bc2cc7d37999dea43ae9bcd9b8",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "retry-plan--tests",
+      "attempt_id": "attempt-82d3a29e40549512917f8c65f44a7217",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-758a3d75b02b0d61043493d1"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 14147,
+          "outputTokens": 104,
+          "reasoningOutputTokens": 29,
+          "totalTokens": 14251
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 22463,
+          "outputTokens": 180,
+          "reasoningOutputTokens": 29,
+          "totalTokens": 22643
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 8192,
+          "input_tokens": 22463,
+          "output_tokens": 180,
+          "reasoning_output_tokens": 29,
+          "total_tokens": 22643
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 2
+      },
+      "command_evidence": {
+        "sha256": "4b804f3e0091ff8b7170949d9eebe72f0719de32c620128d9959322d247eb62e",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "retry-plan--review",
+      "attempt_id": "attempt-66a95f084a7456efc49c731c5b4e8189",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-75fd15ac7fa7c0e7b1ab906d"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 10368,
+          "inputTokens": 10554,
+          "outputTokens": 72,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10626
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 34816,
+          "inputTokens": 37955,
+          "outputTokens": 712,
+          "reasoningOutputTokens": 31,
+          "totalTokens": 38667
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 34816,
+          "input_tokens": 37955,
+          "output_tokens": 712,
+          "reasoning_output_tokens": 31,
+          "total_tokens": 38667
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "d61fe9e58a876ce3219f1ce2b48ab64bdf416d7eeebace305c5957443afdd7ef",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "rate-limit--tests",
+      "attempt_id": "attempt-7b796ddcfe0c91b9efa0e9827728a2ad",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-d867c2cc9ee121d40b2ba7e4"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 19328,
+          "inputTokens": 20805,
+          "outputTokens": 71,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 20876
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 19328,
+          "inputTokens": 48457,
+          "outputTokens": 372,
+          "reasoningOutputTokens": 18,
+          "totalTokens": 48829
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 19328,
+          "input_tokens": 48457,
+          "output_tokens": 372,
+          "reasoning_output_tokens": 18,
+          "total_tokens": 48829
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 3
+      },
+      "command_evidence": {
+        "sha256": "c4eea1e4d4e6b806cf1d5c562f5d3eaed206fafcc032efc2ea1f49a5f79403f3",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "rate-limit--review",
+      "attempt_id": "attempt-57c9ad07992164670c24fd8a470ffbb3",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-b7aef07649139ccf0d07601e"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 9007,
+          "outputTokens": 417,
+          "reasoningOutputTokens": 31,
+          "totalTokens": 9424
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 17323,
+          "outputTokens": 494,
+          "reasoningOutputTokens": 31,
+          "totalTokens": 17817
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 8192,
+          "input_tokens": 17323,
+          "output_tokens": 494,
+          "reasoning_output_tokens": 31,
+          "total_tokens": 17817
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 2
+      },
+      "command_evidence": {
+        "sha256": "8891af3d9335c479b6efd43f559c0a869ddb7e051b5ea41be03c1c4e35c620a2",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "idempotency--review",
+      "attempt_id": "attempt-46397e34241cf7611b6aefc359c3bd07",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-5b5566d54b616c20f4b3a45e"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 10496,
+          "inputTokens": 10707,
+          "outputTokens": 67,
+          "reasoningOutputTokens": 0,
+          "totalTokens": 10774
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 26880,
+          "inputTokens": 37861,
+          "outputTokens": 803,
+          "reasoningOutputTokens": 39,
+          "totalTokens": 38664
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 26880,
+          "input_tokens": 37861,
+          "output_tokens": 803,
+          "reasoning_output_tokens": 39,
+          "total_tokens": 38664
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 4
+      },
+      "command_evidence": {
+        "sha256": "02680de3899037f92e473048bfb68d36de968c36cc73d46cca7c47627ced5ffa",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "idempotency--tests",
+      "attempt_id": "attempt-a76cff72a7b92db6747de549e73a4d0c",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-bba45459ceacdd7b20593250"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 18368,
+          "outputTokens": 109,
+          "reasoningOutputTokens": 25,
+          "totalTokens": 18477
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 26684,
+          "outputTokens": 192,
+          "reasoningOutputTokens": 25,
+          "totalTokens": 26876
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 8192,
+          "input_tokens": 26684,
+          "output_tokens": 192,
+          "reasoning_output_tokens": 25,
+          "total_tokens": 26876
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 2
+      },
+      "command_evidence": {
+        "sha256": "f1804a537450e313abf11e98fe820fa9f482d2b966b9fc68a59ae4ea31614461",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "pagination--tests",
+      "attempt_id": "attempt-7a252029ba723f6b5d46e145ea8b39a0",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-e3807ee3d69c9ae976ba8475"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 19072,
+          "inputTokens": 22133,
+          "outputTokens": 96,
+          "reasoningOutputTokens": 10,
+          "totalTokens": 22229
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 27264,
+          "inputTokens": 49554,
+          "outputTokens": 328,
+          "reasoningOutputTokens": 10,
+          "totalTokens": 49882
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 27264,
+          "input_tokens": 49554,
+          "output_tokens": 328,
+          "reasoning_output_tokens": 10,
+          "total_tokens": 49882
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 3
+      },
+      "command_evidence": {
+        "sha256": "18484fd150d9869590438cf4596c61ce058256cd0eeb9568aa2e124df121a9ca",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "pagination--review",
+      "attempt_id": "attempt-80de04c574b87dde6efd94ca84c637cf",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-faf3e555d00de6ace1609adf"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 9021,
+          "outputTokens": 451,
+          "reasoningOutputTokens": 30,
+          "totalTokens": 9472
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 17337,
+          "outputTokens": 528,
+          "reasoningOutputTokens": 30,
+          "totalTokens": 17865
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 8192,
+          "input_tokens": 17337,
+          "output_tokens": 528,
+          "reasoning_output_tokens": 30,
+          "total_tokens": 17865
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 2
+      },
+      "command_evidence": {
+        "sha256": "d7aa7f576b79a38fa2459d6862201b46720074740922061335631b4562d3802f",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "ttl-lru--review",
+      "attempt_id": "attempt-5a6bc59175d931f1d9ff657200619012",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-be18ab6c560eae89f6f27807"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8320,
+          "inputTokens": 9206,
+          "outputTokens": 780,
+          "reasoningOutputTokens": 61,
+          "totalTokens": 9986
+        },
+        "modelContextWindow": 258400,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8320,
+          "inputTokens": 17570,
+          "outputTokens": 859,
+          "reasoningOutputTokens": 61,
+          "totalTokens": 18429
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 8320,
+          "input_tokens": 17570,
+          "output_tokens": 859,
+          "reasoning_output_tokens": 61,
+          "total_tokens": 18429
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 2
+      },
+      "command_evidence": {
+        "sha256": "ffc7d7b2e43f4d11f6c92627c1d619b36dccbc3c0a57d9cf596f513a7fa8b7d3",
+        "unrecorded_commands": 0
+      }
+    },
+    {
+      "phase": "repair",
+      "case_id": "ttl-lru--tests",
+      "attempt_id": "attempt-2036651bdf38756e9d8e1018649dfad9",
+      "runtime": {
+        "image": "sha256:db21298b84d45d950442afa08ebd86a5e1f7deadb4a167d170b6dd9ba1262e01",
+        "resource_contract": {
+          "docker_args": [
+            "--cpus=2",
+            "--memory=2147483648",
+            "--memory-swap=2147483648",
+            "--pids-limit=256",
+            "--ulimit=nofile=1024:1024",
+            "--tmpfs=/scratch:rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          ],
+          "host_config": {
+            "Memory": 2147483648,
+            "MemorySwap": 2147483648,
+            "NanoCpus": 2000000000,
+            "PidsLimit": 256,
+            "Tmpfs": {
+              "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+            },
+            "Ulimits": [
+              {
+                "Hard": 1024,
+                "Name": "nofile",
+                "Soft": 1024
+              }
+            ]
+          },
+          "limits": {
+            "cpus": 2,
+            "extra_swap_bytes": 0,
+            "file_descriptors": 1024,
+            "memory_bytes": 2147483648,
+            "processes": 256,
+            "scratch_bytes": 268435456
+          },
+          "profile": "codex-environment-v2",
+          "resolved": true,
+          "schema_version": 1
+        },
+        "host_config": {
+          "Memory": 2147483648,
+          "MemorySwap": 2147483648,
+          "NanoCpus": 2000000000,
+          "PidsLimit": 256,
+          "Tmpfs": {
+            "/scratch": "rw,nosuid,nodev,exec,size=268435456,mode=1777"
+          },
+          "Ulimits": [
+            {
+              "Hard": 1024,
+              "Name": "nofile",
+              "Soft": 1024
+            }
+          ]
+        },
+        "memory_bytes": 2147483648,
+        "nano_cpus": 2000000000,
+        "pids_limit": 256,
+        "network": "invariant-link-f096ad288f2357c8e51a4415"
+      },
+      "token_usage": {
+        "last": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 8192,
+          "inputTokens": 18170,
+          "outputTokens": 108,
+          "reasoningOutputTokens": 17,
+          "totalTokens": 18278
+        },
+        "modelContextWindow": 475000,
+        "total": {
+          "cacheWriteInputTokens": 0,
+          "cachedInputTokens": 16384,
+          "inputTokens": 26486,
+          "outputTokens": 185,
+          "reasoningOutputTokens": 17,
+          "totalTokens": 26671
+        }
+      },
+      "inference_usage": {
+        "complete": true,
+        "final": {
+          "cached_input_tokens": 16384,
+          "input_tokens": 26486,
+          "output_tokens": 185,
+          "reasoning_output_tokens": 17,
+          "total_tokens": 26671
+        },
+        "problems": [],
+        "reconciled": true,
+        "response_count": 2
+      },
+      "command_evidence": {
+        "sha256": "4e4667a9ac5cd85282478edd9f8d1f4d71af1b147b02c0343b7a208685532b2b",
+        "unrecorded_commands": 0
+      }
+    }
+  ],
+  "omitted": "Authentication, environment variable values, private mount paths and local native-home paths are not published."
+}

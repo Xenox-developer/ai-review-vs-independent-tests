@@ -1,0 +1,6123 @@
+{
+  "summary": {
+    "tasks": 8,
+    "initial": {
+      "passed": 7,
+      "visible_green_hidden_red": 1
+    },
+    "review": {
+      "passed": 7,
+      "visible_green_hidden_red": 1,
+      "repaired": 0,
+      "regressed": 0
+    },
+    "tests": {
+      "passed": 8,
+      "visible_green_hidden_red": 0,
+      "repaired": 1,
+      "regressed": 0
+    },
+    "test_feedback": {
+      "submitted": 230,
+      "qualified": 230,
+      "rejected": 0,
+      "invalid_feedback": 0,
+      "incorrect_initials_passing_nonempty_generated_suite": 0
+    },
+    "review_feedback": {
+      "incorrect_initials_assessed_likely_correct": 1
+    },
+    "resources": {
+      "sessions": 40,
+      "wall_seconds": 2150.827500104904,
+      "models": [
+        "gpt-6.1-sol"
+      ],
+      "known_total_tokens": 1405533,
+      "missing_token_totals": 0,
+      "outer_orchestration_tokens": null,
+      "response_observations": 139,
+      "sessions_with_complete_response_accounting": 40
+    }
+  },
+  "tasks": [
+    {
+      "task": "pagination",
+      "initial": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [],
+              "next": null
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [
+                {
+                  "id": 1,
+                  "timestamp": 1
+                }
+              ],
+              "next": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [
+                {
+                  "id": 2,
+                  "timestamp": 1
+                }
+              ],
+              "next": null
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [
+                {
+                  "extra": "v",
+                  "id": 1,
+                  "timestamp": 0
+                }
+              ],
+              "next": null
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 7,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 8,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 9,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 10,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [],
+              "next": null
+            }
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [],
+                "next": null
+              }
+            }
+          ]
+        }
+      },
+      "review": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [],
+              "next": null
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [
+                {
+                  "id": 1,
+                  "timestamp": 1
+                }
+              ],
+              "next": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [
+                {
+                  "id": 2,
+                  "timestamp": 1
+                }
+              ],
+              "next": null
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [
+                {
+                  "extra": "v",
+                  "id": 1,
+                  "timestamp": 0
+                }
+              ],
+              "next": null
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 7,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 8,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 9,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 10,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [],
+              "next": null
+            }
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [],
+                "next": null
+              }
+            }
+          ]
+        }
+      },
+      "tests": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [],
+              "next": null
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [
+                {
+                  "id": 1,
+                  "timestamp": 1
+                }
+              ],
+              "next": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [
+                {
+                  "id": 2,
+                  "timestamp": 1
+                }
+              ],
+              "next": null
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [
+                {
+                  "extra": "v",
+                  "id": 1,
+                  "timestamp": 0
+                }
+              ],
+              "next": null
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 7,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 8,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 9,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "limit must be an integer between 1 and 100"
+          },
+          {
+            "index": 10,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "items": [],
+              "next": null
+            }
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [],
+                "next": null
+              }
+            },
+            {
+              "index": 1,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [],
+                "next": null
+              }
+            },
+            {
+              "index": 2,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 7,
+                    "timestamp": 4,
+                    "name": "only"
+                  }
+                ],
+                "next": null
+              }
+            },
+            {
+              "index": 3,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 3,
+                    "timestamp": 2
+                  },
+                  {
+                    "id": 5,
+                    "timestamp": 2
+                  }
+                ],
+                "next": [
+                  2,
+                  5
+                ]
+              }
+            },
+            {
+              "index": 4,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 5,
+                    "timestamp": 2
+                  },
+                  {
+                    "id": 9,
+                    "timestamp": 2
+                  }
+                ],
+                "next": null
+              }
+            },
+            {
+              "index": 5,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 5,
+                    "timestamp": 2
+                  }
+                ],
+                "next": [
+                  2,
+                  5
+                ]
+              }
+            },
+            {
+              "index": 6,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [],
+                "next": null
+              }
+            },
+            {
+              "index": 7,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 10,
+                    "timestamp": 1
+                  },
+                  {
+                    "id": 0,
+                    "timestamp": 2
+                  }
+                ],
+                "next": [
+                  2,
+                  0
+                ]
+              }
+            },
+            {
+              "index": 8,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 10,
+                    "timestamp": 1
+                  },
+                  {
+                    "id": 0,
+                    "timestamp": 2
+                  },
+                  {
+                    "id": -5,
+                    "timestamp": 3
+                  }
+                ],
+                "next": null
+              }
+            },
+            {
+              "index": 9,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": -5,
+                    "timestamp": 3
+                  }
+                ],
+                "next": null
+              }
+            },
+            {
+              "index": 10,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 1,
+                    "timestamp": 0
+                  }
+                ],
+                "next": null
+              }
+            },
+            {
+              "index": 11,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": -3,
+                    "timestamp": -2
+                  }
+                ],
+                "next": [
+                  -2,
+                  -3
+                ]
+              }
+            },
+            {
+              "index": 12,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 1,
+                    "timestamp": 8,
+                    "meta": [
+                      1,
+                      {
+                        "a": "b"
+                      }
+                    ]
+                  },
+                  {
+                    "id": 2,
+                    "timestamp": 8,
+                    "meta": {
+                      "tags": [
+                        "x",
+                        null
+                      ],
+                      "ok": false
+                    },
+                    "extra": 0
+                  }
+                ],
+                "next": null
+              }
+            },
+            {
+              "index": 13,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 1,
+                    "timestamp": 10
+                  }
+                ],
+                "next": [
+                  10,
+                  1
+                ]
+              }
+            },
+            {
+              "index": 14,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [],
+                "next": null
+              }
+            },
+            {
+              "index": 15,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [],
+                "next": null
+              }
+            },
+            {
+              "index": 16,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 9007199254740993,
+                    "timestamp": 9007199254740993
+                  }
+                ],
+                "next": [
+                  9007199254740993,
+                  9007199254740993
+                ]
+              }
+            },
+            {
+              "index": 17,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 1,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 2,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 3,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 4,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 5,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 6,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 7,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 8,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 9,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 10,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 11,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 12,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 13,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 14,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 15,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 16,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 17,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 18,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 19,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 20,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 21,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 22,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 23,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 24,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 25,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 26,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 27,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 28,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 29,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 30,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 31,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 32,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 33,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 34,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 35,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 36,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 37,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 38,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 39,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 40,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 41,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 42,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 43,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 44,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 45,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 46,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 47,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 48,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 49,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 50,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 51,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 52,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 53,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 54,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 55,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 56,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 57,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 58,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 59,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 60,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 61,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 62,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 63,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 64,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 65,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 66,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 67,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 68,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 69,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 70,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 71,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 72,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 73,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 74,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 75,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 76,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 77,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 78,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 79,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 80,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 81,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 82,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 83,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 84,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 85,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 86,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 87,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 88,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 89,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 90,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 91,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 92,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 93,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 94,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 95,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 96,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 97,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 98,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 99,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 100,
+                    "timestamp": 0
+                  }
+                ],
+                "next": [
+                  0,
+                  100
+                ]
+              }
+            },
+            {
+              "index": 18,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 1,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 2,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 3,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 4,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 5,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 6,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 7,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 8,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 9,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 10,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 11,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 12,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 13,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 14,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 15,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 16,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 17,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 18,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 19,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 20,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 21,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 22,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 23,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 24,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 25,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 26,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 27,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 28,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 29,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 30,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 31,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 32,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 33,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 34,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 35,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 36,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 37,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 38,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 39,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 40,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 41,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 42,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 43,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 44,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 45,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 46,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 47,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 48,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 49,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 50,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 51,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 52,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 53,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 54,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 55,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 56,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 57,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 58,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 59,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 60,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 61,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 62,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 63,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 64,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 65,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 66,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 67,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 68,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 69,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 70,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 71,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 72,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 73,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 74,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 75,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 76,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 77,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 78,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 79,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 80,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 81,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 82,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 83,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 84,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 85,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 86,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 87,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 88,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 89,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 90,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 91,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 92,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 93,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 94,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 95,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 96,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 97,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 98,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 99,
+                    "timestamp": 0
+                  },
+                  {
+                    "id": 100,
+                    "timestamp": 0
+                  }
+                ],
+                "next": null
+              }
+            },
+            {
+              "index": 19,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "items": [
+                  {
+                    "id": 4,
+                    "timestamp": 4
+                  },
+                  {
+                    "id": 5,
+                    "timestamp": 5
+                  }
+                ],
+                "next": null
+              }
+            },
+            {
+              "index": 20,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 21,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 22,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 23,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 24,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 25,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 26,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 27,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 28,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 29,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 30,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 31,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            },
+            {
+              "index": 32,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "limit must be an integer between 1 and 100"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "retry-plan",
+      "initial": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              2,
+              6
+            ]
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": []
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              2,
+              5,
+              8
+            ]
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0
+            ]
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "max_attempts must be at most 100"
+          },
+          {
+            "index": 7,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "max_attempts must be a nonnegative integer"
+          },
+          {
+            "index": 8,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "base must be a nonnegative integer"
+          },
+          {
+            "index": 9,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "cap must be a nonnegative integer"
+          },
+          {
+            "index": 10,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "budget must be a nonnegative integer"
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                2,
+                6
+              ]
+            }
+          ]
+        }
+      },
+      "review": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              2,
+              6
+            ]
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": []
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              2,
+              5,
+              8
+            ]
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0
+            ]
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "max_attempts must be at most 100"
+          },
+          {
+            "index": 7,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "max_attempts must be a nonnegative integer"
+          },
+          {
+            "index": 8,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "base must be a nonnegative integer"
+          },
+          {
+            "index": 9,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "cap must be a nonnegative integer"
+          },
+          {
+            "index": 10,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "budget must be a nonnegative integer"
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                2,
+                6
+              ]
+            }
+          ]
+        }
+      },
+      "tests": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              2,
+              6
+            ]
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": []
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              2,
+              5,
+              8
+            ]
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0
+            ]
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "max_attempts must be at most 100"
+          },
+          {
+            "index": 7,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "max_attempts must be a nonnegative integer"
+          },
+          {
+            "index": 8,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "base must be a nonnegative integer"
+          },
+          {
+            "index": 9,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "cap must be a nonnegative integer"
+          },
+          {
+            "index": 10,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "budget must be a nonnegative integer"
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                2,
+                6
+              ]
+            },
+            {
+              "index": 1,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": []
+            },
+            {
+              "index": 2,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0
+              ]
+            },
+            {
+              "index": 3,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "index": 4,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                2
+              ]
+            },
+            {
+              "index": 5,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                2,
+                6,
+                14,
+                24
+              ]
+            },
+            {
+              "index": 6,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                3,
+                8,
+                13,
+                18,
+                23
+              ]
+            },
+            {
+              "index": 7,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                4,
+                8,
+                12
+              ]
+            },
+            {
+              "index": 8,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "index": 9,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0
+              ]
+            },
+            {
+              "index": 10,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                2,
+                6
+              ]
+            },
+            {
+              "index": 11,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "index": 12,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                3
+              ]
+            },
+            {
+              "index": 13,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                9007199254740993,
+                27021597764222979
+              ]
+            },
+            {
+              "index": 14,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                1,
+                3,
+                7,
+                15,
+                31,
+                63
+              ]
+            },
+            {
+              "index": 15,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "max_attempts must be a nonnegative integer"
+            },
+            {
+              "index": 16,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "base must be a nonnegative integer"
+            },
+            {
+              "index": 17,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "cap must be a nonnegative integer"
+            },
+            {
+              "index": 18,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "budget must be a nonnegative integer"
+            },
+            {
+              "index": 19,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "max_attempts must be a nonnegative integer"
+            },
+            {
+              "index": 20,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "max_attempts must be at most 100"
+            },
+            {
+              "index": 21,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "base must be a nonnegative integer"
+            },
+            {
+              "index": 22,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "cap must be a nonnegative integer"
+            },
+            {
+              "index": 23,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "budget must be a nonnegative integer"
+            },
+            {
+              "index": 24,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "max_attempts must be a nonnegative integer"
+            },
+            {
+              "index": 25,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "base must be a nonnegative integer"
+            },
+            {
+              "index": 26,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "cap must be a nonnegative integer"
+            },
+            {
+              "index": 27,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "budget must be a nonnegative integer"
+            },
+            {
+              "index": 28,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "max_attempts must be a nonnegative integer"
+            },
+            {
+              "index": 29,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "base must be a nonnegative integer"
+            },
+            {
+              "index": 30,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "cap must be a nonnegative integer"
+            },
+            {
+              "index": 31,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "budget must be a nonnegative integer"
+            },
+            {
+              "index": 32,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "max_attempts must be a nonnegative integer"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "ttl-lru",
+      "initial": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null
+            ]
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null
+            ]
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              1,
+              null,
+              1,
+              null
+            ]
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null,
+              3,
+              null
+            ]
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null
+            ]
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                null
+              ]
+            }
+          ]
+        }
+      },
+      "review": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null
+            ]
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null
+            ]
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              1,
+              null,
+              1,
+              null
+            ]
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null,
+              3,
+              null
+            ]
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null
+            ]
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                null
+              ]
+            }
+          ]
+        }
+      },
+      "tests": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null
+            ]
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null
+            ]
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              1,
+              null,
+              1,
+              null
+            ]
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null,
+              3,
+              null
+            ]
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              null
+            ]
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              0,
+              0,
+              null
+            ]
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                null
+              ]
+            },
+            {
+              "index": 1,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": []
+            },
+            {
+              "index": 2,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": []
+            },
+            {
+              "index": 3,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                null,
+                7,
+                7,
+                null,
+                null
+              ]
+            },
+            {
+              "index": 4,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "index": 5,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                1,
+                null,
+                1,
+                3
+              ]
+            },
+            {
+              "index": 6,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                "v",
+                "v",
+                null,
+                null
+              ]
+            },
+            {
+              "index": 7,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                9,
+                null,
+                3
+              ]
+            },
+            {
+              "index": 8,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                "new",
+                "new",
+                null
+              ]
+            },
+            {
+              "index": 9,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                8,
+                2,
+                null,
+                8,
+                null
+              ]
+            },
+            {
+              "index": 10,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                1,
+                2,
+                null,
+                3
+              ]
+            },
+            {
+              "index": 11,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                1,
+                null,
+                null,
+                null,
+                4
+              ]
+            },
+            {
+              "index": 12,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                null,
+                null,
+                2,
+                3
+              ]
+            },
+            {
+              "index": 13,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                null,
+                null,
+                3
+              ]
+            },
+            {
+              "index": 14,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                null,
+                null,
+                null,
+                3
+              ]
+            },
+            {
+              "index": 15,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                false,
+                null,
+                false,
+                0
+              ]
+            },
+            {
+              "index": 16,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                "",
+                null,
+                "",
+                -2.5
+              ]
+            },
+            {
+              "index": 17,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                0,
+                "x",
+                true,
+                null,
+                null,
+                null
+              ]
+            },
+            {
+              "index": 18,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                1,
+                null,
+                2,
+                null
+              ]
+            },
+            {
+              "index": 19,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                42,
+                null
+              ]
+            },
+            {
+              "index": 20,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                1,
+                null,
+                3,
+                1,
+                null,
+                null
+              ]
+            },
+            {
+              "index": 21,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                2,
+                null,
+                3,
+                null
+              ]
+            },
+            {
+              "index": 22,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                1,
+                1,
+                null,
+                null,
+                3,
+                null,
+                4,
+                3,
+                5
+              ]
+            },
+            {
+              "index": 23,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                true,
+                1,
+                false,
+                0,
+                null,
+                "null"
+              ]
+            },
+            {
+              "index": 24,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                null,
+                2,
+                3,
+                null,
+                3,
+                4,
+                null,
+                null
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "idempotency",
+      "initial": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [],
+              "applied": 0
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "failed",
+                "applied",
+                "conflict"
+              ],
+              "applied": 1
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "applied",
+                "duplicate",
+                "conflict"
+              ],
+              "applied": 1
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "applied",
+                "conflict"
+              ],
+              "applied": 1
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "applied",
+                "applied",
+                "duplicate"
+              ],
+              "applied": 2
+            }
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [],
+                "applied": 0
+              }
+            }
+          ]
+        }
+      },
+      "review": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [],
+              "applied": 0
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "failed",
+                "applied",
+                "conflict"
+              ],
+              "applied": 1
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "applied",
+                "duplicate",
+                "conflict"
+              ],
+              "applied": 1
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "applied",
+                "conflict"
+              ],
+              "applied": 1
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "applied",
+                "applied",
+                "duplicate"
+              ],
+              "applied": 2
+            }
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [],
+                "applied": 0
+              }
+            }
+          ]
+        }
+      },
+      "tests": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [],
+              "applied": 0
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "failed",
+                "applied",
+                "conflict"
+              ],
+              "applied": 1
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "applied",
+                "duplicate",
+                "conflict"
+              ],
+              "applied": 1
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "applied",
+                "conflict"
+              ],
+              "applied": 1
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "statuses": [
+                "applied",
+                "applied",
+                "duplicate"
+              ],
+              "applied": 2
+            }
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [],
+                "applied": 0
+              }
+            },
+            {
+              "index": 1,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [],
+                "applied": 0
+              }
+            },
+            {
+              "index": 2,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 3,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "failed"
+                ],
+                "applied": 0
+              }
+            },
+            {
+              "index": 4,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "failed",
+                  "applied",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 5,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "failed",
+                  "failed",
+                  "applied",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 6,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "duplicate",
+                  "conflict"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 7,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 8,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 9,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "applied",
+                  "duplicate",
+                  "conflict",
+                  "failed",
+                  "applied"
+                ],
+                "applied": 3
+              }
+            },
+            {
+              "index": 10,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 11,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 12,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 13,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "conflict"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 14,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "duplicate",
+                  "applied",
+                  "duplicate"
+                ],
+                "applied": 2
+              }
+            },
+            {
+              "index": 15,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "conflict",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 16,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "duplicate",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 17,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 18,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "conflict"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 19,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 20,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "conflict",
+                  "conflict",
+                  "conflict",
+                  "conflict",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 21,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "duplicate",
+                  "applied",
+                  "conflict",
+                  "duplicate"
+                ],
+                "applied": 2
+              }
+            },
+            {
+              "index": 22,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "conflict",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 23,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "duplicate",
+                  "applied",
+                  "conflict"
+                ],
+                "applied": 2
+              }
+            },
+            {
+              "index": 24,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "conflict"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 25,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "failed",
+                  "applied",
+                  "duplicate",
+                  "applied",
+                  "applied"
+                ],
+                "applied": 3
+              }
+            },
+            {
+              "index": 26,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "duplicate",
+                  "applied",
+                  "conflict"
+                ],
+                "applied": 2
+              }
+            },
+            {
+              "index": 27,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "conflict",
+                  "duplicate",
+                  "applied",
+                  "duplicate"
+                ],
+                "applied": 2
+              }
+            },
+            {
+              "index": 28,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "failed",
+                  "applied",
+                  "applied",
+                  "conflict",
+                  "conflict",
+                  "duplicate",
+                  "failed",
+                  "applied",
+                  "duplicate"
+                ],
+                "applied": 3
+              }
+            },
+            {
+              "index": 29,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "conflict"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 30,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "conflict",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 31,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "applied",
+                  "conflict",
+                  "duplicate"
+                ],
+                "applied": 1
+              }
+            },
+            {
+              "index": 32,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "statuses": [
+                  "failed",
+                  "failed",
+                  "failed"
+                ],
+                "applied": 0
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "timezone-days",
+      "initial": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-01-01": 1
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-03-07": 1,
+              "2026-03-08": 2
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-11-01": 3,
+              "2026-11-02": 1
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-01-02": 1,
+              "2026-01-01": 1
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "Event timestamps must include a UTC offset"
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "day is out of range for month"
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {}
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-01-01": 1
+              }
+            }
+          ]
+        }
+      },
+      "review": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-01-01": 1
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-03-07": 1,
+              "2026-03-08": 2
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-11-01": 3,
+              "2026-11-02": 1
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-01-02": 1,
+              "2026-01-01": 1
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "Event timestamps must include a UTC offset"
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "day is out of range for month"
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {}
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-01-01": 1
+              }
+            }
+          ]
+        }
+      },
+      "tests": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-01-01": 1
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-03-07": 1,
+              "2026-03-08": 2
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-11-01": 3,
+              "2026-11-02": 1
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "2026-01-02": 1,
+              "2026-01-01": 1
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "Event timestamps must include a UTC offset"
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "day is out of range for month"
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {}
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-01-01": 1
+              }
+            },
+            {
+              "index": 1,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {}
+            },
+            {
+              "index": 2,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-01-01": 2,
+                "2026-01-02": 1
+              }
+            },
+            {
+              "index": 3,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2025-12-31": 1,
+                "2026-01-01": 1
+              }
+            },
+            {
+              "index": 4,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2025-12-31": 1,
+                "2026-01-01": 1
+              }
+            },
+            {
+              "index": 5,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-12-31": 1,
+                "2027-01-01": 1
+              }
+            },
+            {
+              "index": 6,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-06-01": 1,
+                "2026-06-02": 1
+              }
+            },
+            {
+              "index": 7,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-02-28": 1,
+                "2026-03-01": 1
+              }
+            },
+            {
+              "index": 8,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-01-01": 1,
+                "2026-01-02": 1
+              }
+            },
+            {
+              "index": 9,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2025-12-31": 1,
+                "2026-01-01": 1
+              }
+            },
+            {
+              "index": 10,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-01-14": 1,
+                "2026-07-15": 1
+              }
+            },
+            {
+              "index": 11,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-03-07": 1,
+                "2026-03-08": 3,
+                "2026-03-09": 1
+              }
+            },
+            {
+              "index": 12,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-10-31": 1,
+                "2026-11-01": 4,
+                "2026-11-02": 1
+              }
+            },
+            {
+              "index": 13,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-03-28": 1,
+                "2026-03-30": 1,
+                "2026-10-25": 2
+              }
+            },
+            {
+              "index": 14,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-01-02": 1,
+                "2026-07-01": 1
+              }
+            },
+            {
+              "index": 15,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-10-03": 1,
+                "2026-10-05": 1
+              }
+            },
+            {
+              "index": 16,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2011-12-29": 1,
+                "2011-12-31": 1
+              }
+            },
+            {
+              "index": 17,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2025-12-31": 1,
+                "2026-07-01": 1
+              }
+            },
+            {
+              "index": 18,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-06-30": 3
+              }
+            },
+            {
+              "index": 19,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-01-02": 2
+              }
+            },
+            {
+              "index": 20,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2024-02-29": 1,
+                "2024-03-01": 1
+              }
+            },
+            {
+              "index": 21,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "0001-01-01": 1,
+                "9999-12-31": 1
+              }
+            },
+            {
+              "index": 22,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-01-01": 2,
+                "2025-12-31": 1
+              }
+            },
+            {
+              "index": 23,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "Event timestamps must include a UTC offset"
+            },
+            {
+              "index": 24,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "Event timestamps must include a UTC offset"
+            },
+            {
+              "index": 25,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "Event timestamps must include a UTC offset"
+            },
+            {
+              "index": 26,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "Event timestamps must include a UTC offset"
+            },
+            {
+              "index": 27,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "day is out of range for month"
+            },
+            {
+              "index": 28,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "day is out of range for month"
+            },
+            {
+              "index": 29,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "day is out of range for month"
+            },
+            {
+              "index": 30,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "month must be in 1..12"
+            },
+            {
+              "index": 31,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2000-02-29": 1,
+                "2000-03-01": 1
+              }
+            },
+            {
+              "index": 32,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "2026-06-14": 1,
+                "2026-06-15": 1
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "safe-path",
+      "initial": {
+        "available": true,
+        "passed": false,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "docs/a.txt"
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "parent component is not allowed"
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "a/b"
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "a/.../b+z"
+          },
+          {
+            "index": 7,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "%2e%2e/x"
+          },
+          {
+            "index": 8,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "empty relative path"
+          },
+          {
+            "index": 9,
+            "passed": false,
+            "input_unchanged": true,
+            "error": "UnicodeDecodeError",
+            "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte"
+          },
+          {
+            "index": 10,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "docs/a.txt"
+            }
+          ]
+        }
+      },
+      "review": {
+        "available": true,
+        "passed": false,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "docs/a.txt"
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "parent component is not allowed"
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "a/b"
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "a/.../b+z"
+          },
+          {
+            "index": 7,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "%2e%2e/x"
+          },
+          {
+            "index": 8,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "empty relative path"
+          },
+          {
+            "index": 9,
+            "passed": false,
+            "input_unchanged": true,
+            "error": "UnicodeDecodeError",
+            "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte"
+          },
+          {
+            "index": 10,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "docs/a.txt"
+            }
+          ]
+        }
+      },
+      "tests": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "docs/a.txt"
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "parent component is not allowed"
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "a/b"
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "a/.../b+z"
+          },
+          {
+            "index": 7,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": "%2e%2e/x"
+          },
+          {
+            "index": 8,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "empty relative path"
+          },
+          {
+            "index": 9,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid UTF-8 in path"
+          },
+          {
+            "index": 10,
+            "passed": true,
+            "input_unchanged": true,
+            "error": "ValueError",
+            "message": "invalid relative path"
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "docs/a.txt"
+            },
+            {
+              "index": 1,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "docs/a.txt"
+            },
+            {
+              "index": 2,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "a/b"
+            },
+            {
+              "index": 3,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "a"
+            },
+            {
+              "index": 4,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": ".hidden/a..b/..hidden/..."
+            },
+            {
+              "index": 5,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "a/b/c"
+            },
+            {
+              "index": 6,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "a+b/+/ "
+            },
+            {
+              "index": 7,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "%2e%2e"
+            },
+            {
+              "index": 8,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "%2F/%5C/%00"
+            },
+            {
+              "index": 9,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "x%/y%2/z%GG"
+            },
+            {
+              "index": 10,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "café/☃/😀"
+            },
+            {
+              "index": 11,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": " \t/\n "
+            },
+            {
+              "index": 12,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "a/b"
+            },
+            {
+              "index": 13,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "a/.../b"
+            },
+            {
+              "index": 14,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "﻿file"
+            },
+            {
+              "index": 15,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "folder/file?x=1#part:two"
+            },
+            {
+              "index": 16,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": "雪/é"
+            },
+            {
+              "index": 17,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid relative path"
+            },
+            {
+              "index": 18,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "empty relative path"
+            },
+            {
+              "index": 19,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "empty relative path"
+            },
+            {
+              "index": 20,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid relative path"
+            },
+            {
+              "index": 21,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid relative path"
+            },
+            {
+              "index": 22,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid relative path"
+            },
+            {
+              "index": 23,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "parent component is not allowed"
+            },
+            {
+              "index": 24,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "parent component is not allowed"
+            },
+            {
+              "index": 25,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "parent component is not allowed"
+            },
+            {
+              "index": 26,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid relative path"
+            },
+            {
+              "index": 27,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid relative path"
+            },
+            {
+              "index": 28,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid relative path"
+            },
+            {
+              "index": 29,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid relative path"
+            },
+            {
+              "index": 30,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid UTF-8 in path"
+            },
+            {
+              "index": 31,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid UTF-8 in path"
+            },
+            {
+              "index": 32,
+              "passed": true,
+              "input_unchanged": true,
+              "error": "ValueError",
+              "message": "invalid UTF-8 in path"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "deep-merge",
+      "initial": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "x": 2
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "y": 2,
+                "z": 4
+              }
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": [
+                null
+              ],
+              "b": {}
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "b": 1
+              }
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "c": 2
+              }
+            }
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "x": 3
+              }
+            }
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "b": {
+                  "c": 3,
+                  "d": 2
+                }
+              }
+            }
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "x": 2
+              }
+            }
+          ]
+        }
+      },
+      "review": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "x": 2
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "y": 2,
+                "z": 4
+              }
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": [
+                null
+              ],
+              "b": {}
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "b": 1
+              }
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "c": 2
+              }
+            }
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "x": 3
+              }
+            }
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "b": {
+                  "c": 3,
+                  "d": 2
+                }
+              }
+            }
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "x": 2
+              }
+            }
+          ]
+        }
+      },
+      "tests": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "x": 2
+            }
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "y": 2,
+                "z": 4
+              }
+            }
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": [
+                null
+              ],
+              "b": {}
+            }
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "b": 1
+              }
+            }
+          },
+          {
+            "index": 4,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "c": 2
+              }
+            }
+          },
+          {
+            "index": 5,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "x": 3
+              }
+            }
+          },
+          {
+            "index": 6,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": {
+              "a": {
+                "b": {
+                  "c": 3,
+                  "d": 2
+                }
+              }
+            }
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "x": 2
+              }
+            },
+            {
+              "index": 1,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {}
+            },
+            {
+              "index": 2,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": 1,
+                "b": {
+                  "c": [
+                    1,
+                    null,
+                    3
+                  ]
+                },
+                "n": null
+              }
+            },
+            {
+              "index": 3,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "b": 2
+              }
+            },
+            {
+              "index": 4,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {}
+            },
+            {
+              "index": 5,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {}
+            },
+            {
+              "index": 6,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "x": 9,
+                  "y": 2,
+                  "z": 4
+                },
+                "keep": 3
+              }
+            },
+            {
+              "index": 7,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "y": 2
+                }
+              }
+            },
+            {
+              "index": 8,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {}
+              }
+            },
+            {
+              "index": 9,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {}
+            },
+            {
+              "index": 10,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "x": 1
+                }
+              }
+            },
+            {
+              "index": 11,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {},
+                "b": {},
+                "c": {},
+                "d": {},
+                "e": {},
+                "f": {}
+              }
+            },
+            {
+              "index": 12,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {}
+              }
+            },
+            {
+              "index": 13,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "x": 2
+                }
+              }
+            },
+            {
+              "index": 14,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "0": {
+                    "new": 3
+                  }
+                }
+              }
+            },
+            {
+              "index": 15,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "b": {},
+                  "c": []
+                }
+              }
+            },
+            {
+              "index": 16,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": [
+                  4
+                ]
+              }
+            },
+            {
+              "index": 17,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": [],
+                "b": [],
+                "c": []
+              }
+            },
+            {
+              "index": 18,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": [
+                  null,
+                  {
+                    "x": null,
+                    "nested": {
+                      "y": null
+                    }
+                  },
+                  [
+                    null
+                  ],
+                  false,
+                  0
+                ]
+              }
+            },
+            {
+              "index": 19,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": false,
+                "b": 0,
+                "c": "",
+                "d": true
+              }
+            },
+            {
+              "index": 20,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "b": {
+                    "d": 2,
+                    "e": {
+                      "y": 3
+                    }
+                  },
+                  "keep": [
+                    1,
+                    null
+                  ],
+                  "new": false
+                }
+              }
+            },
+            {
+              "index": 21,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "b": {
+                    "c": {
+                      "e": 7
+                    }
+                  },
+                  "sibling": 8
+                }
+              }
+            },
+            {
+              "index": 22,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "": {
+                  "keep": 2,
+                  "new": 0
+                },
+                "a": {
+                  "b": 4
+                },
+                "/x": 6
+              }
+            },
+            {
+              "index": 23,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "__proto__": {
+                  "keep": 1,
+                  "new": 2
+                },
+                "constructor": {},
+                "雪": {
+                  "🍀": true
+                }
+              }
+            },
+            {
+              "index": 24,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "n": null,
+                  "deep": {
+                    "n": null
+                  },
+                  "new": 1
+                },
+                "arr": [
+                  null,
+                  {
+                    "n": null
+                  }
+                ]
+              }
+            },
+            {
+              "index": 25,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "x": 1,
+                  "y": 3
+                },
+                "b": {
+                  "y": 4
+                }
+              }
+            },
+            {
+              "index": 26,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "a": {
+                  "b": {
+                    "c": {
+                      "d": 9,
+                      "keep": 2
+                    }
+                  },
+                  "keep": 3,
+                  "missing": {}
+                }
+              }
+            },
+            {
+              "index": 27,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "number": -7,
+                "fraction": 0.25,
+                "text": "after",
+                "list": {
+                  "nested": [
+                    null,
+                    {
+                      "x": null
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "index": 28,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": {
+                "merge": {
+                  "keep": 1,
+                  "add": {}
+                },
+                "replace": [
+                  {
+                    "n": null
+                  },
+                  null
+                ],
+                "scalar": {
+                  "x": 0
+                },
+                "untouched": {
+                  "n": null
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "rate-limit",
+      "initial": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": []
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 1
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 9
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 5
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 3
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 3
+              }
+            ]
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": []
+            }
+          ]
+        }
+      },
+      "review": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": []
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 1
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 9
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 5
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 3
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 3
+              }
+            ]
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": []
+            }
+          ]
+        }
+      },
+      "tests": {
+        "available": true,
+        "passed": true,
+        "checks": [
+          {
+            "index": 0,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": []
+          },
+          {
+            "index": 1,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 1
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 9
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 5
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              }
+            ]
+          },
+          {
+            "index": 3,
+            "passed": true,
+            "input_unchanged": true,
+            "actual": [
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 3
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": true,
+                "retry_after": 0
+              },
+              {
+                "allowed": false,
+                "retry_after": 3
+              }
+            ]
+          }
+        ],
+        "visible": {
+          "available": true,
+          "passed": true,
+          "checks": [
+            {
+              "index": 0,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": []
+            },
+            {
+              "index": 1,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": []
+            },
+            {
+              "index": 2,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 9
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 6
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 3
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 7
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 6,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 7
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 7
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 7
+                }
+              ]
+            },
+            {
+              "index": 7,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 4
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 3
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 2
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 4
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 8,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 9
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 9
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 9,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 10,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 3
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 11,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 5
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 6
+                }
+              ]
+            },
+            {
+              "index": 12,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                }
+              ]
+            },
+            {
+              "index": 13,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 2
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 2
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 2
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 2
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 2
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 2
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 2
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 14,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 99999999999999999999
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 15,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 16,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 5
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 4
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 17,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 5
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            },
+            {
+              "index": 18,
+              "passed": true,
+              "input_unchanged": true,
+              "actual": [
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": false,
+                  "retry_after": 1
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                },
+                {
+                  "allowed": true,
+                  "retry_after": 0
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

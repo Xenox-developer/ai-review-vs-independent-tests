@@ -1,0 +1,1261 @@
+{
+  "tests": [
+    {
+      "input": {
+        "capacity": 1,
+        "ttl": 0,
+        "events": []
+      },
+      "expect": []
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 5,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "put",
+            "t": 2,
+            "key": "c",
+            "value": 3
+          }
+        ]
+      },
+      "expect": []
+    },
+    {
+      "input": {
+        "capacity": 1,
+        "ttl": 10,
+        "events": [
+          {
+            "op": "get",
+            "t": 0,
+            "key": "missing"
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 7
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 9,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 10,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 11,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        null,
+        7,
+        7,
+        null,
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 0,
+        "events": [
+          {
+            "op": "put",
+            "t": 4,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 4,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "b"
+          },
+          {
+            "op": "put",
+            "t": 5,
+            "key": "a",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 5,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 100,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 3,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        1,
+        null,
+        1,
+        3
+      ]
+    },
+    {
+      "input": {
+        "capacity": 1,
+        "ttl": 5,
+        "events": [
+          {
+            "op": "put",
+            "t": 10,
+            "key": "a",
+            "value": "v"
+          },
+          {
+            "op": "get",
+            "t": 13,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 14,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 15,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 16,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        "v",
+        "v",
+        null,
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 100,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "put",
+            "t": 2,
+            "key": "a",
+            "value": 9
+          },
+          {
+            "op": "put",
+            "t": 3,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        9,
+        null,
+        3
+      ]
+    },
+    {
+      "input": {
+        "capacity": 1,
+        "ttl": 5,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": "old"
+          },
+          {
+            "op": "put",
+            "t": 4,
+            "key": "a",
+            "value": "new"
+          },
+          {
+            "op": "get",
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 8,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 9,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        "new",
+        "new",
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 5,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "put",
+            "t": 5,
+            "key": "a",
+            "value": 8
+          },
+          {
+            "op": "get",
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 5,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 6,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 9,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 10,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        8,
+        2,
+        null,
+        8,
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 5,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 2,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 3,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 5,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 5,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 5,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 5,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        1,
+        2,
+        null,
+        3
+      ]
+    },
+    {
+      "input": {
+        "capacity": 3,
+        "ttl": 4,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 4,
+            "key": "d",
+            "value": 4
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "c"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "d"
+          }
+        ]
+      },
+      "expect": [
+        1,
+        null,
+        null,
+        null,
+        4
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 100,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "absent"
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        null,
+        null,
+        2,
+        3
+      ]
+    },
+    {
+      "input": {
+        "capacity": 1,
+        "ttl": 100,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        null,
+        null,
+        3
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 100,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": null
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 3,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        null,
+        null,
+        null,
+        3
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 100,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": false
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "b",
+            "value": true
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 3,
+            "key": "c",
+            "value": 0
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        false,
+        null,
+        false,
+        0
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 100,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": ""
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "b",
+            "value": 0
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 3,
+            "key": "c",
+            "value": -2.5
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        0,
+        "",
+        null,
+        "",
+        -2.5
+      ]
+    },
+    {
+      "input": {
+        "capacity": 3,
+        "ttl": 2,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "",
+            "value": 0
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "__proto__",
+            "value": "x"
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "雪",
+            "value": true
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": ""
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": "__proto__"
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": "雪"
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": ""
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "__proto__"
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "雪"
+          }
+        ]
+      },
+      "expect": [
+        0,
+        "x",
+        true,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 3,
+        "events": [
+          {
+            "op": "put",
+            "t": -5,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "get",
+            "t": -3,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": -2,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": -2,
+            "key": "a",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        1,
+        null,
+        2,
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 1,
+        "ttl": 2,
+        "events": [
+          {
+            "op": "put",
+            "t": 100000000000000000000,
+            "key": "a",
+            "value": 42
+          },
+          {
+            "op": "get",
+            "t": 100000000000000000001,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 100000000000000000002,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        42,
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 1,
+        "events": [
+          {
+            "op": "put",
+            "t": 7,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 7,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 7,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 7,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 7,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 7,
+            "key": "c"
+          },
+          {
+            "op": "get",
+            "t": 7,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 8,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 8,
+            "key": "c"
+          }
+        ]
+      },
+      "expect": [
+        1,
+        null,
+        3,
+        1,
+        null,
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 1,
+        "ttl": 1,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "b",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "b"
+          }
+        ]
+      },
+      "expect": [
+        2,
+        null,
+        3,
+        null
+      ]
+    },
+    {
+      "input": {
+        "capacity": 3,
+        "ttl": 100,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "put",
+            "t": 0,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": "missing"
+          },
+          {
+            "op": "put",
+            "t": 2,
+            "key": "d",
+            "value": 4
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "c"
+          },
+          {
+            "op": "put",
+            "t": 3,
+            "key": "e",
+            "value": 5
+          },
+          {
+            "op": "get",
+            "t": 3,
+            "key": "a"
+          },
+          {
+            "op": "get",
+            "t": 3,
+            "key": "d"
+          },
+          {
+            "op": "get",
+            "t": 3,
+            "key": "c"
+          },
+          {
+            "op": "get",
+            "t": 3,
+            "key": "e"
+          }
+        ]
+      },
+      "expect": [
+        1,
+        1,
+        null,
+        null,
+        3,
+        null,
+        4,
+        3,
+        5
+      ]
+    },
+    {
+      "input": {
+        "capacity": 1,
+        "ttl": 10,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": true
+          },
+          {
+            "op": "get",
+            "t": 0,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "get",
+            "t": 1,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 2,
+            "key": "a",
+            "value": false
+          },
+          {
+            "op": "get",
+            "t": 2,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 3,
+            "key": "a",
+            "value": 0
+          },
+          {
+            "op": "get",
+            "t": 3,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 4,
+            "key": "a",
+            "value": null
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 5,
+            "key": "a",
+            "value": "null"
+          },
+          {
+            "op": "get",
+            "t": 5,
+            "key": "a"
+          }
+        ]
+      },
+      "expect": [
+        true,
+        1,
+        false,
+        0,
+        null,
+        "null"
+      ]
+    },
+    {
+      "input": {
+        "capacity": 2,
+        "ttl": 3,
+        "events": [
+          {
+            "op": "put",
+            "t": 0,
+            "key": "a",
+            "value": 1
+          },
+          {
+            "op": "put",
+            "t": 1,
+            "key": "b",
+            "value": 2
+          },
+          {
+            "op": "get",
+            "t": 3,
+            "key": "a"
+          },
+          {
+            "op": "put",
+            "t": 3,
+            "key": "c",
+            "value": 3
+          },
+          {
+            "op": "get",
+            "t": 3,
+            "key": "b"
+          },
+          {
+            "op": "get",
+            "t": 3,
+            "key": "c"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "b"
+          },
+          {
+            "op": "put",
+            "t": 4,
+            "key": "d",
+            "value": 4
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "c"
+          },
+          {
+            "op": "get",
+            "t": 4,
+            "key": "d"
+          },
+          {
+            "op": "get",
+            "t": 6,
+            "key": "c"
+          },
+          {
+            "op": "get",
+            "t": 7,
+            "key": "d"
+          }
+        ]
+      },
+      "expect": [
+        null,
+        2,
+        3,
+        null,
+        3,
+        4,
+        null,
+        null
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "invariant_cli": "invariant 0.3.1",
+  "invariant_source_commit": "ca2a1991a76178c6737c34f737a9ef0dfb4a2bd3",
+  "invariant_source_dirty": false,
+  "invariant_changed_paths_count": 0,
+  "host_python": "3.12.1 (v3.12.1:2305ca5144, Dec  7 2023, 17:23:38) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "platform": "macOS-15.6.1-arm64-arm-64bit",
+  "heldout_python": "3.12.15",
+  "heldout_architecture": "arm64",
+  "plotting_matplotlib": "3.10.3",
+  "host_codex": "codex-cli 0.167.0-alpha.3.2",
+  "native_codex_version": "recorded per measured attempt in stage receipts"
+}

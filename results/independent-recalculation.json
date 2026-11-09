@@ -1,0 +1,32 @@
+{
+  "passed": false,
+  "image": "sha256:34386ef0cb081344d7ec1c103ba398e6e9f64e9ab3a1509accc92a4e24a07258",
+  "same_image_as_original": true,
+  "tasks": 8,
+  "source_snapshots": 24,
+  "counts": {
+    "initial": 8,
+    "review": 8,
+    "tests": 8
+  },
+  "primary_counts": {
+    "initial": 7,
+    "review": 7,
+    "tests": 8
+  },
+  "differences": [
+    {
+      "task": "safe-path",
+      "condition": "initial",
+      "primary_passed": false,
+      "independent_assertRaises_passed": true
+    },
+    {
+      "task": "safe-path",
+      "condition": "review",
+      "primary_passed": false,
+      "independent_assertRaises_passed": true
+    }
+  ],
+  "exception_semantics": "assertRaises(ValueError) accepts subclasses; frozen primary matches exact class name"
+}

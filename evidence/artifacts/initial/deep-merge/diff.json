@@ -1,0 +1,62 @@
+{
+  "study_id": "study-df8d9e868ee6422b80adc1ee788d7c24",
+  "trial_id": "trial-42571bed7fc63b3e1c5a199b03456f59",
+  "attempt_id": "attempt-64b75564d1b96ef0466baebb0bc0cc4c",
+  "baseline_id": "baseline-724458e279bbdf20ad974f96518e41cbda3af5a8db3d2181689dfe4dfda6abd4",
+  "result_digest": "941fdcdcaa86e52c8150ee1173d3d437a66e2098d0c7fa547e79c5469a15bf94",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 149,
+        "mode": 384,
+        "sha256": "d178ca47d42645139c2e0486a2c07693fa14220555206859b352c8e7a854ed03"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,15 @@\n+[\n+  {\n+    \"expect\": {\n+      \"x\": 2\n+    },\n+    \"input\": {\n+      \"base\": {\n+        \"x\": 1\n+      },\n+      \"patch\": {\n+        \"x\": 2\n+      }\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 550,
+        "mode": 384,
+        "sha256": "8ce98063fc9a8ffeebf2349226ee9313e1edb0884b49f7ef424618fb076a59ab"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,18 @@\n+\"\"\"Recursive JSON object merge without modifying either input.\"\"\"\n+\n+from copy import deepcopy\n+\n+\n+def solve(data):\n+    def merge(base, patch):\n+        result = deepcopy(base) if isinstance(base, dict) else {}\n+        for key, value in patch.items():\n+            if value is None:\n+                result.pop(key, None)\n+            elif isinstance(value, dict):\n+                result[key] = merge(result.get(key), value)\n+            else:\n+                result[key] = deepcopy(value)\n+        return result\n+\n+    return merge(data['base'], data['patch'])\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 465,
+        "mode": 384,
+        "sha256": "ae568548c4eece00e3340305c82bc848109358712d47ec2c7e290b665f221880"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,6 @@\n+Implement solve(data), merging patch into base (both JSON objects). Object-valued\n+patches recursively merge into the corresponding object or into {} if the old\n+value is not an object. A null member in a patch object deletes that key if\n+present. Arrays replace in full, including null array elements; all other values\n+replace. Empty patch objects preserve an existing object, but replace a scalar\n+or array with {}. Return merged object. Do not mutate base or patch.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:f7b8f0b00465ec55bb6378de883a21fdd9dc3354bbd33d9ecec6c9c4a9ac5ba5",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

@@ -1,0 +1,76 @@
+{
+  "study_id": "study-766e4325812640fdb7cea40f8d041920",
+  "trial_id": "trial-361b02ab5db31f4246b479250f3c4042",
+  "attempt_id": "attempt-357cb666af76121e1c9fe801d3389a03",
+  "baseline_id": "baseline-64c9ac65d17484c8f49a91f9f1d65cea9ea2cfe77401a9dc1b342dd4b4cc9e14",
+  "result_digest": "d1428f2117ac9b5a41c8f98ee429cf9bb6c329804ecabef97edd9c294dfa61a4",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 44,
+        "mode": 420,
+        "sha256": "24a198eb9b4113e869a70abd32011439bdd6a8827028701ebf26a7bfc337a02d"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/feedback.json\n+++ after/feedback.json\n@@ -0,0 +1 @@\n+{\"assessment\":\"likely_correct\",\"issues\":[]}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 159,
+        "mode": 384,
+        "sha256": "36850e32ba91c8edc0c39b4ffea01cc786ffb5de0d25e9ece81b824f630fc5b5"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,15 @@\n+[\n+  {\n+    \"expect\": [\n+      0,\n+      2,\n+      6\n+    ],\n+    \"input\": {\n+      \"base\": 2,\n+      \"budget\": 9,\n+      \"cap\": 10,\n+      \"max_attempts\": 3\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 1010,
+        "mode": 384,
+        "sha256": "e4f418967fb986d1eb4acfe2c6e7885e78091d9ac03ccbfcf02e892c16c794b8"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,29 @@\n+def solve(data):\n+    \"\"\"Return attempt timestamps for a capped exponential retry schedule.\"\"\"\n+    if not isinstance(data, dict):\n+        raise ValueError('data must contain the retry fields')\n+\n+    values = {}\n+    for name in ('max_attempts', 'base', 'cap', 'budget'):\n+        if name not in data:\n+            raise ValueError('missing field: ' + name)\n+        value = data[name]\n+        if isinstance(value, bool) or not isinstance(value, int) or value < 0:\n+            raise ValueError(name + ' must be a nonnegative integer')\n+        values[name] = value\n+\n+    attempts = values['max_attempts']\n+    if attempts > 100:\n+        raise ValueError('max_attempts must be at most 100')\n+    if attempts == 0:\n+        return []\n+\n+    times = [0]\n+    delay = min(values['base'], values['cap'])\n+    for _ in range(attempts - 1):\n+        timestamp = times[-1] + delay\n+        if timestamp > values['budget']:\n+            break\n+        times.append(timestamp)\n+        delay = min(delay * 2, values['cap'])\n+    return times\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 445,
+        "mode": 384,
+        "sha256": "f61a978e32a61001919ea042653dbdb0def158bc8fc516fe0b6cc930be7243fb"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,6 @@\n+Implement solve(data) returning the integer timestamps of attempts, starting at 0.\n+max_attempts counts the first attempt. Delay before retry k (k starts at 0) is\n+min(base*2**k, cap); cumulative attempt time must be <= budget (inclusive).\n+max_attempts is an integer 0..100, base/cap/budget are nonnegative integers;\n+bool is invalid for all four. Invalid fields raise ValueError. base > cap is\n+allowed. Zero delay is allowed. Do not mutate input.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:8a5ad049663b43312a424e09d4a034e792047543ba5849d276ff665a912ef19b",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

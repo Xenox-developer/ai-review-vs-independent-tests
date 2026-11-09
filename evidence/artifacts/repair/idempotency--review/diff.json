@@ -1,0 +1,76 @@
+{
+  "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+  "trial_id": "trial-050d106fdd2d0a457888878e110569d7",
+  "attempt_id": "attempt-46397e34241cf7611b6aefc359c3bd07",
+  "baseline_id": "baseline-db9b2797ea394b7461d5c1805d81965948ac8afc38686315db18ee00f8f0c2d8",
+  "result_digest": "515e0ce170abdbcea277c53740e6fe49939d17e9ff1d8743cb4ecd5446500dfe",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 53,
+        "mode": 384,
+        "sha256": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/feedback.json\n+++ after/feedback.json\n@@ -0,0 +1,4 @@\n+{\n+  \"assessment\": \"likely_correct\",\n+  \"issues\": []\n+}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 118,
+        "mode": 384,
+        "sha256": "99a55f6fabad911abd07dd0cc2c6ddbabbc344fc87ab273ed36968f9a9867546"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,11 @@\n+[\n+  {\n+    \"expect\": {\n+      \"applied\": 0,\n+      \"statuses\": []\n+    },\n+    \"input\": {\n+      \"requests\": []\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 1352,
+        "mode": 384,
+        "sha256": "cf2be583b7ecd90ec5ce3199e206080308eef8e2e8250e67763d6a9034c647b4"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,35 @@\n+def _json_equal(left, right):\n+    \"\"\"Compare JSON values, preserving the distinction between bool and number.\"\"\"\n+    if isinstance(left, bool) or isinstance(right, bool):\n+        return type(left) is type(right) and left == right\n+    if isinstance(left, dict):\n+        return (isinstance(right, dict)\n+                and left.keys() == right.keys()\n+                and all(_json_equal(value, right[key])\n+                        for key, value in left.items()))\n+    if isinstance(left, list):\n+        return (isinstance(right, list)\n+                and len(left) == len(right)\n+                and all(_json_equal(a, b) for a, b in zip(left, right)))\n+    if isinstance(left, (int, float)):\n+        return isinstance(right, (int, float)) and left == right\n+    return type(left) is type(right) and left == right\n+\n+\n+def solve(data):\n+    seen = {}\n+    statuses = []\n+    applied = 0\n+    for request in data['requests']:\n+        key = request['key']\n+        payload = request['payload']\n+        if key in seen:\n+            statuses.append('duplicate' if _json_equal(seen[key], payload)\n+                            else 'conflict')\n+        elif request['ok']:\n+            seen[key] = payload\n+            statuses.append('applied')\n+            applied += 1\n+        else:\n+            statuses.append('failed')\n+    return {'statuses': statuses, 'applied': applied}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 562,
+        "mode": 384,
+        "sha256": "bfd6dcf510c5fb59b7257df3361c4108146a479535a4a319f50d7b4aab12717e"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,7 @@\n+Implement solve(data), processing requests {key, payload, ok}. payload is any JSON\n+value. Equal JSON objects ignore key order; arrays preserve order; booleans are\n+different from numbers; numeric 1 equals 1.0. Successful requests are persisted\n+by key. A later equal payload returns 'duplicate' even if ok is false. A later\n+different payload returns 'conflict'. A new key with ok=false returns 'failed'\n+and stores nothing; with ok=true returns 'applied' and stores payload. Return\n+{statuses: [...], applied: count}. Failed requests must be retryable. No mutation.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:c0dc1a1ac42b635126e9c9eabc4e76fde41e1eadb8968bd65e16ce4c0960e602",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

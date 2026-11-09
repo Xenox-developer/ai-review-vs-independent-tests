@@ -1,0 +1,76 @@
+{
+  "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+  "trial_id": "trial-f1dd79df5b727b0914cf878e9664829d",
+  "attempt_id": "attempt-65a296c8fd6375201bd9cdadb2789d9d",
+  "baseline_id": "baseline-db9b2797ea394b7461d5c1805d81965948ac8afc38686315db18ee00f8f0c2d8",
+  "result_digest": "c84b6579a53d9b3f70f2bf604ea4b0e0d1a00571c1e7738b2b35eeccf358cb61",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 8151,
+        "mode": 384,
+        "sha256": "03292d2ea116a42d18b850217e10f47145d72e74a96d7e226f6500c9e16fda9c"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/feedback.json\n+++ after/feedback.json\n@@ -0,0 +1,413 @@\n+{\n+  \"tests\": [\n+    {\n+      \"input\": {\n+        \"path\": \"docs/a.txt\"\n+      },\n+      \"expect\": \"docs/a.txt\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"./a//./b///\"\n+      },\n+      \"expect\": \"a/b\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/.\"\n+      },\n+      \"expect\": \"a\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \".hidden/a..b/..hidden/...\"\n+      },\n+      \"expect\": \".hidden/a..b/..hidden/...\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%2E/a/%2e/b%2Fc/\"\n+      },\n+      \"expect\": \"a/b/c\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a+b/%2B/%20\"\n+      },\n+      \"expect\": \"a+b/+/ \"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%252e%252e\"\n+      },\n+      \"expect\": \"%2e%2e\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%252F/%255C/%2500\"\n+      },\n+      \"expect\": \"%2F/%5C/%00\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"x%/y%2/z%GG\"\n+      },\n+      \"expect\": \"x%/y%2/z%GG\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"caf%C3%A9/%E2%98%83/%F0%9F%98%80\"\n+      },\n+      \"expect\": \"café/☃/😀\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \" \\t/\\n \"\n+      },\n+      \"expect\": \" \\t/\\n \"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a%2f%2F.%2f%2Fb\"\n+      },\n+      \"expect\": \"a/b\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/%2E%2E%2E/b\"\n+      },\n+      \"expect\": \"a/.../b\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%EF%BB%BFfile\"\n+      },\n+      \"expect\": \"﻿file\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"folder/file?x=1#part:two\"\n+      },\n+      \"expect\": \"folder/file?x=1#part:two\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"雪/é\"\n+      },\n+      \"expect\": \"雪/é\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \".\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"././/%2e/\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"/a\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%2fa\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"//\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"..\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/%2e%2E/b\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/..\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a\\\\b\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a%5cb\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a\\u0000b\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a%00b\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/%FF\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%C3%28\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%ED%A0%80\"\n+      },\n+      \"error\": \"ValueError\"\n+    }\n+  ],\n+  \"submitted\": 32,\n+  \"rejected\": 0,\n+  \"format_valid\": true,\n+  \"initial_candidate_execution\": {\n+    \"available\": true,\n+    \"passed\": false,\n+    \"checks\": [\n+      {\n+        \"index\": 0,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"docs/a.txt\"\n+      },\n+      {\n+        \"index\": 1,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"a/b\"\n+      },\n+      {\n+        \"index\": 2,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"a\"\n+      },\n+      {\n+        \"index\": 3,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \".hidden/a..b/..hidden/...\"\n+      },\n+      {\n+        \"index\": 4,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"a/b/c\"\n+      },\n+      {\n+        \"index\": 5,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"a+b/+/ \"\n+      },\n+      {\n+        \"index\": 6,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"%2e%2e\"\n+      },\n+      {\n+        \"index\": 7,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"%2F/%5C/%00\"\n+      },\n+      {\n+        \"index\": 8,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"x%/y%2/z%GG\"\n+      },\n+      {\n+        \"index\": 9,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"café/☃/😀\"\n+      },\n+      {\n+        \"index\": 10,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \" \\t/\\n \"\n+      },\n+      {\n+        \"index\": 11,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"a/b\"\n+      },\n+      {\n+        \"index\": 12,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"a/.../b\"\n+      },\n+      {\n+        \"index\": 13,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"﻿file\"\n+      },\n+      {\n+        \"index\": 14,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"folder/file?x=1#part:two\"\n+      },\n+      {\n+        \"index\": 15,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"actual\": \"雪/é\"\n+      },\n+      {\n+        \"index\": 16,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"invalid relative path\"\n+      },\n+      {\n+        \"index\": 17,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"empty relative path\"\n+      },\n+      {\n+        \"index\": 18,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"empty relative path\"\n+      },\n+      {\n+        \"index\": 19,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"invalid relative path\"\n+      },\n+      {\n+        \"index\": 20,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"invalid relative path\"\n+      },\n+      {\n+        \"index\": 21,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"invalid relative path\"\n+      },\n+      {\n+        \"index\": 22,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"parent component is not allowed\"\n+      },\n+      {\n+        \"index\": 23,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"parent component is not allowed\"\n+      },\n+      {\n+        \"index\": 24,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"parent component is not allowed\"\n+      },\n+      {\n+        \"index\": 25,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"invalid relative path\"\n+      },\n+      {\n+        \"index\": 26,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"invalid relative path\"\n+      },\n+      {\n+        \"index\": 27,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"invalid relative path\"\n+      },\n+      {\n+        \"index\": 28,\n+        \"passed\": true,\n+        \"input_unchanged\": true,\n+        \"error\": \"ValueError\",\n+        \"message\": \"invalid relative path\"\n+      },\n+      {\n+        \"index\": 29,\n+        \"passed\": false,\n+        \"input_unchanged\": true,\n+        \"error\": \"UnicodeDecodeError\",\n+        \"message\": \"'utf-8' codec can't decode byte 0xff in position 2: invalid start byte\"\n+      },\n+      {\n+        \"index\": 30,\n+        \"passed\": false,\n+        \"input_unchanged\": true,\n+        \"error\": \"UnicodeDecodeError\",\n+        \"message\": \"'utf-8' codec can't decode byte 0xc3 in position 0: invalid continuation byte\"\n+      },\n+      {\n+        \"index\": 31,\n+        \"passed\": false,\n+        \"input_unchanged\": true,\n+        \"error\": \"UnicodeDecodeError\",\n+        \"message\": \"'utf-8' codec can't decode byte 0xed in position 0: invalid continuation byte\"\n+      }\n+    ]\n+  }\n+}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 88,
+        "mode": 384,
+        "sha256": "81a1454dfb95fde8324b7ce5fdf06fa5847234db1202a9b64e224382f14745b3"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,8 @@\n+[\n+  {\n+    \"expect\": \"docs/a.txt\",\n+    \"input\": {\n+      \"path\": \"docs/a.txt\"\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 642,
+        "mode": 384,
+        "sha256": "45cc20c5c6e0318c1399782b61671a982f3520b3570ecc0ba481f9a6630ef442"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,19 @@\n+from urllib.parse import unquote\n+\n+\n+def solve(data):\n+    try:\n+        path = unquote(data['path'], encoding='utf-8', errors='strict')\n+    except UnicodeDecodeError as error:\n+        raise ValueError('invalid UTF-8 in path') from error\n+    if not path or path.startswith('/') or '\\\\' in path or '\\x00' in path:\n+        raise ValueError('invalid relative path')\n+\n+    components = path.split('/')\n+    if '..' in components:\n+        raise ValueError('parent component is not allowed')\n+\n+    result = '/'.join(part for part in components if part not in ('', '.'))\n+    if not result:\n+        raise ValueError('empty relative path')\n+    return result\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 627,
+        "mode": 384,
+        "sha256": "d451ef4f911204f95e2535091ce105afd903d99d01cd15cd3b2e85d265bb3c05"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,8 @@\n+Implement solve(data) returning a canonical relative POSIX path. data.path is a\n+URL-encoded string: percent-decode EXACTLY ONCE with urllib.parse.unquote using\n+strict UTF-8 errors. Reject by raising ValueError: empty result; leading slash;\n+backslash; NUL; any decoded component exactly '..'. Remove empty components\n+and '.' components, joining with '/'; reject if nothing remains. Dots inside\n+ordinary names are allowed. A percent sequence remaining after one decode is\n+literal (do not decode recursively). '+' stays '+'. Do not access filesystem\n+or mutate input. No requirement to reject malformed percent escapes themselves.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:5689d4bedec9e926ffc3ee7960041428e52449d1ac94b19efa860de0d24d05f9",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

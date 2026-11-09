@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "started_at": 1794235643.0169878,
+  "planned_sessions": 40,
+  "global_wall_limit": null,
+  "authorization": "User removed artificial generation and overall duration caps on 2026-11-09; zero additional spending remains in force.",
+  "invariant_version": "invariant 0.3.1",
+  "tested_commit": "15ab1282327b92ccd62750ea4fbd15de263b3dfa",
+  "finished_at": 1794237793.844488,
+  "wall_seconds": 2150.827500104904
+}

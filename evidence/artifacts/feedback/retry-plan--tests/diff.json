@@ -1,0 +1,76 @@
+{
+  "study_id": "study-766e4325812640fdb7cea40f8d041920",
+  "trial_id": "trial-ace38c8419ba128b14bf069b28a021e5",
+  "attempt_id": "attempt-af0355984c0b664d05de3ce2029ce7b6",
+  "baseline_id": "baseline-64c9ac65d17484c8f49a91f9f1d65cea9ea2cfe77401a9dc1b342dd4b4cc9e14",
+  "result_digest": "5028b6c6664b2ec2540d5cf921391f2ef40660ea0f1779a8e1831d7aacc8863c",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 6569,
+        "mode": 420,
+        "sha256": "6f74ec8fc97acf33f3cc2f4f868f5b976495a3ec8eb2eae870f75b8e7ac7c71e"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/feedback.json\n+++ after/feedback.json\n@@ -0,0 +1,450 @@\n+{\n+  \"tests\": [\n+    {\n+      \"input\": {\n+        \"max_attempts\": 0,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"expect\": []\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 1,\n+        \"base\": 100,\n+        \"cap\": 1,\n+        \"budget\": 0\n+      },\n+      \"expect\": [\n+        0\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 100,\n+        \"base\": 0,\n+        \"cap\": 0,\n+        \"budget\": 0\n+      },\n+      \"expect\": [\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 5,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 2\n+      },\n+      \"expect\": [\n+        0,\n+        2\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 10,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 24\n+      },\n+      \"expect\": [\n+        0,\n+        2,\n+        6,\n+        14,\n+        24\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 10,\n+        \"base\": 3,\n+        \"cap\": 5,\n+        \"budget\": 23\n+      },\n+      \"expect\": [\n+        0,\n+        3,\n+        8,\n+        13,\n+        18,\n+        23\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 8,\n+        \"base\": 9,\n+        \"cap\": 4,\n+        \"budget\": 12\n+      },\n+      \"expect\": [\n+        0,\n+        4,\n+        8,\n+        12\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 5,\n+        \"base\": 5,\n+        \"cap\": 0,\n+        \"budget\": 0\n+      },\n+      \"expect\": [\n+        0,\n+        0,\n+        0,\n+        0,\n+        0\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 5,\n+        \"base\": 1,\n+        \"cap\": 10,\n+        \"budget\": 0\n+      },\n+      \"expect\": [\n+        0\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 10,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 13\n+      },\n+      \"expect\": [\n+        0,\n+        2,\n+        6\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 6,\n+        \"base\": 0,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"expect\": [\n+        0,\n+        0,\n+        0,\n+        0,\n+        0,\n+        0\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 2,\n+        \"base\": 3,\n+        \"cap\": 100,\n+        \"budget\": 100\n+      },\n+      \"expect\": [\n+        0,\n+        3\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 4,\n+        \"base\": 9007199254740993,\n+        \"cap\": 18014398509481986,\n+        \"budget\": 27021597764222979\n+      },\n+      \"expect\": [\n+        0,\n+        9007199254740993,\n+        27021597764222979\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 7,\n+        \"base\": 1,\n+        \"cap\": 100,\n+        \"budget\": 1000\n+      },\n+      \"expect\": [\n+        0,\n+        1,\n+        3,\n+        7,\n+        15,\n+        31,\n+        63\n+      ]\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": true,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": true,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": 2,\n+        \"cap\": false,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": false\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": -1,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 101,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": -1,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": 2,\n+        \"cap\": -1,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": -1\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3.0,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": 2.0,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": 2,\n+        \"cap\": 10.0,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 9.0\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": null,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": null,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": 2,\n+        \"cap\": null,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": 3,\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": null\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"max_attempts\": \"3\",\n+        \"base\": 2,\n+        \"cap\": 10,\n+        \"budget\": 9\n+      },\n+      \"error\": \"ValueError\"\n+    }\n+  ]\n+}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 159,
+        "mode": 384,
+        "sha256": "36850e32ba91c8edc0c39b4ffea01cc786ffb5de0d25e9ece81b824f630fc5b5"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,15 @@\n+[\n+  {\n+    \"expect\": [\n+      0,\n+      2,\n+      6\n+    ],\n+    \"input\": {\n+      \"base\": 2,\n+      \"budget\": 9,\n+      \"cap\": 10,\n+      \"max_attempts\": 3\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 202,
+        "mode": 384,
+        "sha256": "8d80e0d8bb875510f85d46f41d82af46e5a1e62382d7b1ad7cc3e4d25e351ad0"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,7 @@\n+def solve(data):\n+    times = [0]\n+    for k in range(data['max_attempts'] - 1):\n+        t = times[-1] + data['base'] * 2**k\n+        if t >= data['budget']: break\n+        times.append(t)\n+    return times\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 445,
+        "mode": 384,
+        "sha256": "f61a978e32a61001919ea042653dbdb0def158bc8fc516fe0b6cc930be7243fb"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,6 @@\n+Implement solve(data) returning the integer timestamps of attempts, starting at 0.\n+max_attempts counts the first attempt. Delay before retry k (k starts at 0) is\n+min(base*2**k, cap); cumulative attempt time must be <= budget (inclusive).\n+max_attempts is an integer 0..100, base/cap/budget are nonnegative integers;\n+bool is invalid for all four. Invalid fields raise ValueError. base > cap is\n+allowed. Zero delay is allowed. Do not mutate input.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:0688cdbcee3dd51bed63f034deb5694b08db743a96ae4face09b64bb22cb0774",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

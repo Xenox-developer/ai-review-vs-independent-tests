@@ -1,0 +1,76 @@
+{
+  "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+  "trial_id": "trial-570a1deebdeeba6fae962aa62307c56c",
+  "attempt_id": "attempt-f4b9b9a904fc167797dbf128cf64008a",
+  "baseline_id": "baseline-db9b2797ea394b7461d5c1805d81965948ac8afc38686315db18ee00f8f0c2d8",
+  "result_digest": "8efaf1a8d2e7caee173ca0c5d93dac7e9984045d91b692111a99b1f6c5000c96",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 53,
+        "mode": 384,
+        "sha256": "322d741b28d826dcca97887cede5dc2d0fca21ce4f83fe8a8d58cd363daa4b38"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/feedback.json\n+++ after/feedback.json\n@@ -0,0 +1,4 @@\n+{\n+  \"assessment\": \"likely_correct\",\n+  \"issues\": []\n+}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 88,
+        "mode": 384,
+        "sha256": "81a1454dfb95fde8324b7ce5fdf06fa5847234db1202a9b64e224382f14745b3"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,8 @@\n+[\n+  {\n+    \"expect\": \"docs/a.txt\",\n+    \"input\": {\n+      \"path\": \"docs/a.txt\"\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 528,
+        "mode": 384,
+        "sha256": "94f4f5ee5410be5a732f4600c2b3a617ab54ed8c44381a715c376d2072b1d9a0"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,16 @@\n+from urllib.parse import unquote\n+\n+\n+def solve(data):\n+    path = unquote(data['path'], encoding='utf-8', errors='strict')\n+    if not path or path.startswith('/') or '\\\\' in path or '\\x00' in path:\n+        raise ValueError('invalid relative path')\n+\n+    components = path.split('/')\n+    if '..' in components:\n+        raise ValueError('parent component is not allowed')\n+\n+    result = '/'.join(part for part in components if part not in ('', '.'))\n+    if not result:\n+        raise ValueError('empty relative path')\n+    return result\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 627,
+        "mode": 384,
+        "sha256": "d451ef4f911204f95e2535091ce105afd903d99d01cd15cd3b2e85d265bb3c05"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,8 @@\n+Implement solve(data) returning a canonical relative POSIX path. data.path is a\n+URL-encoded string: percent-decode EXACTLY ONCE with urllib.parse.unquote using\n+strict UTF-8 errors. Reject by raising ValueError: empty result; leading slash;\n+backslash; NUL; any decoded component exactly '..'. Remove empty components\n+and '.' components, joining with '/'; reject if nothing remains. Dots inside\n+ordinary names are allowed. A percent sequence remaining after one decode is\n+literal (do not decode recursively). '+' stays '+'. Do not access filesystem\n+or mutate input. No requirement to reject malformed percent escapes themselves.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:b8d42dcf5de59988accee0ceb81028f6943954944f57a912e8f9026254a48522",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

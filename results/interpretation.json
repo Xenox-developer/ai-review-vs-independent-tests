@@ -1,0 +1,17 @@
+{
+  "status": "completed_diagnostic",
+  "claim": "No demonstrated advantage; apparent exact-class gain is a scoring artifact.",
+  "primary_exact_class": {
+    "initial": 7,
+    "review": 7,
+    "tests": 8
+  },
+  "subclass_accepting_sensitivity": {
+    "initial": 8,
+    "review": 8,
+    "tests": 8
+  },
+  "altered_original_measurements": false,
+  "new_model_calls_for_sensitivity": 0,
+  "image_compares_both_reports": true
+}

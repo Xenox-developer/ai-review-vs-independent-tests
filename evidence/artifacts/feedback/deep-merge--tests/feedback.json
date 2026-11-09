@@ -1,0 +1,32 @@
+{
+  "tests": [
+    {"input":{"base":{},"patch":{}},"expect":{}},
+    {"input":{"base":{"a":1,"b":{"c":[1,null,3]},"n":null},"patch":{}},"expect":{"a":1,"b":{"c":[1,null,3]},"n":null}},
+    {"input":{"base":{"a":1,"b":2},"patch":{"a":null}},"expect":{"b":2}},
+    {"input":{"base":{},"patch":{"missing":null}},"expect":{}},
+    {"input":{"base":{"a":null,"b":false,"c":0,"d":""},"patch":{"a":null,"b":null,"c":null,"d":null}},"expect":{}},
+    {"input":{"base":{"a":{"x":1,"y":2},"keep":3},"patch":{"a":{"x":9,"z":4}}},"expect":{"a":{"x":9,"y":2,"z":4},"keep":3}},
+    {"input":{"base":{"a":{"x":1,"y":2}},"patch":{"a":{"x":null,"z":null}}},"expect":{"a":{"y":2}}},
+    {"input":{"base":{"a":{"x":1}},"patch":{"a":{"x":null}}},"expect":{"a":{}}},
+    {"input":{"base":{"a":{"x":1}},"patch":{"a":null}},"expect":{}},
+    {"input":{"base":{"a":{"x":1}},"patch":{"a":{}}},"expect":{"a":{"x":1}}},
+    {"input":{"base":{"a":7,"b":"text","c":true,"d":false,"e":null,"f":[1,2]},"patch":{"a":{},"b":{},"c":{},"d":{},"e":{},"f":{}}},"expect":{"a":{},"b":{},"c":{},"d":{},"e":{},"f":{}}},
+    {"input":{"base":{},"patch":{"a":{}}},"expect":{"a":{}}},
+    {"input":{"base":{"a":5},"patch":{"a":{"gone":null,"x":2}}},"expect":{"a":{"x":2}}},
+    {"input":{"base":{"a":[{"old":1},2]},"patch":{"a":{"0":{"new":3},"gone":null}}},"expect":{"a":{"0":{"new":3}}}},
+    {"input":{"base":{},"patch":{"a":{"gone":null,"b":{"gone":null},"c":[]}}},"expect":{"a":{"b":{},"c":[]}}},
+    {"input":{"base":{"a":[1,2,3]},"patch":{"a":[4]}},"expect":{"a":[4]}},
+    {"input":{"base":{"a":{"x":1},"b":[1],"c":9},"patch":{"a":[],"b":[],"c":[]}},"expect":{"a":[],"b":[],"c":[]}},
+    {"input":{"base":{"a":[1,2]},"patch":{"a":[null,{"x":null,"nested":{"y":null}},[null],false,0]}},"expect":{"a":[null,{"x":null,"nested":{"y":null}},[null],false,0]}},
+    {"input":{"base":{"a":{"x":1},"b":[1],"c":true,"d":5},"patch":{"a":false,"b":0,"c":"","d":true}},"expect":{"a":false,"b":0,"c":"","d":true}},
+    {"input":{"base":{"a":{"b":{"c":1,"d":2},"keep":[1,null]}},"patch":{"a":{"b":{"c":null,"e":{"x":null,"y":3}},"new":false}}},"expect":{"a":{"b":{"d":2,"e":{"y":3}},"keep":[1,null],"new":false}}},
+    {"input":{"base":{"a":{"b":2,"sibling":8}},"patch":{"a":{"b":{"c":{"d":null,"e":7}}}}},"expect":{"a":{"b":{"c":{"e":7}},"sibling":8}}},
+    {"input":{"base":{"":{"":1,"keep":2},"a.b":3,"a":{"b":4},"/x":5},"patch":{"":{"":null,"new":0},"a.b":null,"/x":6}},"expect":{"":{"keep":2,"new":0},"a":{"b":4},"/x":6}},
+    {"input":{"base":{"__proto__":{"keep":1},"constructor":2,"雪":{"é":1}},"patch":{"__proto__":{"new":2},"constructor":{},"雪":{"é":null,"🍀":true}}},"expect":{"__proto__":{"keep":1,"new":2},"constructor":{},"雪":{"🍀":true}}},
+    {"input":{"base":{"a":{"n":null,"deep":{"n":null}},"arr":[null,{"n":null}]},"patch":{"a":{"new":1}}},"expect":{"a":{"n":null,"deep":{"n":null},"new":1},"arr":[null,{"n":null}]}},
+    {"input":{"base":{"a":{"x":1},"b":{"x":2}},"patch":{"a":{"y":3},"b":{"x":null,"y":4}}},"expect":{"a":{"x":1,"y":3},"b":{"y":4}}},
+    {"input":{"base":{"a":{"b":{"c":{"d":1,"keep":2}},"keep":3}},"patch":{"a":{"b":{"c":{"d":9,"new":null}},"missing":{"x":null}}}},"expect":{"a":{"b":{"c":{"d":9,"keep":2}},"keep":3,"missing":{}}}},
+    {"input":{"base":{"number":1,"fraction":2.5,"text":"before","list":[1]},"patch":{"number":-7,"fraction":0.25,"text":"after","list":{"nested":[null,{"x":null}]}}},"expect":{"number":-7,"fraction":0.25,"text":"after","list":{"nested":[null,{"x":null}]}}},
+    {"input":{"base":{"delete":{"x":[1]},"merge":{"keep":1,"remove":2},"replace":[1,2],"scalar":false,"untouched":{"n":null}},"patch":{"delete":null,"merge":{"remove":null,"add":{"drop":null}},"replace":[{"n":null},null],"scalar":{"x":0},"absent":null}},"expect":{"merge":{"keep":1,"add":{}},"replace":[{"n":null},null],"scalar":{"x":0},"untouched":{"n":null}}}
+  ]
+}

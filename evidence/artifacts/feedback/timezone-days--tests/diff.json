@@ -1,0 +1,76 @@
+{
+  "study_id": "study-766e4325812640fdb7cea40f8d041920",
+  "trial_id": "trial-e52ac2e18a401ac13af2c8b6dbe2f533",
+  "attempt_id": "attempt-1e7aeb26c1e2c88ce3b4c4fe14054262",
+  "baseline_id": "baseline-64c9ac65d17484c8f49a91f9f1d65cea9ea2cfe77401a9dc1b342dd4b4cc9e14",
+  "result_digest": "3f34e563cb57f3a8d9300f50ae87a6ef34d821e272a1a60598234a0e6ce33333",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 4352,
+        "mode": 420,
+        "sha256": "077733de9ba36c889cfbd7ddf26669731c5972c7ff200f616c12c20b590cfa8e"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/feedback.json\n+++ after/feedback.json\n@@ -0,0 +1,36 @@\n+{\n+  \"tests\": [\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[]},\"expect\":{}},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-01-01T12:00:00Z\",\"2026-01-01T12:00:00Z\",\"2026-01-02T00:00:00+00:00\"]},\"expect\":{\"2026-01-01\":2,\"2026-01-02\":1}},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-01-01T00:30:00+01:00\",\"2025-12-31T23:30:00-01:00\"]},\"expect\":{\"2025-12-31\":1,\"2026-01-01\":1}},\n+    {\"input\":{\"zone\":\"America/Los_Angeles\",\"events\":[\"2026-01-01T07:59:59.999999Z\",\"2026-01-01T08:00:00Z\"]},\"expect\":{\"2025-12-31\":1,\"2026-01-01\":1}},\n+    {\"input\":{\"zone\":\"Asia/Tokyo\",\"events\":[\"2026-12-31T14:59:59.999999Z\",\"2026-12-31T15:00:00Z\"]},\"expect\":{\"2026-12-31\":1,\"2027-01-01\":1}},\n+    {\"input\":{\"zone\":\"Asia/Kathmandu\",\"events\":[\"2026-06-01T18:14:59Z\",\"2026-06-01T18:15:00Z\"]},\"expect\":{\"2026-06-01\":1,\"2026-06-02\":1}},\n+    {\"input\":{\"zone\":\"Asia/Kolkata\",\"events\":[\"2026-02-28T18:29:59Z\",\"2026-02-28T18:30:00Z\"]},\"expect\":{\"2026-02-28\":1,\"2026-03-01\":1}},\n+    {\"input\":{\"zone\":\"Pacific/Kiritimati\",\"events\":[\"2026-01-01T09:59:59Z\",\"2026-01-01T10:00:00Z\"]},\"expect\":{\"2026-01-01\":1,\"2026-01-02\":1}},\n+    {\"input\":{\"zone\":\"Etc/GMT+12\",\"events\":[\"2026-01-01T11:59:59Z\",\"2026-01-01T12:00:00Z\"]},\"expect\":{\"2025-12-31\":1,\"2026-01-01\":1}},\n+    {\"input\":{\"zone\":\"America/New_York\",\"events\":[\"2026-01-15T04:30:00Z\",\"2026-07-15T04:30:00Z\"]},\"expect\":{\"2026-01-14\":1,\"2026-07-15\":1}},\n+    {\"input\":{\"zone\":\"America/New_York\",\"events\":[\"2026-03-08T04:59:59Z\",\"2026-03-08T05:00:00Z\",\"2026-03-08T06:59:59Z\",\"2026-03-08T07:00:00Z\",\"2026-03-09T04:00:00Z\"]},\"expect\":{\"2026-03-07\":1,\"2026-03-08\":3,\"2026-03-09\":1}},\n+    {\"input\":{\"zone\":\"America/New_York\",\"events\":[\"2026-11-01T03:59:59Z\",\"2026-11-01T04:00:00Z\",\"2026-11-01T05:30:00Z\",\"2026-11-01T06:30:00Z\",\"2026-11-02T04:30:00Z\",\"2026-11-02T05:00:00Z\"]},\"expect\":{\"2026-10-31\":1,\"2026-11-01\":4,\"2026-11-02\":1}},\n+    {\"input\":{\"zone\":\"Europe/London\",\"events\":[\"2026-03-28T23:30:00Z\",\"2026-03-29T23:30:00Z\",\"2026-10-24T23:30:00Z\",\"2026-10-25T23:30:00Z\"]},\"expect\":{\"2026-03-28\":1,\"2026-03-30\":1,\"2026-10-25\":2}},\n+    {\"input\":{\"zone\":\"Australia/Sydney\",\"events\":[\"2026-01-01T13:30:00Z\",\"2026-07-01T13:30:00Z\"]},\"expect\":{\"2026-01-02\":1,\"2026-07-01\":1}},\n+    {\"input\":{\"zone\":\"Australia/Lord_Howe\",\"events\":[\"2026-10-03T13:15:00Z\",\"2026-10-04T13:15:00Z\"]},\"expect\":{\"2026-10-03\":1,\"2026-10-05\":1}},\n+    {\"input\":{\"zone\":\"Pacific/Apia\",\"events\":[\"2011-12-30T09:59:59Z\",\"2011-12-30T10:00:00Z\"]},\"expect\":{\"2011-12-29\":1,\"2011-12-31\":1}},\n+    {\"input\":{\"zone\":\"America/St_Johns\",\"events\":[\"2026-01-01T03:00:00Z\",\"2026-07-01T03:00:00Z\"]},\"expect\":{\"2025-12-31\":1,\"2026-07-01\":1}},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-07-01T00:00:00+05:45\",\"2026-06-30T18:15:00Z\",\"2026-06-30T14:45:00-03:30\"]},\"expect\":{\"2026-06-30\":3}},\n+    {\"input\":{\"zone\":\"Asia/Tokyo\",\"events\":[\"2026-01-01T23:00:00-10:00\",\"2026-01-02T23:00:00+14:00\"]},\"expect\":{\"2026-01-02\":2}},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2024-03-01T00:15:00+01:00\",\"2024-02-29T23:45:00-01:00\"]},\"expect\":{\"2024-02-29\":1,\"2024-03-01\":1}},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"0001-01-01T00:00:00Z\",\"9999-12-31T23:59:59.999999+00:00\"]},\"expect\":{\"0001-01-01\":1,\"9999-12-31\":1}},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-01-01T00:00:00-00:00\",\"2025-12-31T23:59:59.999999Z\",\"2026-01-01T00:00:00.000001+00:00\"]},\"expect\":{\"2026-01-01\":2,\"2025-12-31\":1}},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-01-01T12:00:00\"]},\"error\":\"ValueError\"},\n+    {\"input\":{\"zone\":\"Asia/Tokyo\",\"events\":[\"2026-01-01T00:00:00Z\",\"2026-01-01T12:00:00\"]},\"error\":\"ValueError\"},\n+    {\"input\":{\"zone\":\"America/New_York\",\"events\":[\"2026-11-01T01:30:00\",\"2026-11-01T06:30:00Z\"]},\"error\":\"ValueError\"},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-01-01\"]},\"error\":\"ValueError\"},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-02-29T12:00:00Z\"]},\"error\":\"ValueError\"},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"1900-02-29T00:00:00+00:00\"]},\"error\":\"ValueError\"},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-04-31T00:00:00Z\"]},\"error\":\"ValueError\"},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-01-01T12:00:00Z\",\"2026-13-01T00:00:00Z\"]},\"error\":\"ValueError\"},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2000-02-29T23:59:59Z\",\"2000-03-01T00:00:00+00:00\"]},\"expect\":{\"2000-02-29\":1,\"2000-03-01\":1}},\n+    {\"input\":{\"zone\":\"UTC\",\"events\":[\"2026-06-15T00:10:00+00:30\",\"2026-06-14T23:50:00-00:30\"]},\"expect\":{\"2026-06-14\":1,\"2026-06-15\":1}}\n+  ]\n+}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 156,
+        "mode": 384,
+        "sha256": "7f412635d96c057c3bd0523ec7207b4f3109f28eb996965e56041a906689ed3f"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,13 @@\n+[\n+  {\n+    \"expect\": {\n+      \"2026-01-01\": 1\n+    },\n+    \"input\": {\n+      \"events\": [\n+        \"2026-01-01T12:00:00Z\"\n+      ],\n+      \"zone\": \"UTC\"\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 153,
+        "mode": 384,
+        "sha256": "15fb5b68d273248c289d1c87f4ed8ec1fa499e732ba5b7dcead0b1ceda5e946f"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,6 @@\n+def solve(data):\n+    result = {}\n+    for value in data['events']:\n+        key = value[:10]\n+        result[key] = result.get(key,0) + 1\n+    return result\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 443,
+        "mode": 384,
+        "sha256": "dd743b6b355fdbf240668d20725bdd24c86c2c0da724eb50241ff452ab657ec8"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,6 @@\n+Implement solve(data): given zone (IANA timezone) and events (ISO8601 timestamps),\n+return {local YYYY-MM-DD: count} after converting each timestamp to that zone.\n+Accept Z or numeric UTC offsets; timestamps without an offset must raise\n+ValueError, even if other events are valid. Invalid dates raise ValueError.\n+Use standard-library zoneinfo, account for daylight saving time. Empty events\n+returns {}. Input zone is valid. Do not mutate input.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:b6b8077793208fa389c48c702368299a23b0dfd3a97af8e3fe47e888ea9d695b",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

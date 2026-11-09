@@ -1,0 +1,413 @@
+{
+  "tests": [
+    {
+      "input": {
+        "path": "docs/a.txt"
+      },
+      "expect": "docs/a.txt"
+    },
+    {
+      "input": {
+        "path": "./a//./b///"
+      },
+      "expect": "a/b"
+    },
+    {
+      "input": {
+        "path": "a/."
+      },
+      "expect": "a"
+    },
+    {
+      "input": {
+        "path": ".hidden/a..b/..hidden/..."
+      },
+      "expect": ".hidden/a..b/..hidden/..."
+    },
+    {
+      "input": {
+        "path": "%2E/a/%2e/b%2Fc/"
+      },
+      "expect": "a/b/c"
+    },
+    {
+      "input": {
+        "path": "a+b/%2B/%20"
+      },
+      "expect": "a+b/+/ "
+    },
+    {
+      "input": {
+        "path": "%252e%252e"
+      },
+      "expect": "%2e%2e"
+    },
+    {
+      "input": {
+        "path": "%252F/%255C/%2500"
+      },
+      "expect": "%2F/%5C/%00"
+    },
+    {
+      "input": {
+        "path": "x%/y%2/z%GG"
+      },
+      "expect": "x%/y%2/z%GG"
+    },
+    {
+      "input": {
+        "path": "caf%C3%A9/%E2%98%83/%F0%9F%98%80"
+      },
+      "expect": "café/☃/😀"
+    },
+    {
+      "input": {
+        "path": " \t/\n "
+      },
+      "expect": " \t/\n "
+    },
+    {
+      "input": {
+        "path": "a%2f%2F.%2f%2Fb"
+      },
+      "expect": "a/b"
+    },
+    {
+      "input": {
+        "path": "a/%2E%2E%2E/b"
+      },
+      "expect": "a/.../b"
+    },
+    {
+      "input": {
+        "path": "%EF%BB%BFfile"
+      },
+      "expect": "﻿file"
+    },
+    {
+      "input": {
+        "path": "folder/file?x=1#part:two"
+      },
+      "expect": "folder/file?x=1#part:two"
+    },
+    {
+      "input": {
+        "path": "雪/é"
+      },
+      "expect": "雪/é"
+    },
+    {
+      "input": {
+        "path": ""
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "."
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "././/%2e/"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "/a"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "%2fa"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "//"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": ".."
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a/%2e%2E/b"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a/.."
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a\\b"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a%5cb"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a\u0000b"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a%00b"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a/%FF"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "%C3%28"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "%ED%A0%80"
+      },
+      "error": "ValueError"
+    }
+  ],
+  "submitted": 32,
+  "rejected": 0,
+  "format_valid": true,
+  "initial_candidate_execution": {
+    "available": true,
+    "passed": false,
+    "checks": [
+      {
+        "index": 0,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "docs/a.txt"
+      },
+      {
+        "index": 1,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "a/b"
+      },
+      {
+        "index": 2,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "a"
+      },
+      {
+        "index": 3,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": ".hidden/a..b/..hidden/..."
+      },
+      {
+        "index": 4,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "a/b/c"
+      },
+      {
+        "index": 5,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "a+b/+/ "
+      },
+      {
+        "index": 6,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "%2e%2e"
+      },
+      {
+        "index": 7,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "%2F/%5C/%00"
+      },
+      {
+        "index": 8,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "x%/y%2/z%GG"
+      },
+      {
+        "index": 9,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "café/☃/😀"
+      },
+      {
+        "index": 10,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": " \t/\n "
+      },
+      {
+        "index": 11,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "a/b"
+      },
+      {
+        "index": 12,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "a/.../b"
+      },
+      {
+        "index": 13,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "﻿file"
+      },
+      {
+        "index": 14,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "folder/file?x=1#part:two"
+      },
+      {
+        "index": 15,
+        "passed": true,
+        "input_unchanged": true,
+        "actual": "雪/é"
+      },
+      {
+        "index": 16,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "invalid relative path"
+      },
+      {
+        "index": 17,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "empty relative path"
+      },
+      {
+        "index": 18,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "empty relative path"
+      },
+      {
+        "index": 19,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "invalid relative path"
+      },
+      {
+        "index": 20,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "invalid relative path"
+      },
+      {
+        "index": 21,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "invalid relative path"
+      },
+      {
+        "index": 22,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "parent component is not allowed"
+      },
+      {
+        "index": 23,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "parent component is not allowed"
+      },
+      {
+        "index": 24,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "parent component is not allowed"
+      },
+      {
+        "index": 25,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "invalid relative path"
+      },
+      {
+        "index": 26,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "invalid relative path"
+      },
+      {
+        "index": 27,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "invalid relative path"
+      },
+      {
+        "index": 28,
+        "passed": true,
+        "input_unchanged": true,
+        "error": "ValueError",
+        "message": "invalid relative path"
+      },
+      {
+        "index": 29,
+        "passed": false,
+        "input_unchanged": true,
+        "error": "UnicodeDecodeError",
+        "message": "'utf-8' codec can't decode byte 0xff in position 2: invalid start byte"
+      },
+      {
+        "index": 30,
+        "passed": false,
+        "input_unchanged": true,
+        "error": "UnicodeDecodeError",
+        "message": "'utf-8' codec can't decode byte 0xc3 in position 0: invalid continuation byte"
+      },
+      {
+        "index": 31,
+        "passed": false,
+        "input_unchanged": true,
+        "error": "UnicodeDecodeError",
+        "message": "'utf-8' codec can't decode byte 0xed in position 0: invalid continuation byte"
+      }
+    ]
+  }
+}

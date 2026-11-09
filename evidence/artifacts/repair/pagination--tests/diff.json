@@ -1,0 +1,76 @@
+{
+  "study_id": "study-710222efaf57439aa030b4c3c5b84fd3",
+  "trial_id": "trial-b12a597069754e7c560ed922370daa26",
+  "attempt_id": "attempt-7a252029ba723f6b5d46e145ea8b39a0",
+  "baseline_id": "baseline-db9b2797ea394b7461d5c1805d81965948ac8afc38686315db18ee00f8f0c2d8",
+  "result_digest": "18bda95bcba56181ad7eaa77bbaea8ae8e5103279a95c9043a482444015752ed",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 66061,
+        "mode": 384,
+        "sha256": "a3ae2b6421b03ca5177e401c6c984f1718744c84a93014cf60514cbfffbce01e"
+      },
+      "variant_patch": false,
+      "text_diff": null,
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 129,
+        "mode": 384,
+        "sha256": "0ce625f28c365875e12184a4f3db5f02ef43c80c57b5ab8a59bb7fa91e603e57"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,12 @@\n+[\n+  {\n+    \"expect\": {\n+      \"items\": [],\n+      \"next\": null\n+    },\n+    \"input\": {\n+      \"limit\": 2,\n+      \"rows\": []\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 618,
+        "mode": 384,
+        "sha256": "3aea7112f8da55e6f70827fde7bf7dc5c52fdb8c3778dbbf858ee1d648f93842"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,17 @@\n+def solve(data):\n+    limit = data['limit']\n+    if isinstance(limit, bool) or not isinstance(limit, int) or not 1 <= limit <= 100:\n+        raise ValueError('limit must be an integer between 1 and 100')\n+\n+    def key(row):\n+        return row['timestamp'], row['id']\n+\n+    after = data.get('after')\n+    rows = data['rows']\n+    if after is not None:\n+        cursor = tuple(after)\n+        rows = [row for row in rows if key(row) > cursor]\n+    ordered = sorted(rows, key=key)\n+    items = ordered[:limit]\n+    next_cursor = list(key(items[-1])) if len(ordered) > limit else None\n+    return {'items': items, 'next': next_cursor}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 569,
+        "mode": 384,
+        "sha256": "66bdb9f294b213e35f633362712d9b4e4f66619cbb6f43d5a3ceaaa17dcbdf94"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,7 @@\n+Implement solve(data). data contains rows [{id: integer, timestamp: integer}], limit,\n+and optional after=[timestamp,id] (or null). Sort ascending by (timestamp,id), keep\n+only rows strictly greater than after, and return the first limit rows. Preserve all\n+row fields. limit must be an integer 1..100 inclusive; bool is invalid; raise\n+ValueError for invalid limit. Return {items: [...], next: [timestamp,id] or null}.\n+next is the last returned key ONLY if additional eligible rows remain. Do not\n+mutate input. Rows have unique ids; other inputs follow the stated schema.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:8cb55da79c52f4f60fd4238b1cc00fc80baae80ba8b385e46083f11a9982abe9",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

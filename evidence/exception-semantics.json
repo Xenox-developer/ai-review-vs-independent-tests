@@ -1,0 +1,12 @@
+{
+  "unicode_decode_error_is_value_error_subclass": true,
+  "normal_assertRaises_value_error_accepts_unicode_decode_error": true,
+  "mro": [
+    "UnicodeDecodeError",
+    "UnicodeError",
+    "ValueError",
+    "Exception",
+    "BaseException",
+    "object"
+  ]
+}

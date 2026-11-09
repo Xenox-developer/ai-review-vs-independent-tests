@@ -1,0 +1,62 @@
+{
+  "study_id": "study-df8d9e868ee6422b80adc1ee788d7c24",
+  "trial_id": "trial-ef21226d49bdb89aaea45bf1d8a2f248",
+  "attempt_id": "attempt-0b87d6e0887849726709539dd6ef6f1e",
+  "baseline_id": "baseline-724458e279bbdf20ad974f96518e41cbda3af5a8db3d2181689dfe4dfda6abd4",
+  "result_digest": "5172f8b7f96f36a445ecd7229a2f4f931bf2fc5a3cd8b8dc103dabe626a3abb1",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 108,
+        "mode": 384,
+        "sha256": "139ab4ce1e2be7794af2c89a5ffb242fc97d4f6ba896f35a2aa7eedacd03a9eb"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,10 @@\n+[\n+  {\n+    \"expect\": [],\n+    \"input\": {\n+      \"events\": [],\n+      \"limit\": 1,\n+      \"window\": 10\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 768,
+        "mode": 384,
+        "sha256": "4864574ba2a7f8b614f6cf838eb2282071c530986bd8ef522ff385f6f2f9f386"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,27 @@\n+from collections import deque\n+\n+\n+def solve(data):\n+    \"\"\"Apply the sliding window independently to each key's accepted events.\"\"\"\n+    window = data['window']\n+    limit = data['limit']\n+    histories = {}\n+    result = []\n+\n+    for event in data['events']:\n+        timestamp = event['t']\n+        history = histories.setdefault(event['key'], deque())\n+        cutoff = timestamp - window\n+        while history and history[0] <= cutoff:\n+            history.popleft()\n+\n+        if len(history) < limit:\n+            history.append(timestamp)\n+            result.append({'allowed': True, 'retry_after': 0})\n+        else:\n+            result.append({\n+                'allowed': False,\n+                'retry_after': history[0] + window - timestamp,\n+            })\n+\n+    return result\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 519,
+        "mode": 384,
+        "sha256": "24451539cbb24424bdeb117484ab74b36e57daa57eb4a68ffa5fd08d7f27eb40"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,7 @@\n+Implement solve(data), a per-key sliding-window limiter. positive integer window\n+and limit; events {t: nonnegative integer, key: string} in nondecreasing time\n+order (different keys may share timestamps). At time t discard accepted events\n+with timestamp <= t-window for that key. If fewer than limit remain, accept\n+and record t; otherwise reject WITHOUT recording. Return a list of\n+{allowed: bool, retry_after: integer}: accepted gives 0; rejected gives\n+oldest retained timestamp + window - t. No sleeping, no mutation.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:39e237a4417fb7775787c4e4f954e29d6508aa4b8de2f8302127b3f0dae4497a",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

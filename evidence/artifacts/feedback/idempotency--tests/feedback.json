@@ -1,0 +1,1217 @@
+{
+  "tests": [
+    {
+      "input": {
+        "requests": []
+      },
+      "expect": {
+        "statuses": [],
+        "applied": 0
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": null,
+            "ok": true
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": null,
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "failed"
+        ],
+        "applied": 0
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": 7,
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": 7,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 7,
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "failed",
+          "applied",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": "old",
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": "new",
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": "final",
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": "final",
+            "ok": true
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "failed",
+          "failed",
+          "applied",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": 1,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 2,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 1,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 2,
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "duplicate",
+          "conflict"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "v": 1
+            },
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "v": 1
+            },
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "v": 1
+            },
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "v": 2
+            },
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": 1,
+            "ok": true
+          },
+          {
+            "key": "b",
+            "payload": 1,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 1,
+            "ok": true
+          },
+          {
+            "key": "b",
+            "payload": 2,
+            "ok": true
+          },
+          {
+            "key": "c",
+            "payload": 1,
+            "ok": false
+          },
+          {
+            "key": "c",
+            "payload": 2,
+            "ok": true
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "applied",
+          "duplicate",
+          "conflict",
+          "failed",
+          "applied"
+        ],
+        "applied": 3
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "x": 1,
+              "y": 2
+            },
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "y": 2,
+              "x": 1
+            },
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "outer": [
+                {
+                  "x": 1,
+                  "y": {
+                    "a": 2,
+                    "b": 3
+                  }
+                }
+              ],
+              "z": null
+            },
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "z": null,
+              "outer": [
+                {
+                  "y": {
+                    "b": 3,
+                    "a": 2
+                  },
+                  "x": 1.0
+                }
+              ]
+            },
+            "ok": true
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": [
+              1,
+              2
+            ],
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": [
+              2,
+              1
+            ],
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": [
+              1,
+              2
+            ],
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": [
+              1,
+              1
+            ],
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": [
+              1
+            ],
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": [
+              1,
+              1,
+              1
+            ],
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "conflict"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": 1,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 1.0,
+            "ok": false
+          },
+          {
+            "key": "b",
+            "payload": 2.5,
+            "ok": true
+          },
+          {
+            "key": "b",
+            "payload": 2.5,
+            "ok": true
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "duplicate",
+          "applied",
+          "duplicate"
+        ],
+        "applied": 2
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": true,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 1,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 1.0,
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": true,
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "conflict",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": 0,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": false,
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": 0.0,
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": -0.0,
+            "ok": true
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "duplicate",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": false,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 0.0,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": false,
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "x": [
+                true,
+                {
+                  "v": false
+                }
+              ]
+            },
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "x": [
+                1,
+                {
+                  "v": false
+                }
+              ]
+            },
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "x": [
+                true,
+                {
+                  "v": 0
+                }
+              ]
+            },
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "conflict"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": [
+              1,
+              {
+                "n": -2
+              }
+            ],
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": [
+              1.0,
+              {
+                "n": -2.0
+              }
+            ],
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": null,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": false,
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": 0,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": "",
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": [],
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": {},
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": null,
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "conflict",
+          "conflict",
+          "conflict",
+          "conflict",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": [],
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {},
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": [],
+            "ok": false
+          },
+          {
+            "key": "b",
+            "payload": {},
+            "ok": true
+          },
+          {
+            "key": "b",
+            "payload": [],
+            "ok": false
+          },
+          {
+            "key": "b",
+            "payload": {},
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "duplicate",
+          "applied",
+          "conflict",
+          "duplicate"
+        ],
+        "applied": 2
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "x": null
+            },
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {},
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "x": null,
+              "y": null
+            },
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": {
+              "x": null
+            },
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "conflict",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": "1",
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 1,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": "1",
+            "ok": false
+          },
+          {
+            "key": "b",
+            "payload": "true",
+            "ok": true
+          },
+          {
+            "key": "b",
+            "payload": true,
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "duplicate",
+          "applied",
+          "conflict"
+        ],
+        "applied": 2
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "x": [
+                1,
+                2
+              ],
+              "y": []
+            },
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "x": [
+                2,
+                1
+              ],
+              "y": []
+            },
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": {
+              "x": [
+                1,
+                2
+              ],
+              "y": [
+                null
+              ]
+            },
+            "ok": true
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "conflict"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "",
+            "payload": 0,
+            "ok": false
+          },
+          {
+            "key": "",
+            "payload": false,
+            "ok": true
+          },
+          {
+            "key": "",
+            "payload": false,
+            "ok": false
+          },
+          {
+            "key": "A",
+            "payload": null,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": null,
+            "ok": true
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "failed",
+          "applied",
+          "duplicate",
+          "applied",
+          "applied"
+        ],
+        "applied": 3
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": "é",
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": "é",
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": "é",
+            "ok": false
+          },
+          {
+            "key": "b",
+            "payload": "a\nb",
+            "ok": true
+          },
+          {
+            "key": "b",
+            "payload": "a\\nb",
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "duplicate",
+          "applied",
+          "conflict"
+        ],
+        "applied": 2
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": 1.25,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 1.2501,
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": -1.25,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 1.25,
+            "ok": false
+          },
+          {
+            "key": "b",
+            "payload": -3,
+            "ok": true
+          },
+          {
+            "key": "b",
+            "payload": -3.0,
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "conflict",
+          "duplicate",
+          "applied",
+          "duplicate"
+        ],
+        "applied": 2
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "n": 1
+            },
+            "ok": false
+          },
+          {
+            "key": "b",
+            "payload": [
+              false
+            ],
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "n": 2
+            },
+            "ok": true
+          },
+          {
+            "key": "b",
+            "payload": [
+              0
+            ],
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": {
+              "n": 1
+            },
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": {
+              "n": 2.0
+            },
+            "ok": false
+          },
+          {
+            "key": "c",
+            "payload": [],
+            "ok": false
+          },
+          {
+            "key": "c",
+            "payload": {},
+            "ok": true
+          },
+          {
+            "key": "c",
+            "payload": {},
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "failed",
+          "applied",
+          "applied",
+          "conflict",
+          "conflict",
+          "duplicate",
+          "failed",
+          "applied",
+          "duplicate"
+        ],
+        "applied": 3
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "a": 1,
+              "b": 2
+            },
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": {
+              "a": 2,
+              "b": 1
+            },
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": {
+              "a": 1,
+              "c": 2
+            },
+            "ok": true
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "conflict"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": [
+              [
+                1,
+                2
+              ],
+              [
+                3
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": [
+              [
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": [
+              1,
+              2,
+              3
+            ],
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": [
+              [
+                1.0,
+                2
+              ],
+              [
+                3.0
+              ]
+            ],
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "conflict",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": 9007199254740992,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 9007199254740993,
+            "ok": true
+          },
+          {
+            "key": "a",
+            "payload": 9007199254740992,
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "applied",
+          "conflict",
+          "duplicate"
+        ],
+        "applied": 1
+      }
+    },
+    {
+      "input": {
+        "requests": [
+          {
+            "key": "a",
+            "payload": {
+              "a": 1
+            },
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": {
+              "a": 1
+            },
+            "ok": false
+          },
+          {
+            "key": "a",
+            "payload": {
+              "a": 1
+            },
+            "ok": false
+          }
+        ]
+      },
+      "expect": {
+        "statuses": [
+          "failed",
+          "failed",
+          "failed"
+        ],
+        "applied": 0
+      }
+    }
+  ]
+}

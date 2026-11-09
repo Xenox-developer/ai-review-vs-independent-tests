@@ -1,0 +1,76 @@
+{
+  "study_id": "study-766e4325812640fdb7cea40f8d041920",
+  "trial_id": "trial-8a68711c8c3dc624aca581ae54388854",
+  "attempt_id": "attempt-4db2d007daa0c0d50f20ecd6da3d5a77",
+  "baseline_id": "baseline-64c9ac65d17484c8f49a91f9f1d65cea9ea2cfe77401a9dc1b342dd4b4cc9e14",
+  "result_digest": "6bf8057a0e3da3c36b459c3950d7cdc675b5aaf307bc7233d39050271ab7f366",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 44,
+        "mode": 420,
+        "sha256": "24a198eb9b4113e869a70abd32011439bdd6a8827028701ebf26a7bfc337a02d"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/feedback.json\n+++ after/feedback.json\n@@ -0,0 +1 @@\n+{\"assessment\":\"likely_correct\",\"issues\":[]}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 149,
+        "mode": 384,
+        "sha256": "d178ca47d42645139c2e0486a2c07693fa14220555206859b352c8e7a854ed03"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,15 @@\n+[\n+  {\n+    \"expect\": {\n+      \"x\": 2\n+    },\n+    \"input\": {\n+      \"base\": {\n+        \"x\": 1\n+      },\n+      \"patch\": {\n+        \"x\": 2\n+      }\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 550,
+        "mode": 384,
+        "sha256": "8ce98063fc9a8ffeebf2349226ee9313e1edb0884b49f7ef424618fb076a59ab"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,18 @@\n+\"\"\"Recursive JSON object merge without modifying either input.\"\"\"\n+\n+from copy import deepcopy\n+\n+\n+def solve(data):\n+    def merge(base, patch):\n+        result = deepcopy(base) if isinstance(base, dict) else {}\n+        for key, value in patch.items():\n+            if value is None:\n+                result.pop(key, None)\n+            elif isinstance(value, dict):\n+                result[key] = merge(result.get(key), value)\n+            else:\n+                result[key] = deepcopy(value)\n+        return result\n+\n+    return merge(data['base'], data['patch'])\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 465,
+        "mode": 384,
+        "sha256": "ae568548c4eece00e3340305c82bc848109358712d47ec2c7e290b665f221880"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,6 @@\n+Implement solve(data), merging patch into base (both JSON objects). Object-valued\n+patches recursively merge into the corresponding object or into {} if the old\n+value is not an object. A null member in a patch object deletes that key if\n+present. Arrays replace in full, including null array elements; all other values\n+replace. Empty patch objects preserve an existing object, but replace a scalar\n+or array with {}. Return merged object. Do not mutate base or patch.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:44480aca1d993b7b5e591fabe66119de63af395339e2239479727e0640890344",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

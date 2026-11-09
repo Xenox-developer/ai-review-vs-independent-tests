@@ -1,0 +1,76 @@
+{
+  "study_id": "study-766e4325812640fdb7cea40f8d041920",
+  "trial_id": "trial-cbf420d82fdbd11aa17382f2a95179c4",
+  "attempt_id": "attempt-c9cf14cbad042c21b926243fc475b109",
+  "baseline_id": "baseline-64c9ac65d17484c8f49a91f9f1d65cea9ea2cfe77401a9dc1b342dd4b4cc9e14",
+  "result_digest": "34fc8ef0a4d74c9a059b032cd2e44e71bcbbe9928a6fb8bccecf7c2d872c692c",
+  "selection_revision": 0,
+  "parent": null,
+  "changes": [
+    {
+      "path": "feedback.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 3107,
+        "mode": 420,
+        "sha256": "62f70c890ff4def7ae42df6aac3b639b5356039176004f1dca9e66d8a91b908b"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/feedback.json\n+++ after/feedback.json\n@@ -0,0 +1,196 @@\n+{\n+  \"tests\": [\n+    {\n+      \"input\": {\n+        \"path\": \"docs/a.txt\"\n+      },\n+      \"expect\": \"docs/a.txt\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"./a//./b///\"\n+      },\n+      \"expect\": \"a/b\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/.\"\n+      },\n+      \"expect\": \"a\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \".hidden/a..b/..hidden/...\"\n+      },\n+      \"expect\": \".hidden/a..b/..hidden/...\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%2E/a/%2e/b%2Fc/\"\n+      },\n+      \"expect\": \"a/b/c\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a+b/%2B/%20\"\n+      },\n+      \"expect\": \"a+b/+/ \"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%252e%252e\"\n+      },\n+      \"expect\": \"%2e%2e\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%252F/%255C/%2500\"\n+      },\n+      \"expect\": \"%2F/%5C/%00\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"x%/y%2/z%GG\"\n+      },\n+      \"expect\": \"x%/y%2/z%GG\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"caf%C3%A9/%E2%98%83/%F0%9F%98%80\"\n+      },\n+      \"expect\": \"caf\\u00e9/\\u2603/\\ud83d\\ude00\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \" \\t/\\n \"\n+      },\n+      \"expect\": \" \\t/\\n \"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a%2f%2F.%2f%2Fb\"\n+      },\n+      \"expect\": \"a/b\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/%2E%2E%2E/b\"\n+      },\n+      \"expect\": \"a/.../b\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%EF%BB%BFfile\"\n+      },\n+      \"expect\": \"\\ufefffile\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"folder/file?x=1#part:two\"\n+      },\n+      \"expect\": \"folder/file?x=1#part:two\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"\\u96ea/\\u00e9\"\n+      },\n+      \"expect\": \"\\u96ea/\\u00e9\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \".\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"././/%2e/\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"/a\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%2fa\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"//\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"..\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/%2e%2E/b\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/..\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a\\\\b\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a%5cb\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a\\u0000b\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a%00b\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"a/%FF\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%C3%28\"\n+      },\n+      \"error\": \"ValueError\"\n+    },\n+    {\n+      \"input\": {\n+        \"path\": \"%ED%A0%80\"\n+      },\n+      \"error\": \"ValueError\"\n+    }\n+  ]\n+}\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "public.json",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 88,
+        "mode": 384,
+        "sha256": "81a1454dfb95fde8324b7ce5fdf06fa5847234db1202a9b64e224382f14745b3"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/public.json\n+++ after/public.json\n@@ -0,0 +1,8 @@\n+[\n+  {\n+    \"expect\": \"docs/a.txt\",\n+    \"input\": {\n+      \"path\": \"docs/a.txt\"\n+    }\n+  }\n+]\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "solution.py",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 142,
+        "mode": 384,
+        "sha256": "75bf0dd21c28a1e7b12119559ab55cb7ca4374fd6f5b8ecf791e9acb4b61721a"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/solution.py\n+++ after/solution.py\n@@ -0,0 +1,4 @@\n+def solve(data):\n+    value = data['path']\n+    if value.startswith('/') or '..' in value: raise ValueError('path')\n+    return value.strip('/')\n",
+      "text_diff_truncated": false
+    },
+    {
+      "path": "spec.md",
+      "change": "created",
+      "before": null,
+      "after": {
+        "type": "file",
+        "size": 627,
+        "mode": 384,
+        "sha256": "d451ef4f911204f95e2535091ce105afd903d99d01cd15cd3b2e85d265bb3c05"
+      },
+      "variant_patch": false,
+      "text_diff": "--- before/spec.md\n+++ after/spec.md\n@@ -0,0 +1,8 @@\n+Implement solve(data) returning a canonical relative POSIX path. data.path is a\n+URL-encoded string: percent-decode EXACTLY ONCE with urllib.parse.unquote using\n+strict UTF-8 errors. Reject by raising ValueError: empty result; leading slash;\n+backslash; NUL; any decoded component exactly '..'. Remove empty components\n+and '.' components, joining with '/'; reject if nothing remains. Dots inside\n+ordinary names are allowed. A percent sequence remaining after one decode is\n+literal (do not decode recursively). '+' stays '+'. Do not access filesystem\n+or mutate input. No requirement to reject malformed percent escapes themselves.\n",
+      "text_diff_truncated": false
+    }
+  ],
+  "excluded": [],
+  "environment": {
+    "image": "sha256:d16c0c8258f7cbdaf17934d3071cb79240e823b83508a571187adb0ed140e411",
+    "applied_to_host": false
+  },
+  "project_files_changed": false,
+  "exported_logs": null,
+  "exported_results": [],
+  "host_delivery": []
+}

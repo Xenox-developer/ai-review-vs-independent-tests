@@ -1,0 +1,196 @@
+{
+  "tests": [
+    {
+      "input": {
+        "path": "docs/a.txt"
+      },
+      "expect": "docs/a.txt"
+    },
+    {
+      "input": {
+        "path": "./a//./b///"
+      },
+      "expect": "a/b"
+    },
+    {
+      "input": {
+        "path": "a/."
+      },
+      "expect": "a"
+    },
+    {
+      "input": {
+        "path": ".hidden/a..b/..hidden/..."
+      },
+      "expect": ".hidden/a..b/..hidden/..."
+    },
+    {
+      "input": {
+        "path": "%2E/a/%2e/b%2Fc/"
+      },
+      "expect": "a/b/c"
+    },
+    {
+      "input": {
+        "path": "a+b/%2B/%20"
+      },
+      "expect": "a+b/+/ "
+    },
+    {
+      "input": {
+        "path": "%252e%252e"
+      },
+      "expect": "%2e%2e"
+    },
+    {
+      "input": {
+        "path": "%252F/%255C/%2500"
+      },
+      "expect": "%2F/%5C/%00"
+    },
+    {
+      "input": {
+        "path": "x%/y%2/z%GG"
+      },
+      "expect": "x%/y%2/z%GG"
+    },
+    {
+      "input": {
+        "path": "caf%C3%A9/%E2%98%83/%F0%9F%98%80"
+      },
+      "expect": "caf\u00e9/\u2603/\ud83d\ude00"
+    },
+    {
+      "input": {
+        "path": " \t/\n "
+      },
+      "expect": " \t/\n "
+    },
+    {
+      "input": {
+        "path": "a%2f%2F.%2f%2Fb"
+      },
+      "expect": "a/b"
+    },
+    {
+      "input": {
+        "path": "a/%2E%2E%2E/b"
+      },
+      "expect": "a/.../b"
+    },
+    {
+      "input": {
+        "path": "%EF%BB%BFfile"
+      },
+      "expect": "\ufefffile"
+    },
+    {
+      "input": {
+        "path": "folder/file?x=1#part:two"
+      },
+      "expect": "folder/file?x=1#part:two"
+    },
+    {
+      "input": {
+        "path": "\u96ea/\u00e9"
+      },
+      "expect": "\u96ea/\u00e9"
+    },
+    {
+      "input": {
+        "path": ""
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "."
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "././/%2e/"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "/a"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "%2fa"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "//"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": ".."
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a/%2e%2E/b"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a/.."
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a\\b"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a%5cb"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a\u0000b"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a%00b"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "a/%FF"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "%C3%28"
+      },
+      "error": "ValueError"
+    },
+    {
+      "input": {
+        "path": "%ED%A0%80"
+      },
+      "error": "ValueError"
+    }
+  ]
+}

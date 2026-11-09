@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "frozen_inputs": 9,
+  "sessions": {
+    "initial": 8,
+    "feedback": 16,
+    "repair": 16
+  },
+  "observed_model_effort": [
+    "gpt-6.1-sol",
+    "medium"
+  ],
+  "recalculated_task_passes": {
+    "initial": 7,
+    "review": 7,
+    "tests": 8
+  },
+  "candidate_snapshot_hashes_verified": 24,
+  "primary_checks_reexecuted": false,
+  "unique_fresh_native_threads": 40,
+  "feedback_author_source_changes": [],
+  "test_author_inputs": "original starters; no candidates or held-out oracle",
+  "notes": "Clone can recalculate scores and hashes; private stage workspace check is available only on the original host."
+}

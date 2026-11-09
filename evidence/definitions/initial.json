@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "name": "code-verification-initial",
+  "runner": {
+    "type": "codex",
+    "completion": "validated"
+  },
+  "workspace": {
+    "include": [
+      "check.py"
+    ],
+    "exclude": []
+  },
+  "variants": [
+    {
+      "id": "medium",
+      "effort": "medium"
+    }
+  ],
+  "cases": [
+    {
+      "id": "deep-merge",
+      "prompt_file": "inputs/deep-merge/prompt.md",
+      "input_file": "inputs/deep-merge/case.json",
+      "fixtures": [
+        {
+          "source": "inputs/deep-merge/solution.py",
+          "destination": "solution.py"
+        },
+        {
+          "source": "inputs/deep-merge/spec.md",
+          "destination": "spec.md"
+        },
+        {
+          "source": "inputs/deep-merge/public.json",
+          "destination": "public.json"
+        }
+      ]
+    },
+    {
+      "id": "timezone-days",
+      "prompt_file": "inputs/timezone-days/prompt.md",
+      "input_file": "inputs/timezone-days/case.json",
+      "fixtures": [
+        {
+          "source": "inputs/timezone-days/solution.py",
+          "destination": "solution.py"
+        },
+        {
+          "source": "inputs/timezone-days/spec.md",
+          "destination": "spec.md"
+        },
+        {
+          "source": "inputs/timezone-days/public.json",
+          "destination": "public.json"
+        }
+      ]
+    },
+    {
+      "id": "safe-path",
+      "prompt_file": "inputs/safe-path/prompt.md",
+      "input_file": "inputs/safe-path/case.json",
+      "fixtures": [
+        {
+          "source": "inputs/safe-path/solution.py",
+          "destination": "solution.py"
+        },
+        {
+          "source": "inputs/safe-path/spec.md",
+          "destination": "spec.md"
+        },
+        {
+          "source": "inputs/safe-path/public.json",
+          "destination": "public.json"
+        }
+      ]
+    },
+    {
+      "id": "retry-plan",
+      "prompt_file": "inputs/retry-plan/prompt.md",
+      "input_file": "inputs/retry-plan/case.json",
+      "fixtures": [
+        {
+          "source": "inputs/retry-plan/solution.py",
+          "destination": "solution.py"
+        },
+        {
+          "source": "inputs/retry-plan/spec.md",
+          "destination": "spec.md"
+        },
+        {
+          "source": "inputs/retry-plan/public.json",
+          "destination": "public.json"
+        }
+      ]
+    },
+    {
+      "id": "rate-limit",
+      "prompt_file": "inputs/rate-limit/prompt.md",
+      "input_file": "inputs/rate-limit/case.json",
+      "fixtures": [
+        {
+          "source": "inputs/rate-limit/solution.py",
+          "destination": "solution.py"
+        },
+        {
+          "source": "inputs/rate-limit/spec.md",
+          "destination": "spec.md"
+        },
+        {
+          "source": "inputs/rate-limit/public.json",
+          "destination": "public.json"
+        }
+      ]
+    },
+    {
+      "id": "idempotency",
+      "prompt_file": "inputs/idempotency/prompt.md",
+      "input_file": "inputs/idempotency/case.json",
+      "fixtures": [
+        {
+          "source": "inputs/idempotency/solution.py",
+          "destination": "solution.py"
+        },
+        {
+          "source": "inputs/idempotency/spec.md",
+          "destination": "spec.md"
+        },
+        {
+          "source": "inputs/idempotency/public.json",
+          "destination": "public.json"
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "prompt_file": "inputs/pagination/prompt.md",
+      "input_file": "inputs/pagination/case.json",
+      "fixtures": [
+        {
+          "source": "inputs/pagination/solution.py",
+          "destination": "solution.py"
+        },
+        {
+          "source": "inputs/pagination/spec.md",
+          "destination": "spec.md"
+        },
+        {
+          "source": "inputs/pagination/public.json",
+          "destination": "public.json"
+        }
+      ]
+    },
+    {
+      "id": "ttl-lru",
+      "prompt_file": "inputs/ttl-lru/prompt.md",
+      "input_file": "inputs/ttl-lru/case.json",
+      "fixtures": [
+        {
+          "source": "inputs/ttl-lru/solution.py",
+          "destination": "solution.py"
+        },
+        {
+          "source": "inputs/ttl-lru/spec.md",
+          "destination": "spec.md"
+        },
+        {
+          "source": "inputs/ttl-lru/public.json",
+          "destination": "public.json"
+        }
+      ]
+    }
+  ],
+  "repetitions": 1,
+  "execution": {
+    "max_parallel": 1,
+    "trial_cpus": 2,
+    "trial_memory_mib": 2048,
+    "trial_timeout_seconds": 180
+  },
+  "evaluator": {
+    "argv": [
+      "python3",
+      "-B",
+      "check.py"
+    ],
+    "source_paths": [
+      "check.py"
+    ],
+    "timeout_seconds": 15
+  },
+  "artifacts": [
+    "solution.py",
+    "feedback.json"
+  ],
+  "external_dependencies": [],
+  "secret_refs": {}
+}

@@ -1,0 +1,1216 @@
+{
+  "attempts": [
+    {
+      "attempt_id": "attempt-64b75564d1b96ef0466baebb0bc0cc4c",
+      "phase": "initial",
+      "case_id": "deep-merge",
+      "available": true,
+      "sha256": "b5ebcdd9042992b5bcd084b6f48ee4e7b581a9bf7da190918688f816058681fa",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-43ed6390-2eed-47a1-a69e-e3a919e1fcb1",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-6570e587-f6b2-44c5-963c-87fe026b841c",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-a0c5b14d-ce85-4c64-b85f-76fb6cc7a80d",
+          "command": "/bin/bash -lc \"cat > solution.py <<'PY'\n\\\"\\\"\\\"Recursive JSON object merge without modifying either input.\\\"\\\"\\\"\n\nfrom copy import deepcopy\n\n\ndef solve(data):\n    def merge(base, patch):\n        result = deepcopy(base) if isinstance(base, dict) else {}\n        for key, value in patch.items():\n            if value is None:\n                result.pop(key, None)\n            elif isinstance(value, dict):\n                result[key] = merge(result.get(key), value)\n            else:\n                result[key] = deepcopy(value)\n        return result\n\n    return merge(data['base'], data['patch'])\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-c622d2cf38e8345885671ae64594d74c",
+      "phase": "initial",
+      "case_id": "timezone-days",
+      "available": true,
+      "sha256": "cbfd49e4c72e5b569a7291a7c5b2d8720f2adc0a7c841ed82570f077dc82d6f1",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-265558e0-ec47-4552-bd49-15c6e58253ea",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-9e6b2d49-715f-4706-9a8c-1b025a3ea9ed",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-080d44cc-e6e5-4281-b51a-0a253e0b5eb5",
+          "command": "/bin/bash -lc \"cat > solution.py <<'PY'\nfrom datetime import datetime\nfrom zoneinfo import ZoneInfo\n\n\ndef solve(data):\n    \\\"\\\"\\\"Count offset-aware event timestamps by their date in the target zone.\\\"\\\"\\\"\n    zone = ZoneInfo(data['zone'])\n    result = {}\n    for value in data['events']:\n        if not isinstance(value, str):\n            raise ValueError('Event timestamps must be ISO8601 strings')\n        # Normalize the UTC designator for Python versions predating Z support.\n        timestamp = datetime.fromisoformat(\n            value[:-1] + '+00:00' if value.endswith('Z') else value\n        )\n        if timestamp.tzinfo is None or timestamp.utcoffset() is None:\n            raise ValueError('Event timestamps must include a UTC offset')\n        try:\n            key = timestamp.astimezone(zone).date().isoformat()\n        except OverflowError as error:\n            raise ValueError('Local date is outside the supported range') from error\n        result[key] = result.get(key, 0) + 1\n    return result\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-16baa024116375c01c43642218770346",
+      "phase": "initial",
+      "case_id": "safe-path",
+      "available": true,
+      "sha256": "5b37a496142654eff96c2c527a0fa7122733943762ffb32e735e8dd037eea09a",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-2f5f032e-bebf-41f6-a3db-ccc481d228bc",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-99fd7430-a816-498f-a4b6-5ad442b74198",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-c5ae4861-cd1c-4a2e-9b88-959121076947",
+          "command": "/bin/bash -lc \"cat > solution.py <<'PY'\nfrom urllib.parse import unquote\n\n\ndef solve(data):\n    path = unquote(data['path'], encoding='utf-8', errors='strict')\n    if not path or path.startswith('/') or '\\\\\\\\' in path or '\\\\x00' in path:\n        raise ValueError('invalid relative path')\n\n    components = path.split('/')\n    if '..' in components:\n        raise ValueError('parent component is not allowed')\n\n    result = '/'.join(part for part in components if part not in ('', '.'))\n    if not result:\n        raise ValueError('empty relative path')\n    return result\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-237dfadec0bf256e6fbf73c580293adf",
+      "phase": "initial",
+      "case_id": "retry-plan",
+      "available": true,
+      "sha256": "691a90a68e65a708cd3f4af81f89c20c55d957e90283573b0e57b6619e7f5e24",
+      "completed_executor_commands": 2,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-66ec6783-9c21-479f-9fa6-9072a567e778",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-9c7bc32c-2382-494e-b622-c8b404358ed7",
+          "command": "/bin/bash -lc 'cat solution.py; cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-0b87d6e0887849726709539dd6ef6f1e",
+      "phase": "initial",
+      "case_id": "rate-limit",
+      "available": true,
+      "sha256": "6346080459d2132a0001146c6546be34699e72778824548157c1e3e675d87729",
+      "completed_executor_commands": 4,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-c7e4705f-9ad2-48e5-9e0a-894f528435fe",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-24482ed3-9b56-4d8e-9f9b-3004bf2b555e",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-4338c3a5-94c3-4ab4-887f-ab60a44ec732",
+          "command": "/bin/bash -lc \"cat > solution.py <<'PY'\nfrom collections import deque\n\n\ndef solve(data):\n    \\\"\\\"\\\"Apply the sliding window independently to each key's accepted events.\\\"\\\"\\\"\n    window = data['window']\n    limit = data['limit']\n    histories = {}\n    result = []\n\n    for event in data['events']:\n        timestamp = event['t']\n        history = histories.setdefault(event['key'], deque())\n        cutoff = timestamp - window\n        while history and history[0] <= cutoff:\n            history.popleft()\n\n        if len(history) < limit:\n            history.append(timestamp)\n            result.append({'allowed': True, 'retry_after': 0})\n        else:\n            result.append({\n                'allowed': False,\n                'retry_after': history[0] + window - timestamp,\n            })\n\n    return result\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-1fadbd7c-b355-41f1-97e6-2f4193c41a1e",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nfrom copy import deepcopy\nfrom solution import solve\ncase = {'window': 10, 'limit': 2, 'events': [\n    {'t': 0, 'key': 'a'}, {'t': 0, 'key': 'a'},\n    {'t': 1, 'key': 'a'}, {'t': 1, 'key': 'b'},\n    {'t': 9, 'key': 'a'}, {'t': 10, 'key': 'a'},\n    {'t': 10, 'key': 'a'}, {'t': 10, 'key': 'a'}]}\nbefore = deepcopy(case)\nassert solve(case) == [\n    {'allowed': True, 'retry_after': 0},\n    {'allowed': True, 'retry_after': 0},\n    {'allowed': False, 'retry_after': 9},\n    {'allowed': True, 'retry_after': 0},\n    {'allowed': False, 'retry_after': 1},\n    {'allowed': True, 'retry_after': 0},\n    {'allowed': True, 'retry_after': 0},\n    {'allowed': False, 'retry_after': 10}]\nassert case == before\nassert solve({'window': 1, 'limit': 1, 'events': []}) == []\nprint('Targeted boundary, key isolation, rejection, and immutability checks passed.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-52066b304a1e0f52e3c271c7df839c26",
+      "phase": "initial",
+      "case_id": "idempotency",
+      "available": true,
+      "sha256": "dda3e6504a7198f721826656e2956569b903b66ba9513abd0b24179969f6d65f",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-21414a72-e943-4eb3-817d-7d304517286c",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-5751bd60-d9f7-4fdc-b62f-c1e7634804d7",
+          "command": "/bin/bash -lc 'cat solution.py; cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-b5bb4a03-430e-48be-aff5-9cf1902503cb",
+          "command": "/bin/bash -lc \"cat > solution.py <<'PY'\ndef _json_equal(left, right):\n    \\\"\\\"\\\"Compare JSON values, preserving the distinction between bool and number.\\\"\\\"\\\"\n    if isinstance(left, bool) or isinstance(right, bool):\n        return type(left) is type(right) and left == right\n    if isinstance(left, dict):\n        return (isinstance(right, dict)\n                and left.keys() == right.keys()\n                and all(_json_equal(value, right[key])\n                        for key, value in left.items()))\n    if isinstance(left, list):\n        return (isinstance(right, list)\n                and len(left) == len(right)\n                and all(_json_equal(a, b) for a, b in zip(left, right)))\n    if isinstance(left, (int, float)):\n        return isinstance(right, (int, float)) and left == right\n    return type(left) is type(right) and left == right\n\n\ndef solve(data):\n    seen = {}\n    statuses = []\n    applied = 0\n    for request in data['requests']:\n        key = request['key']\n        payload = request['payload']\n        if key in seen:\n            statuses.append('duplicate' if _json_equal(seen[key], payload)\n                            else 'conflict')\n        elif request['ok']:\n            seen[key] = payload\n            statuses.append('applied')\n            applied += 1\n        else:\n            statuses.append('failed')\n    return {'statuses': statuses, 'applied': applied}\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-fccd21a60ff2fdb9135fee63536c9ad0",
+      "phase": "initial",
+      "case_id": "pagination",
+      "available": true,
+      "sha256": "f4ac66474b551828068a33a657a5ec9dae67519b31863c33a7f326d82837f236",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-127c2120-e78c-484e-8392-6c7a3b4ef07b",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-ca319a4f-0af8-4892-8a2f-67d81a2d41e8",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-2379d7fa-a38f-4cc9-aaff-9012ffd066f3",
+          "command": "/bin/bash -lc \"cat > solution.py <<'PY'\ndef solve(data):\n    limit = data['limit']\n    if isinstance(limit, bool) or not isinstance(limit, int) or not 1 <= limit <= 100:\n        raise ValueError('limit must be an integer between 1 and 100')\n\n    def key(row):\n        return row['timestamp'], row['id']\n\n    after = data.get('after')\n    rows = data['rows']\n    if after is not None:\n        cursor = tuple(after)\n        rows = [row for row in rows if key(row) > cursor]\n    ordered = sorted(rows, key=key)\n    items = ordered[:limit]\n    next_cursor = list(key(items[-1])) if len(ordered) > limit else None\n    return {'items': items, 'next': next_cursor}\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-c1cc77cd4094d12f55331bde072791b3",
+      "phase": "initial",
+      "case_id": "ttl-lru",
+      "available": true,
+      "sha256": "763a59bb2c5e9e4b499077ce839e78d7f9bbcf9952767339520ce1f8bfbde52c",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-be5426c9-7e36-4028-ad49-1fb858e885a9",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-b732d971-e38c-4fb3-a8e8-73cb4448d303",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-747f48d3-c44b-4c30-b9bc-fb4a1f617f12",
+          "command": "/bin/bash -lc \"cat > solution.py <<'PY'\nfrom collections import OrderedDict\n\n\ndef solve(data):\n    \\\"\\\"\\\"Process cache events without modifying the input.\\\"\\\"\\\"\n    capacity = data['capacity']\n    ttl = data['ttl']\n    cache = OrderedDict()\n    # Fixed TTL and nondecreasing event times keep this in expiry order.\n    expirations = OrderedDict()\n    results = []\n\n    for event in data['events']:\n        now = event['t']\n        while expirations:\n            oldest = next(iter(expirations))\n            if expirations[oldest] > now:\n                break\n            del expirations[oldest]\n            del cache[oldest]\n\n        key = event['key']\n        if event['op'] == 'put':\n            cache[key] = event['value']\n            cache.move_to_end(key)\n            expirations[key] = now + ttl\n            expirations.move_to_end(key)\n            if len(cache) > capacity:\n                evicted, _ = cache.popitem(last=False)\n                del expirations[evicted]\n        else:\n            if key in cache:\n                results.append(cache[key])\n                cache.move_to_end(key)\n            else:\n                results.append(None)\n\n    return results\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-88bbdd6f8d3a5a09fddcaf1ef27550e4",
+      "phase": "feedback",
+      "case_id": "deep-merge--tests",
+      "available": true,
+      "sha256": "c80114cb5cffd233518846e479426fd89819b7e9d7aedc2dd0f764e256b7473e",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-cf92ca50-97d6-46f0-bdb4-65fa44d76844",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-3e80e163-551e-4e4c-9f51-810acb370c4c",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-9945da12-63c5-46f9-ab2e-20df5d463e2d",
+          "command": "/bin/bash -lc \"cat > feedback.json <<'EOF'\n{\n  \\\"tests\\\": [\n    {\\\"input\\\":{\\\"base\\\":{},\\\"patch\\\":{}},\\\"expect\\\":{}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":1,\\\"b\\\":{\\\"c\\\":[1,null,3]},\\\"n\\\":null},\\\"patch\\\":{}},\\\"expect\\\":{\\\"a\\\":1,\\\"b\\\":{\\\"c\\\":[1,null,3]},\\\"n\\\":null}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":1,\\\"b\\\":2},\\\"patch\\\":{\\\"a\\\":null}},\\\"expect\\\":{\\\"b\\\":2}},\n    {\\\"input\\\":{\\\"base\\\":{},\\\"patch\\\":{\\\"missing\\\":null}},\\\"expect\\\":{}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":null,\\\"b\\\":false,\\\"c\\\":0,\\\"d\\\":\\\"\\\"},\\\"patch\\\":{\\\"a\\\":null,\\\"b\\\":null,\\\"c\\\":null,\\\"d\\\":null}},\\\"expect\\\":{}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"x\\\":1,\\\"y\\\":2},\\\"keep\\\":3},\\\"patch\\\":{\\\"a\\\":{\\\"x\\\":9,\\\"z\\\":4}}},\\\"expect\\\":{\\\"a\\\":{\\\"x\\\":9,\\\"y\\\":2,\\\"z\\\":4},\\\"keep\\\":3}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"x\\\":1,\\\"y\\\":2}},\\\"patch\\\":{\\\"a\\\":{\\\"x\\\":null,\\\"z\\\":null}}},\\\"expect\\\":{\\\"a\\\":{\\\"y\\\":2}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"x\\\":1}},\\\"patch\\\":{\\\"a\\\":{\\\"x\\\":null}}},\\\"expect\\\":{\\\"a\\\":{}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"x\\\":1}},\\\"patch\\\":{\\\"a\\\":null}},\\\"expect\\\":{}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"x\\\":1}},\\\"patch\\\":{\\\"a\\\":{}}},\\\"expect\\\":{\\\"a\\\":{\\\"x\\\":1}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":7,\\\"b\\\":\\\"text\\\",\\\"c\\\":true,\\\"d\\\":false,\\\"e\\\":null,\\\"f\\\":[1,2]},\\\"patch\\\":{\\\"a\\\":{},\\\"b\\\":{},\\\"c\\\":{},\\\"d\\\":{},\\\"e\\\":{},\\\"f\\\":{}}},\\\"expect\\\":{\\\"a\\\":{},\\\"b\\\":{},\\\"c\\\":{},\\\"d\\\":{},\\\"e\\\":{},\\\"f\\\":{}}},\n    {\\\"input\\\":{\\\"base\\\":{},\\\"patch\\\":{\\\"a\\\":{}}},\\\"expect\\\":{\\\"a\\\":{}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":5},\\\"patch\\\":{\\\"a\\\":{\\\"gone\\\":null,\\\"x\\\":2}}},\\\"expect\\\":{\\\"a\\\":{\\\"x\\\":2}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":[{\\\"old\\\":1},2]},\\\"patch\\\":{\\\"a\\\":{\\\"0\\\":{\\\"new\\\":3},\\\"gone\\\":null}}},\\\"expect\\\":{\\\"a\\\":{\\\"0\\\":{\\\"new\\\":3}}}},\n    {\\\"input\\\":{\\\"base\\\":{},\\\"patch\\\":{\\\"a\\\":{\\\"gone\\\":null,\\\"b\\\":{\\\"gone\\\":null},\\\"c\\\":[]}}},\\\"expect\\\":{\\\"a\\\":{\\\"b\\\":{},\\\"c\\\":[]}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":[1,2,3]},\\\"patch\\\":{\\\"a\\\":[4]}},\\\"expect\\\":{\\\"a\\\":[4]}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"x\\\":1},\\\"b\\\":[1],\\\"c\\\":9},\\\"patch\\\":{\\\"a\\\":[],\\\"b\\\":[],\\\"c\\\":[]}},\\\"expect\\\":{\\\"a\\\":[],\\\"b\\\":[],\\\"c\\\":[]}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":[1,2]},\\\"patch\\\":{\\\"a\\\":[null,{\\\"x\\\":null,\\\"nested\\\":{\\\"y\\\":null}},[null],false,0]}},\\\"expect\\\":{\\\"a\\\":[null,{\\\"x\\\":null,\\\"nested\\\":{\\\"y\\\":null}},[null],false,0]}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"x\\\":1},\\\"b\\\":[1],\\\"c\\\":true,\\\"d\\\":5},\\\"patch\\\":{\\\"a\\\":false,\\\"b\\\":0,\\\"c\\\":\\\"\\\",\\\"d\\\":true}},\\\"expect\\\":{\\\"a\\\":false,\\\"b\\\":0,\\\"c\\\":\\\"\\\",\\\"d\\\":true}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"b\\\":{\\\"c\\\":1,\\\"d\\\":2},\\\"keep\\\":[1,null]}},\\\"patch\\\":{\\\"a\\\":{\\\"b\\\":{\\\"c\\\":null,\\\"e\\\":{\\\"x\\\":null,\\\"y\\\":3}},\\\"new\\\":false}}},\\\"expect\\\":{\\\"a\\\":{\\\"b\\\":{\\\"d\\\":2,\\\"e\\\":{\\\"y\\\":3}},\\\"keep\\\":[1,null],\\\"new\\\":false}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"b\\\":2,\\\"sibling\\\":8}},\\\"patch\\\":{\\\"a\\\":{\\\"b\\\":{\\\"c\\\":{\\\"d\\\":null,\\\"e\\\":7}}}}},\\\"expect\\\":{\\\"a\\\":{\\\"b\\\":{\\\"c\\\":{\\\"e\\\":7}},\\\"sibling\\\":8}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"\\\":{\\\"\\\":1,\\\"keep\\\":2},\\\"a.b\\\":3,\\\"a\\\":{\\\"b\\\":4},\\\"/x\\\":5},\\\"patch\\\":{\\\"\\\":{\\\"\\\":null,\\\"new\\\":0},\\\"a.b\\\":null,\\\"/x\\\":6}},\\\"expect\\\":{\\\"\\\":{\\\"keep\\\":2,\\\"new\\\":0},\\\"a\\\":{\\\"b\\\":4},\\\"/x\\\":6}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"__proto__\\\":{\\\"keep\\\":1},\\\"constructor\\\":2,\\\"雪\\\":{\\\"é\\\":1}},\\\"patch\\\":{\\\"__proto__\\\":{\\\"new\\\":2},\\\"constructor\\\":{},\\\"雪\\\":{\\\"é\\\":null,\\\"🍀\\\":true}}},\\\"expect\\\":{\\\"__proto__\\\":{\\\"keep\\\":1,\\\"new\\\":2},\\\"constructor\\\":{},\\\"雪\\\":{\\\"🍀\\\":true}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"n\\\":null,\\\"deep\\\":{\\\"n\\\":null}},\\\"arr\\\":[null,{\\\"n\\\":null}]},\\\"patch\\\":{\\\"a\\\":{\\\"new\\\":1}}},\\\"expect\\\":{\\\"a\\\":{\\\"n\\\":null,\\\"deep\\\":{\\\"n\\\":null},\\\"new\\\":1},\\\"arr\\\":[null,{\\\"n\\\":null}]}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"x\\\":1},\\\"b\\\":{\\\"x\\\":2}},\\\"patch\\\":{\\\"a\\\":{\\\"y\\\":3},\\\"b\\\":{\\\"x\\\":null,\\\"y\\\":4}}},\\\"expect\\\":{\\\"a\\\":{\\\"x\\\":1,\\\"y\\\":3},\\\"b\\\":{\\\"y\\\":4}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"a\\\":{\\\"b\\\":{\\\"c\\\":{\\\"d\\\":1,\\\"keep\\\":2}},\\\"keep\\\":3}},\\\"patch\\\":{\\\"a\\\":{\\\"b\\\":{\\\"c\\\":{\\\"d\\\":9,\\\"new\\\":null}},\\\"missing\\\":{\\\"x\\\":null}}}},\\\"expect\\\":{\\\"a\\\":{\\\"b\\\":{\\\"c\\\":{\\\"d\\\":9,\\\"keep\\\":2}},\\\"keep\\\":3,\\\"missing\\\":{}}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"number\\\":1,\\\"fraction\\\":2.5,\\\"text\\\":\\\"before\\\",\\\"list\\\":[1]},\\\"patch\\\":{\\\"number\\\":-7,\\\"fraction\\\":0.25,\\\"text\\\":\\\"after\\\",\\\"list\\\":{\\\"nested\\\":[null,{\\\"x\\\":null}]}}},\\\"expect\\\":{\\\"number\\\":-7,\\\"fraction\\\":0.25,\\\"text\\\":\\\"after\\\",\\\"list\\\":{\\\"nested\\\":[null,{\\\"x\\\":null}]}}},\n    {\\\"input\\\":{\\\"base\\\":{\\\"delete\\\":{\\\"x\\\":[1]},\\\"merge\\\":{\\\"keep\\\":1,\\\"remove\\\":2},\\\"replace\\\":[1,2],\\\"scalar\\\":false,\\\"untouched\\\":{\\\"n\\\":null}},\\\"patch\\\":{\\\"delete\\\":null,\\\"merge\\\":{\\\"remove\\\":null,\\\"add\\\":{\\\"drop\\\":null}},\\\"replace\\\":[{\\\"n\\\":null},null],\\\"scalar\\\":{\\\"x\\\":0},\\\"absent\\\":null}},\\\"expect\\\":{\\\"merge\\\":{\\\"keep\\\":1,\\\"add\\\":{}},\\\"replace\\\":[{\\\"n\\\":null},null],\\\"scalar\\\":{\\\"x\\\":0},\\\"untouched\\\":{\\\"n\\\":null}}}\n  ]\n}\nEOF\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-4db2d007daa0c0d50f20ecd6da3d5a77",
+      "phase": "feedback",
+      "case_id": "deep-merge--review",
+      "available": true,
+      "sha256": "e5c13ea0bac4f8607bc3a2ffc8fc544ac8eba6fbea99e05ac6b5a973a5ebaf8a",
+      "completed_executor_commands": 4,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-fc6ac742-b0ff-4e24-9878-4383e822421f",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-b8cd46d4-8646-4476-bb17-e729a73e8a1b",
+          "command": "/bin/bash -lc 'cat solution.py; cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-f8db352b-813a-4a1d-9445-acf8acb5b4a1",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport copy\nimport json\nfrom pathlib import Path\nns = {}\nexec(compile(Path('solution.py').read_text(), 'solution.py', 'exec'), ns)\ncases = [\n    ({'a': {'b': 1, 'c': 2}}, {'a': {'b': None, 'd': 3}}, {'a': {'c': 2, 'd': 3}}),\n    ({'a': [1, 2]}, {'a': {}}, {'a': {}}),\n    ({'a': {'b': 1}}, {'a': {}}, {'a': {'b': 1}}),\n    ({'a': 7}, {'a': {'missing': None}}, {'a': {}}),\n    ({'a': [1]}, {'a': [None, {'b': None}]}, {'a': [None, {'b': None}]}),\n    ({'a': 1}, {'a': None, 'missing': None}, {}),\n    ({'a': True}, {'a': False, 'b': 0, 'c': ''}, {'a': False, 'b': 0, 'c': ''}),\n]\nfor base, patch, expected in cases:\n    data = {'base': base, 'patch': patch}\n    before = copy.deepcopy(data)\n    actual = ns['solve'](data)\n    assert json.dumps(actual, sort_keys=True) == json.dumps(expected, sort_keys=True)\n    assert data == before\nprint('Seven targeted merge and input-preservation checks passed.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-98bce2e0-0cad-4d2f-a026-ed02f60d70b3",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nPath('feedback.json').write_text('{\\\"assessment\\\":\\\"likely_correct\\\",\\\"issues\\\":[]}\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-1e7aeb26c1e2c88ce3b4c4fe14054262",
+      "phase": "feedback",
+      "case_id": "timezone-days--tests",
+      "available": true,
+      "sha256": "a69871fbccc3326e80911736dfc11201478b3b61533b1e619292c6c33ed8b143",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-6100c65c-c5c0-4993-8016-54b44ecdac73",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-8bbc44b8-9f86-4079-aeda-bd6ff7ab5d31",
+          "command": "/bin/bash -lc 'cat solution.py; cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-8b0aa5af-a7ac-4209-9648-19d7f4c6f6f8",
+          "command": "/bin/bash -lc \"cat > feedback.json <<'EOF'\n{\n  \\\"tests\\\": [\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[]},\\\"expect\\\":{}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-01-01T12:00:00Z\\\",\\\"2026-01-01T12:00:00Z\\\",\\\"2026-01-02T00:00:00+00:00\\\"]},\\\"expect\\\":{\\\"2026-01-01\\\":2,\\\"2026-01-02\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-01-01T00:30:00+01:00\\\",\\\"2025-12-31T23:30:00-01:00\\\"]},\\\"expect\\\":{\\\"2025-12-31\\\":1,\\\"2026-01-01\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"America/Los_Angeles\\\",\\\"events\\\":[\\\"2026-01-01T07:59:59.999999Z\\\",\\\"2026-01-01T08:00:00Z\\\"]},\\\"expect\\\":{\\\"2025-12-31\\\":1,\\\"2026-01-01\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Asia/Tokyo\\\",\\\"events\\\":[\\\"2026-12-31T14:59:59.999999Z\\\",\\\"2026-12-31T15:00:00Z\\\"]},\\\"expect\\\":{\\\"2026-12-31\\\":1,\\\"2027-01-01\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Asia/Kathmandu\\\",\\\"events\\\":[\\\"2026-06-01T18:14:59Z\\\",\\\"2026-06-01T18:15:00Z\\\"]},\\\"expect\\\":{\\\"2026-06-01\\\":1,\\\"2026-06-02\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Asia/Kolkata\\\",\\\"events\\\":[\\\"2026-02-28T18:29:59Z\\\",\\\"2026-02-28T18:30:00Z\\\"]},\\\"expect\\\":{\\\"2026-02-28\\\":1,\\\"2026-03-01\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Pacific/Kiritimati\\\",\\\"events\\\":[\\\"2026-01-01T09:59:59Z\\\",\\\"2026-01-01T10:00:00Z\\\"]},\\\"expect\\\":{\\\"2026-01-01\\\":1,\\\"2026-01-02\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Etc/GMT+12\\\",\\\"events\\\":[\\\"2026-01-01T11:59:59Z\\\",\\\"2026-01-01T12:00:00Z\\\"]},\\\"expect\\\":{\\\"2025-12-31\\\":1,\\\"2026-01-01\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"America/New_York\\\",\\\"events\\\":[\\\"2026-01-15T04:30:00Z\\\",\\\"2026-07-15T04:30:00Z\\\"]},\\\"expect\\\":{\\\"2026-01-14\\\":1,\\\"2026-07-15\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"America/New_York\\\",\\\"events\\\":[\\\"2026-03-08T04:59:59Z\\\",\\\"2026-03-08T05:00:00Z\\\",\\\"2026-03-08T06:59:59Z\\\",\\\"2026-03-08T07:00:00Z\\\",\\\"2026-03-09T04:00:00Z\\\"]},\\\"expect\\\":{\\\"2026-03-07\\\":1,\\\"2026-03-08\\\":3,\\\"2026-03-09\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"America/New_York\\\",\\\"events\\\":[\\\"2026-11-01T03:59:59Z\\\",\\\"2026-11-01T04:00:00Z\\\",\\\"2026-11-01T05:30:00Z\\\",\\\"2026-11-01T06:30:00Z\\\",\\\"2026-11-02T04:30:00Z\\\",\\\"2026-11-02T05:00:00Z\\\"]},\\\"expect\\\":{\\\"2026-10-31\\\":1,\\\"2026-11-01\\\":4,\\\"2026-11-02\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Europe/London\\\",\\\"events\\\":[\\\"2026-03-28T23:30:00Z\\\",\\\"2026-03-29T23:30:00Z\\\",\\\"2026-10-24T23:30:00Z\\\",\\\"2026-10-25T23:30:00Z\\\"]},\\\"expect\\\":{\\\"2026-03-28\\\":1,\\\"2026-03-30\\\":1,\\\"2026-10-25\\\":2}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Australia/Sydney\\\",\\\"events\\\":[\\\"2026-01-01T13:30:00Z\\\",\\\"2026-07-01T13:30:00Z\\\"]},\\\"expect\\\":{\\\"2026-01-02\\\":1,\\\"2026-07-01\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Australia/Lord_Howe\\\",\\\"events\\\":[\\\"2026-10-03T13:15:00Z\\\",\\\"2026-10-04T13:15:00Z\\\"]},\\\"expect\\\":{\\\"2026-10-03\\\":1,\\\"2026-10-05\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Pacific/Apia\\\",\\\"events\\\":[\\\"2011-12-30T09:59:59Z\\\",\\\"2011-12-30T10:00:00Z\\\"]},\\\"expect\\\":{\\\"2011-12-29\\\":1,\\\"2011-12-31\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"America/St_Johns\\\",\\\"events\\\":[\\\"2026-01-01T03:00:00Z\\\",\\\"2026-07-01T03:00:00Z\\\"]},\\\"expect\\\":{\\\"2025-12-31\\\":1,\\\"2026-07-01\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-07-01T00:00:00+05:45\\\",\\\"2026-06-30T18:15:00Z\\\",\\\"2026-06-30T14:45:00-03:30\\\"]},\\\"expect\\\":{\\\"2026-06-30\\\":3}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Asia/Tokyo\\\",\\\"events\\\":[\\\"2026-01-01T23:00:00-10:00\\\",\\\"2026-01-02T23:00:00+14:00\\\"]},\\\"expect\\\":{\\\"2026-01-02\\\":2}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2024-03-01T00:15:00+01:00\\\",\\\"2024-02-29T23:45:00-01:00\\\"]},\\\"expect\\\":{\\\"2024-02-29\\\":1,\\\"2024-03-01\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"0001-01-01T00:00:00Z\\\",\\\"9999-12-31T23:59:59.999999+00:00\\\"]},\\\"expect\\\":{\\\"0001-01-01\\\":1,\\\"9999-12-31\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-01-01T00:00:00-00:00\\\",\\\"2025-12-31T23:59:59.999999Z\\\",\\\"2026-01-01T00:00:00.000001+00:00\\\"]},\\\"expect\\\":{\\\"2026-01-01\\\":2,\\\"2025-12-31\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-01-01T12:00:00\\\"]},\\\"error\\\":\\\"ValueError\\\"},\n    {\\\"input\\\":{\\\"zone\\\":\\\"Asia/Tokyo\\\",\\\"events\\\":[\\\"2026-01-01T00:00:00Z\\\",\\\"2026-01-01T12:00:00\\\"]},\\\"error\\\":\\\"ValueError\\\"},\n    {\\\"input\\\":{\\\"zone\\\":\\\"America/New_York\\\",\\\"events\\\":[\\\"2026-11-01T01:30:00\\\",\\\"2026-11-01T06:30:00Z\\\"]},\\\"error\\\":\\\"ValueError\\\"},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-01-01\\\"]},\\\"error\\\":\\\"ValueError\\\"},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-02-29T12:00:00Z\\\"]},\\\"error\\\":\\\"ValueError\\\"},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"1900-02-29T00:00:00+00:00\\\"]},\\\"error\\\":\\\"ValueError\\\"},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-04-31T00:00:00Z\\\"]},\\\"error\\\":\\\"ValueError\\\"},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-01-01T12:00:00Z\\\",\\\"2026-13-01T00:00:00Z\\\"]},\\\"error\\\":\\\"ValueError\\\"},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2000-02-29T23:59:59Z\\\",\\\"2000-03-01T00:00:00+00:00\\\"]},\\\"expect\\\":{\\\"2000-02-29\\\":1,\\\"2000-03-01\\\":1}},\n    {\\\"input\\\":{\\\"zone\\\":\\\"UTC\\\",\\\"events\\\":[\\\"2026-06-15T00:10:00+00:30\\\",\\\"2026-06-14T23:50:00-00:30\\\"]},\\\"expect\\\":{\\\"2026-06-14\\\":1,\\\"2026-06-15\\\":1}}\n  ]\n}\nEOF\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-a54ec639f3f147fd331fff10349ff8a9",
+      "phase": "feedback",
+      "case_id": "timezone-days--review",
+      "available": true,
+      "sha256": "0c2a128ff75e556aff650332e0d26a3bf5c307355f2a8533b2a4225ec5ff017f",
+      "completed_executor_commands": 4,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-e11aaae4-b865-4b3d-bfe2-faf3711f6b57",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-3f5df3c6-3ff2-4c86-9224-d3b645ee7ada",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-3d1493e3-a067-46f5-9d57-497340ffc5a2",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nimport copy\nfrom solution import solve\ncases = [\n    ({'zone':'UTC','events':[]}, {}),\n    ({'zone':'America/New_York','events':['2026-03-08T06:59:59Z','2026-03-08T07:00:00Z','2026-03-08T00:30:00+02:00']}, {'2026-03-08':2,'2026-03-07':1}),\n    ({'zone':'America/New_York','events':['2026-11-01T05:30:00Z','2026-11-01T06:30:00Z']}, {'2026-11-01':2}),\n    ({'zone':'Asia/Kathmandu','events':['2026-01-01T20:00:00-03:00']}, {'2026-01-02':1}),\n]\nfor data, expected in cases:\n    original = copy.deepcopy(data)\n    assert solve(data) == expected\n    assert data == original\nfor value in ['2026-01-01T12:00:00','2026-01-01','2026-02-30T12:00:00Z','2026-01-01T12:00:00+24:00']:\n    try:\n        solve({'zone':'UTC','events':['2026-01-01T12:00:00Z',value]})\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(value)\nprint('Targeted checks passed')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-feddeee5-9fd1-4e1e-a4f7-73d86be364ca",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nfrom pathlib import Path\nPath('feedback.json').write_text('{\\\"assessment\\\":\\\"likely_correct\\\",\\\"issues\\\":[]}\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-134d0fbe89097e81577fe6c031cf1ca4",
+      "phase": "feedback",
+      "case_id": "safe-path--review",
+      "available": true,
+      "sha256": "b1f477f3adbf22e5a49deb22574c09e4ce07b01ba980e3e57583b4b22e84b666",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-b214bdea-cf39-43f2-b8a2-386bfbdd2964",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-60afdebd-c458-4634-8c9c-eea72b7d123d",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nimport ast\nfrom pathlib import Path\nsource = Path('solution.py').read_text()\nfor node in ast.walk(ast.parse(source)):\n    if isinstance(node, ast.Constant) and isinstance(node.value, str):\n        print(repr(node.value))\nns = {}\nexec(compile(source, 'solution.py', 'exec'), ns)\nfor path in ['a%5Cb', 'a%00b', 'a%5C%5Cb', 'a%255Cb', 'a%FF', '../a']:\n    try:\n        print(repr(path), 'returned', repr(ns['solve']({'path': path})))\n    except Exception as exc:\n        print(repr(path), 'raised', type(exc).__name__)\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-d6bd5a80-f9f7-4d45-b843-c07651db7466",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nfrom pathlib import Path\nPath('feedback.json').write_text('{\\\"assessment\\\":\\\"likely_correct\\\",\\\"issues\\\":[]}\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-c9cf14cbad042c21b926243fc475b109",
+      "phase": "feedback",
+      "case_id": "safe-path--tests",
+      "available": true,
+      "sha256": "0683466ce5a02c8ca9c9f3851a63da404c88a7a3719abe7c69bf05db671c0dd9",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-b2d43d22-eb2f-4f94-a27c-95131769c3f1",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-82fdae3f-07fc-4036-b07a-7f9f0b2d61d9",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-63d81dc8-98ab-43cc-978e-bb3160d6ac41",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\n# Expected outputs are derived directly from the contract, without executing solve.\ntests = [\n    {'input': {'path': 'docs/a.txt'}, 'expect': 'docs/a.txt'},\n    {'input': {'path': './a//./b///'}, 'expect': 'a/b'},\n    {'input': {'path': 'a/.'}, 'expect': 'a'},\n    {'input': {'path': '.hidden/a..b/..hidden/...'}, 'expect': '.hidden/a..b/..hidden/...'},\n    {'input': {'path': '%2E/a/%2e/b%2Fc/'}, 'expect': 'a/b/c'},\n    {'input': {'path': 'a+b/%2B/%20'}, 'expect': 'a+b/+/ '},\n    {'input': {'path': '%252e%252e'}, 'expect': '%2e%2e'},\n    {'input': {'path': '%252F/%255C/%2500'}, 'expect': '%2F/%5C/%00'},\n    {'input': {'path': 'x%/y%2/z%GG'}, 'expect': 'x%/y%2/z%GG'},\n    {'input': {'path': 'caf%C3%A9/%E2%98%83/%F0%9F%98%80'}, 'expect': 'caf\\\\u00e9/\\\\u2603/\\\\U0001f600'},\n    {'input': {'path': ' \\\\t/\\\\n '}, 'expect': ' \\\\t/\\\\n '},\n    {'input': {'path': 'a%2f%2F.%2f%2Fb'}, 'expect': 'a/b'},\n    {'input': {'path': 'a/%2E%2E%2E/b'}, 'expect': 'a/.../b'},\n    {'input': {'path': '%EF%BB%BFfile'}, 'expect': '\\\\ufefffile'},\n    {'input': {'path': 'folder/file?x=1#part:two'}, 'expect': 'folder/file?x=1#part:two'},\n    {'input': {'path': '\\\\u96ea/\\\\u00e9'}, 'expect': '\\\\u96ea/\\\\u00e9'},\n    {'input': {'path': ''}, 'error': 'ValueError'},\n    {'input': {'path': '.'}, 'error': 'ValueError'},\n    {'input': {'path': '././/%2e/'}, 'error': 'ValueError'},\n    {'input': {'path': '/a'}, 'error': 'ValueError'},\n    {'input': {'path': '%2fa'}, 'error': 'ValueError'},\n    {'input': {'path': '//'}, 'error': 'ValueError'},\n    {'input': {'path': '..'}, 'error': 'ValueError'},\n    {'input': {'path': 'a/%2e%2E/b'}, 'error': 'ValueError'},\n    {'input': {'path': 'a/..'}, 'error': 'ValueError'},\n    {'input': {'path': 'a\\\\\\\\b'}, 'error': 'ValueError'},\n    {'input': {'path': 'a%5cb'}, 'error': 'ValueError'},\n    {'input': {'path': 'a\\\\u0000b'}, 'error': 'ValueError'},\n    {'input': {'path': 'a%00b'}, 'error': 'ValueError'},\n    {'input': {'path': 'a/%FF'}, 'error': 'ValueError'},\n    {'input': {'path': '%C3%28'}, 'error': 'ValueError'},\n    {'input': {'path': '%ED%A0%80'}, 'error': 'ValueError'},\n]\nPath('feedback.json').write_text(json.dumps({'tests': tests}, ensure_ascii=True, indent=2) + '\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-af0355984c0b664d05de3ce2029ce7b6",
+      "phase": "feedback",
+      "case_id": "retry-plan--tests",
+      "available": true,
+      "sha256": "260a48b3f8480f7fffac500651c5bac84e9a6584dac72dfa90b0a578b4a6bd10",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-e17367ce-6f0a-4c3e-ae3a-51ebfd34d570",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-88c78e99-4596-4efd-aea1-abe51c2dd2d0",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-6f851bcf-b2be-4b5f-9b6a-687d4c2dd468",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\n\ntests = []\ndef valid(n, base, cap, budget, expected):\n    tests.append({'input': {'max_attempts': n, 'base': base, 'cap': cap, 'budget': budget}, 'expect': expected})\n\nvalid(0, 2, 10, 9, [])\nvalid(1, 100, 1, 0, [0])\nvalid(100, 0, 0, 0, [0] * 100)\nvalid(5, 2, 10, 2, [0, 2])\nvalid(10, 2, 10, 24, [0, 2, 6, 14, 24])\nvalid(10, 3, 5, 23, [0, 3, 8, 13, 18, 23])\nvalid(8, 9, 4, 12, [0, 4, 8, 12])\nvalid(5, 5, 0, 0, [0, 0, 0, 0, 0])\nvalid(5, 1, 10, 0, [0])\nvalid(10, 2, 10, 13, [0, 2, 6])\nvalid(6, 0, 10, 9, [0, 0, 0, 0, 0, 0])\nvalid(2, 3, 100, 100, [0, 3])\nvalid(4, 9007199254740993, 18014398509481986, 27021597764222979,\n      [0, 9007199254740993, 27021597764222979])\nvalid(7, 1, 100, 1000, [0, 1, 3, 7, 15, 31, 63])\n\nfor field, bad in [\n    ('max_attempts', True), ('base', True), ('cap', False), ('budget', False),\n    ('max_attempts', -1), ('max_attempts', 101),\n    ('base', -1), ('cap', -1), ('budget', -1),\n    ('max_attempts', 3.0), ('base', 2.0), ('cap', 10.0), ('budget', 9.0),\n    ('max_attempts', None), ('base', None), ('cap', None), ('budget', None),\n    ('max_attempts', '3'),\n]:\n    value = {'max_attempts': 3, 'base': 2, 'cap': 10, 'budget': 9}\n    value[field] = bad\n    tests.append({'input': value, 'error': 'ValueError'})\n\nPath('feedback.json').write_text(json.dumps({'tests': tests}, indent=2) + '\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-357cb666af76121e1c9fe801d3389a03",
+      "phase": "feedback",
+      "case_id": "retry-plan--review",
+      "available": true,
+      "sha256": "72ff181f7cd6cd328acb301a2e2686fa47efc150af4f9e674d7be54d02c483dc",
+      "completed_executor_commands": 4,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-9a10083d-4200-486f-8604-6bdad92be29f",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-2375119e-fb5b-4ff6-aa68-d8a0248da58f",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-c18f434f-d373-43a9-b769-5cd234225289",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport itertools\nfrom pathlib import Path\nns = {}\nexec(compile(Path('solution.py').read_text(), 'solution.py', 'exec'), ns)\nsolve = ns['solve']\ncount = 0\nfor attempts, base, cap, budget in itertools.product((0, 1, 2, 5, 100), (0, 1, 2, 7, 10**100), (0, 1, 3, 8, 10**100), (0, 1, 3, 10, 10**101)):\n    data = dict(max_attempts=attempts, base=base, cap=cap, budget=budget)\n    before = data.copy()\n    expected = []\n    timestamp = 0\n    for i in range(attempts):\n        if i:\n            timestamp += min(base * 2**(i-1), cap)\n        if timestamp > budget:\n            break\n        expected.append(timestamp)\n    assert solve(data) == expected, data\n    assert data == before\n    count += 1\nfor field in ('max_attempts', 'base', 'cap', 'budget'):\n    for value in (True, False, -1, 1.0, '1', None, [], {}):\n        data = dict(max_attempts=3, base=2, cap=10, budget=9)\n        data[field] = value\n        try:\n            solve(data)\n        except ValueError:\n            pass\n        else:\n            raise AssertionError((field, value))\nfor data in ({}, {'max_attempts': 0}, dict(max_attempts=101, base=0, cap=0, budget=0)):\n    try:\n        solve(data)\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(data)\nprint(f'{count} schedule checks and invalid-field checks passed')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-d1b231b6-0a55-4f68-b622-5b0e83c95dfb",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nPath('feedback.json').write_text('{\\\"assessment\\\":\\\"likely_correct\\\",\\\"issues\\\":[]}\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-b839dc965364841ee50f5c1dd29c653f",
+      "phase": "feedback",
+      "case_id": "rate-limit--tests",
+      "available": true,
+      "sha256": "d08823aa2004cfc61253979bbedd07efe856ffdadc3e423bc569a412d8335ce4",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-242042d9-afdf-4229-abe8-b8168a5b2648",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-b8280d92-81c5-406a-9377-cf0ee12fa227",
+          "command": "/bin/bash -lc 'cat solution.py; cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-1970a602-a3f6-4cc5-bf51-7a10f420ff42",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\n\ntests = []\ndef case(window, limit, events, retries):\n    assert len(events) == len(retries)\n    assert all(events[i][0] <= events[i+1][0] for i in range(len(events)-1))\n    tests.append({'input': {'window': window, 'limit': limit, 'events': [{'t': t, 'key': k} for t, k in events]}, 'expect': [{'allowed': r == 0, 'retry_after': r} for r in retries]})\ndef one(window, limit, times, retries):\n    case(window, limit, [(t, 'a') for t in times], retries)\n\none(10, 1, [], [])\none(1, 1, [0], [0])\none(1, 1, [0,0,1,1,2], [0,1,0,1,0])\none(10, 1, [0,9,10,11,19,20], [0,1,0,9,1,0])\none(10, 2, [0,3,4,9,10,10,12,13,13,20,23], [0,0,6,1,0,3,1,0,7,0,0])\none(7, 3, [5,5,5,5,5,11,12,12,12,12], [0,0,0,7,7,1,0,0,0,7])\none(5, 1, [0,1,2,3,4,5,6,10], [0,4,3,2,1,0,4,0])\ncase(10, 1, [(0,'a'),(0,'b'),(1,'a'),(1,'b'),(1,'c'),(10,'a'),(10,'b'),(10,'c'),(11,'c')], [0,0,9,9,0,0,0,1,0])\ncase(4, 2, [(0,'a'),(0,'b'),(1,'a'),(2,'b'),(3,'a'),(3,'b'),(4,'a'),(4,'b'),(4,'a'),(5,'b'),(5,'a'),(6,'b')], [0,0,0,0,1,1,0,0,1,1,0,0])\none(3, 2, [0,1,2,100,100,100,103], [0,0,1,0,0,3,0])\none(10, 3, [0,2,4,5,10,11,12,13,14,14], [0,0,0,5,0,1,0,1,0,6])\none(1, 2, [0,0,0,1,1,1,2,2,2], [0,0,1,0,0,1,0,0,1])\ncase(3, 1, [(0,''),(0,'a'),(0,'A'),(0,'a '),(0,'é'),(0,'e\\\\u0301'),(0,'__proto__'),(1,''),(1,'a'),(1,'A'),(1,'a '),(1,'é'),(1,'e\\\\u0301'),(1,'__proto__'),(3,'')], [0,0,0,0,0,0,0,2,2,2,2,2,2,2,0])\none(10**20, 1, [10**30,10**30+1,10**30+10**20-1,10**30+10**20], [0,10**20-1,1,0])\none(2, 100, [0,0,0,1,1,2,2,3,100], [0,0,0,0,0,0,0,0,0])\none(5, 2, [0,0,4,5,5,5,6,9,10], [0,0,1,0,0,5,4,1,0])\none(6, 2, [0,5,6,6,10,11,11,12], [0,0,0,5,1,0,1,0])\ncase(2, 1, [(0,'0'),(0,'00'),(0,'1'),(1,'0'),(1,'00'),(1,'1'),(2,'0'),(2,'00'),(2,'1')], [0,0,0,1,1,1,0,0,0])\nPath('feedback.json').write_text(json.dumps({'tests': tests}, ensure_ascii=False, indent=2) + '\\\\n')\nprint('Wrote feedback.json with', len(tests), 'independently specified tests')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-7be0c5ef8dae544c5902fd406960c20e",
+      "phase": "feedback",
+      "case_id": "rate-limit--review",
+      "available": true,
+      "sha256": "516b6fc8393f537313fb0f9d944ebf8e174e4af2f1b41c7b6514343e2407b139",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-a456c865-23fe-4be2-9943-13c47b33cdf5",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-e8dea031-c088-4824-8c76-a9f868e5885f",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport copy\nimport itertools\nimport runpy\nsolve = runpy.run_path('solution.py')['solve']\ncases = 0\nfor window in range(1, 4):\n    for limit in range(1, 4):\n        for n in range(5):\n            for times in itertools.combinations_with_replacement(range(4), n):\n                for keys in itertools.product(('a', 'b'), repeat=n):\n                    data = {'window': window, 'limit': limit, 'events': [{'t': t, 'key': k} for t, k in zip(times, keys)]}\n                    original = copy.deepcopy(data)\n                    accepted = []\n                    expected = []\n                    for event in data['events']:\n                        retained = [t for t, k in accepted if k == event['key'] and t > event['t'] - window]\n                        allowed = len(retained) < limit\n                        expected.append({'allowed': allowed, 'retry_after': 0 if allowed else min(retained) + window - event['t']})\n                        if allowed:\n                            accepted.append((event['t'], event['key']))\n                    assert solve(data) == expected, data\n                    assert data == original, data\n                    cases += 1\nprint(f'Passed {cases} exhaustive small cases and input-mutation checks.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-acf828c8-0bff-4006-9524-d4764169ab16",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport json\nwith open('feedback.json', 'w') as f:\n    json.dump({'assessment': 'likely_correct', 'issues': []}, f)\n    f.write('\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-909ad50ae1ead63b2e20cab8409e1225",
+      "phase": "feedback",
+      "case_id": "idempotency--review",
+      "available": true,
+      "sha256": "b8c2819409d57e77cff1aa8b33688f38fc5b42c0b7f883bfed4b196e2ee51e36",
+      "completed_executor_commands": 4,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-28bb881b-c80e-4ba9-97ed-c0a1d930c805",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-1df21264-44d7-4ee3-bdac-cbe7e344a0b3",
+          "command": "/bin/bash -lc 'cat solution.py; cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-fbafabd4-7776-4454-8c17-2245f5b2be15",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport copy\nfrom pathlib import Path\nns = {}\nexec(compile(Path('solution.py').read_text(), 'solution.py', 'exec'), ns)\ncases = [\n({'requests': []}, {'statuses': [], 'applied': 0}),\n({'requests': [\n {'key': 'a', 'payload': {'x': [True, 1, None], 'y': 2}, 'ok': False},\n {'key': 'a', 'payload': {'y': 2.0, 'x': [True, 1.0, None]}, 'ok': True},\n {'key': 'a', 'payload': {'x': [True, 1, None], 'y': 2}, 'ok': False},\n {'key': 'a', 'payload': {'x': [1, 1, None], 'y': 2}, 'ok': True},\n {'key': 'a', 'payload': {'x': [None, 1, True], 'y': 2}, 'ok': False},\n {'key': 'b', 'payload': None, 'ok': True},\n {'key': 'b', 'payload': None, 'ok': False}]},\n {'statuses': ['failed', 'applied', 'duplicate', 'conflict', 'conflict', 'applied', 'duplicate'], 'applied': 2})]\nfor data, expected in cases:\n before = copy.deepcopy(data)\n assert ns['solve'](data) == expected\n assert data == before\nvalues = [None, False, True, 0, 1, 1.0, '', [], {}, [False], [0], {'a': False}, {'a': 0}]\nfor a in values:\n for b in values:\n  assert ns['_json_equal'](a, b) == ns['_json_equal'](b, a)\nprint('Targeted status, equality, and mutation checks passed.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-d4dee5da-c071-4306-9ddd-71e067ddcf70",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nPath('feedback.json').write_text('{\\\"assessment\\\":\\\"likely_correct\\\",\\\"issues\\\":[]}\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-7a878416c35d95e332df921caff7e1a1",
+      "phase": "feedback",
+      "case_id": "idempotency--tests",
+      "available": true,
+      "sha256": "f4003a3656361f52d4bfbe6b0b7aa0c573d82ec5547ee7e2491bda3071afbe37",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-57450919-acec-4be1-bb21-16f9cb072547",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-b9c46762-8836-4de3-8faf-1725fa101e68",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-a1f32a91-62fc-4d35-994b-1fa1fd07cc87",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\n\ntests = []\ndef add(rows, statuses, applied):\n    assert len(rows) == len(statuses)\n    tests.append({'input': {'requests': [{'key': k, 'payload': p, 'ok': ok} for k, p, ok in rows]}, 'expect': {'statuses': statuses, 'applied': applied}})\n\nadd([], [], 0)\nadd([('a', None, True)], ['applied'], 1)\nadd([('a', None, False)], ['failed'], 0)\nadd([('a', 7, False), ('a', 7, True), ('a', 7, False)], ['failed', 'applied', 'duplicate'], 1)\nadd([('a', 'old', False), ('a', 'new', False), ('a', 'final', True), ('a', 'final', True)], ['failed', 'failed', 'applied', 'duplicate'], 1)\nadd([('a', 1, True), ('a', 2, True), ('a', 1, True), ('a', 2, False)], ['applied', 'conflict', 'duplicate', 'conflict'], 1)\nadd([('a', {'v': 1}, True), ('a', {'v': 1}, False)], ['applied', 'duplicate'], 1)\nadd([('a', {'v': 1}, True), ('a', {'v': 2}, False)], ['applied', 'conflict'], 1)\nadd([('a', 1, True), ('b', 1, True), ('a', 1, True), ('b', 2, True), ('c', 1, False), ('c', 2, True)], ['applied', 'applied', 'duplicate', 'conflict', 'failed', 'applied'], 3)\nadd([('a', {'x': 1, 'y': 2}, True), ('a', {'y': 2, 'x': 1}, False)], ['applied', 'duplicate'], 1)\nadd([('a', {'outer': [{'x': 1, 'y': {'a': 2, 'b': 3}}], 'z': None}, True), ('a', {'z': None, 'outer': [{'y': {'b': 3, 'a': 2}, 'x': 1.0}]}, True)], ['applied', 'duplicate'], 1)\nadd([('a', [1, 2], True), ('a', [2, 1], True), ('a', [1, 2], False)], ['applied', 'conflict', 'duplicate'], 1)\nadd([('a', [1, 1], True), ('a', [1], True), ('a', [1, 1, 1], False)], ['applied', 'conflict', 'conflict'], 1)\nadd([('a', 1, True), ('a', 1.0, False), ('b', 2.5, True), ('b', 2.5, True)], ['applied', 'duplicate', 'applied', 'duplicate'], 2)\nadd([('a', True, True), ('a', 1, True), ('a', 1.0, False), ('a', True, False)], ['applied', 'conflict', 'conflict', 'duplicate'], 1)\nadd([('a', 0, True), ('a', False, False), ('a', 0.0, False), ('a', -0.0, True)], ['applied', 'conflict', 'duplicate', 'duplicate'], 1)\nadd([('a', False, True), ('a', 0.0, True), ('a', False, False)], ['applied', 'conflict', 'duplicate'], 1)\nadd([('a', {'x': [True, {'v': False}]}, True), ('a', {'x': [1, {'v': False}]}, True), ('a', {'x': [True, {'v': 0}]}, False)], ['applied', 'conflict', 'conflict'], 1)\nadd([('a', [1, {'n': -2}], True), ('a', [1.0, {'n': -2.0}], False)], ['applied', 'duplicate'], 1)\nadd([('a', None, True), ('a', False, False), ('a', 0, True), ('a', '', True), ('a', [], False), ('a', {}, True), ('a', None, False)], ['applied', 'conflict', 'conflict', 'conflict', 'conflict', 'conflict', 'duplicate'], 1)\nadd([('a', [], True), ('a', {}, True), ('a', [], False), ('b', {}, True), ('b', [], False), ('b', {}, False)], ['applied', 'conflict', 'duplicate', 'applied', 'conflict', 'duplicate'], 2)\nadd([('a', {'x': None}, True), ('a', {}, True), ('a', {'x': None, 'y': None}, False), ('a', {'x': None}, False)], ['applied', 'conflict', 'conflict', 'duplicate'], 1)\nadd([('a', '1', True), ('a', 1, True), ('a', '1', False), ('b', 'true', True), ('b', True, False)], ['applied', 'conflict', 'duplicate', 'applied', 'conflict'], 2)\nadd([('a', {'x': [1, 2], 'y': []}, True), ('a', {'x': [2, 1], 'y': []}, False), ('a', {'x': [1, 2], 'y': [None]}, True)], ['applied', 'conflict', 'conflict'], 1)\nadd([('', 0, False), ('', False, True), ('', False, False), ('A', None, True), ('a', None, True)], ['failed', 'applied', 'duplicate', 'applied', 'applied'], 3)\nadd([('a', 'é', True), ('a', 'e\\\\u0301', True), ('a', 'é', False), ('b', 'a\\\\nb', True), ('b', 'a\\\\\\\\nb', False)], ['applied', 'conflict', 'duplicate', 'applied', 'conflict'], 2)\nadd([('a', 1.25, True), ('a', 1.2501, False), ('a', -1.25, True), ('a', 1.25, False), ('b', -3, True), ('b', -3.0, False)], ['applied', 'conflict', 'conflict', 'duplicate', 'applied', 'duplicate'], 2)\nadd([('a', {'n': 1}, False), ('b', [False], True), ('a', {'n': 2}, True), ('b', [0], False), ('a', {'n': 1}, False), ('a', {'n': 2.0}, False), ('c', [], False), ('c', {}, True), ('c', {}, False)], ['failed', 'applied', 'applied', 'conflict', 'conflict', 'duplicate', 'failed', 'applied', 'duplicate'], 3)\nadd([('a', {'a': 1, 'b': 2}, True), ('a', {'a': 2, 'b': 1}, False), ('a', {'a': 1, 'c': 2}, True)], ['applied', 'conflict', 'conflict'], 1)\nadd([('a', [[1, 2], [3]], True), ('a', [[1], [2, 3]], True), ('a', [1, 2, 3], False), ('a', [[1.0, 2], [3.0]], False)], ['applied', 'conflict', 'conflict', 'duplicate'], 1)\nadd([('a', 9007199254740992, True), ('a', 9007199254740993, True), ('a', 9007199254740992, False)], ['applied', 'conflict', 'duplicate'], 1)\nadd([('a', {'a': 1}, False), ('a', {'a': 1}, False), ('a', {'a': 1}, False)], ['failed', 'failed', 'failed'], 0)\nassert len(tests) == 32\nPath('feedback.json').write_text(json.dumps({'tests': tests}, ensure_ascii=False, indent=2) + '\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-67b63cf10c31c2a987df03c489ffd4a9",
+      "phase": "feedback",
+      "case_id": "pagination--tests",
+      "available": true,
+      "sha256": "f25d0636a2f9779361a3ed5380678efdbeb6964d43bb4b483e92ea20ae8450b7",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-4e412de3-a3ab-4bbd-a4ee-bc2f0269a5af",
+          "command": "/bin/bash -lc 'ls -la /workspace && cat /workspace/spec.md && cat /workspace/public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-9b0e8d20-f39b-4d92-99a0-45979463f413",
+          "command": "/bin/bash -lc 'cat /workspace/solution.py && cat /workspace/check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-dbc295b7-5bae-4619-a254-6f42fba15e84",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\nT = []\ndef case(data, items, nxt=None):\n    T.append({'input': data, 'expect': {'items': items, 'next': nxt}})\ncase({'rows': [], 'limit': 1}, [])\ncase({'rows': [{'id': 7, 'timestamp': 4, 'name': 'only'}], 'limit': 1}, [{'id': 7, 'timestamp': 4, 'name': 'only'}])\ncase({'rows': [{'id': 9, 'timestamp': 2}, {'id': 3, 'timestamp': 2}, {'id': 5, 'timestamp': 2}], 'limit': 2}, [{'id': 3, 'timestamp': 2}, {'id': 5, 'timestamp': 2}], [2, 5])\ncase({'rows': [{'id': 9, 'timestamp': 2}, {'id': 3, 'timestamp': 2}, {'id': 5, 'timestamp': 2}], 'limit': 2, 'after': [2, 3]}, [{'id': 5, 'timestamp': 2}, {'id': 9, 'timestamp': 2}])\ncase({'rows': [{'id': 9, 'timestamp': 2}, {'id': 3, 'timestamp': 2}, {'id': 5, 'timestamp': 2}], 'limit': 1, 'after': [2, 4]}, [{'id': 5, 'timestamp': 2}], [2, 5])\ncase({'rows': [{'id': 9, 'timestamp': 2}, {'id': 3, 'timestamp': 2}], 'limit': 1, 'after': [2, 9]}, [])\ncase({'rows': [{'id': 10, 'timestamp': 1}, {'id': -5, 'timestamp': 3}, {'id': 0, 'timestamp': 2}], 'limit': 2}, [{'id': 10, 'timestamp': 1}, {'id': 0, 'timestamp': 2}], [2, 0])\ncase({'rows': [{'id': 10, 'timestamp': 1}, {'id': -5, 'timestamp': 3}, {'id': 0, 'timestamp': 2}], 'limit': 3}, [{'id': 10, 'timestamp': 1}, {'id': 0, 'timestamp': 2}, {'id': -5, 'timestamp': 3}])\ncase({'rows': [{'id': 10, 'timestamp': 1}, {'id': -5, 'timestamp': 3}, {'id': 0, 'timestamp': 2}], 'limit': 1, 'after': [2, 999]}, [{'id': -5, 'timestamp': 3}])\ncase({'rows': [{'id': 1, 'timestamp': 0}, {'id': 0, 'timestamp': 0}, {'id': -1, 'timestamp': 0}, {'id': 2, 'timestamp': -1}], 'limit': 2, 'after': [0, 0]}, [{'id': 1, 'timestamp': 0}])\ncase({'rows': [{'id': 0, 'timestamp': -2}, {'id': -3, 'timestamp': -2}, {'id': -1, 'timestamp': -3}], 'limit': 1, 'after': [-2, -4]}, [{'id': -3, 'timestamp': -2}], [-2, -3])\ncase({'rows': [{'id': 2, 'timestamp': 8, 'meta': {'tags': ['x', None], 'ok': False}, 'extra': 0}, {'id': 1, 'timestamp': 8, 'meta': [1, {'a': 'b'}]}], 'limit': 100, 'after': None}, [{'id': 1, 'timestamp': 8, 'meta': [1, {'a': 'b'}]}, {'id': 2, 'timestamp': 8, 'meta': {'tags': ['x', None], 'ok': False}, 'extra': 0}])\ncase({'rows': [{'id': 1, 'timestamp': 10}, {'id': 2, 'timestamp': 11}], 'limit': 1, 'after': [-100, 9999]}, [{'id': 1, 'timestamp': 10}], [10, 1])\ncase({'rows': [{'id': 1, 'timestamp': 10}, {'id': 2, 'timestamp': 11}], 'limit': 100, 'after': [12, -9999]}, [])\ncase({'rows': [], 'limit': 100, 'after': [0, 0]}, [])\ncase({'rows': [{'id': 9007199254740993, 'timestamp': 9007199254740993}, {'id': 9007199254740992, 'timestamp': 9007199254740993}, {'id': -1, 'timestamp': 9007199254740994}], 'limit': 1, 'after': [9007199254740993, 9007199254740992]}, [{'id': 9007199254740993, 'timestamp': 9007199254740993}], [9007199254740993, 9007199254740993])\n# Constant timestamp makes the expected ordering simply ascending integer IDs.\ncase({'rows': [{'id': i, 'timestamp': 0} for i in range(101, 0, -1)], 'limit': 100}, [{'id': i, 'timestamp': 0} for i in range(1, 101)], [0, 100])\ncase({'rows': [{'id': i, 'timestamp': 0} for i in range(100, 0, -1)], 'limit': 100}, [{'id': i, 'timestamp': 0} for i in range(1, 101)])\ncase({'rows': [{'id': 5, 'timestamp': 5}, {'id': 1, 'timestamp': 1}, {'id': 4, 'timestamp': 4}, {'id': 2, 'timestamp': 2}, {'id': 3, 'timestamp': 3}], 'limit': 2, 'after': [3, 3]}, [{'id': 4, 'timestamp': 4}, {'id': 5, 'timestamp': 5}])\nfor bad in [0, -1, 101, 100000000000000000000, True, False, 1.0, 2.5, '2', None, [], {}]:\n    T.append({'input': {'rows': [{'id': 1, 'timestamp': 0}], 'limit': bad}, 'error': 'ValueError'})\nT.append({'input': {'rows': [], 'limit': 0, 'after': [99, 99]}, 'error': 'ValueError'})\nassert len(T) == 32\nPath('/workspace/feedback.json').write_text(json.dumps({'tests': T}, indent=2) + '\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-4fb17b805e742ec20f0abd3b12b9f02e",
+      "phase": "feedback",
+      "case_id": "pagination--review",
+      "available": true,
+      "sha256": "82b78fb62a5b55561e8177e032862f7f425236b61b662d4745726895eb62ba67",
+      "completed_executor_commands": 4,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-7fd52e87-2c36-41c8-a917-3ba41a8c69f6",
+          "command": "/bin/bash -lc 'ls -la /workspace && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-4bfa88ad-0efc-4cb9-81ad-cde226542e73",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-58999f87-7884-44d1-9d68-f6206ce0d4f9",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport copy\nfrom pathlib import Path\nscope = {}\nexec(Path('solution.py').read_text(), scope)\nsolve = scope['solve']\nrows = [{'id': 3, 'timestamp': 2, 'extra': {'x': 1}}, {'id': 2, 'timestamp': 1}, {'id': 1, 'timestamp': 1}]\ncases = [\n    ({'rows': rows, 'limit': 1}, {'items': [rows[2]], 'next': [1, 1]}),\n    ({'rows': rows, 'limit': 1, 'after': [1, 1]}, {'items': [rows[1]], 'next': [1, 2]}),\n    ({'rows': rows, 'limit': 1, 'after': [1, 2]}, {'items': [rows[0]], 'next': None}),\n    ({'rows': rows, 'limit': 100, 'after': None}, {'items': [rows[2], rows[1], rows[0]], 'next': None}),\n    ({'rows': rows, 'limit': 2, 'after': [2, 3]}, {'items': [], 'next': None}),\n]\nfor data, expected in cases:\n    before = copy.deepcopy(data)\n    assert solve(data) == expected\n    assert data == before\nfor limit in [True, False, 0, -1, 101, 1.0, '1', None]:\n    try:\n        solve({'rows': [], 'limit': limit})\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(limit)\nprint('Targeted pagination, field preservation, input preservation, and limit checks passed.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-b2b75df3-f1b3-4a7b-a1c5-9853db64e07c",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nPath('feedback.json').write_text('{\\\"assessment\\\":\\\"likely_correct\\\",\\\"issues\\\":[]}\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-dd6a98776d6c4766979485db2f8b921e",
+      "phase": "feedback",
+      "case_id": "ttl-lru--review",
+      "available": true,
+      "sha256": "a65b0aea665c23b07ec125f17e952d3e79edeb31b950a676be6279ded00b67e4",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-df8ac724-55f0-4259-891b-306f2db4c8d3",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-30d99d76-fd4b-4db2-86ea-a4c139ce77f7",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nimport copy\nimport random\nfrom solution import solve\n\ndef reference(data):\n    cache = {}\n    results = []\n    for i, event in enumerate(data['events']):\n        now = event['t']\n        cache = {k: v for k, v in cache.items() if v[1] > now}\n        key = event['key']\n        if event['op'] == 'put':\n            cache[key] = (event['value'], now + data['ttl'], i)\n            if len(cache) > data['capacity']:\n                del cache[min(cache, key=lambda k: cache[k][2])]\n        elif key in cache:\n            value, expiry, _ = cache[key]\n            results.append(value)\n            cache[key] = (value, expiry, i)\n        else:\n            results.append(None)\n    return results\n\nrng = random.Random(17)\nfor trial in range(10000):\n    now = -10\n    events = []\n    for _ in range(rng.randrange(60)):\n        now += rng.randrange(4)\n        event = {'op': rng.choice(['get', 'put']), 't': now, 'key': rng.choice(['', 'a', 'b', 'c', 'd'])}\n        if event['op'] == 'put':\n            event['value'] = rng.choice([None, False, True, 0, 1, -2, 2.5, '', 'value'])\n        events.append(event)\n    data = {'capacity': rng.randrange(1, 6), 'ttl': rng.randrange(8), 'events': events}\n    before = copy.deepcopy(data)\n    expected = reference(data)\n    actual = solve(data)\n    assert actual == expected, (data, expected, actual)\n    assert data == before, data\nprint('10000 targeted randomized comparisons passed; inputs unchanged.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-85a566fc-c959-40a2-8397-152d5ded24b8",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nimport json\nwith open('feedback.json', 'w') as f:\n    json.dump({'assessment': 'likely_correct', 'issues': []}, f)\n    f.write('\\\\n')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-e14e94365a1a3e3d86048ca9c4f3aeb5",
+      "phase": "feedback",
+      "case_id": "ttl-lru--tests",
+      "available": true,
+      "sha256": "f6bf08544ee0af62d96a66d27a4e35ca54183c994dc64d6f9f1809c040186109",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-242e51e3-c433-4a4b-a4eb-c708dfece4e7",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-206fcb25-d859-40cf-845f-7c7df28099c8",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-b6ab1210-52b4-4959-bf8e-ec9ec38ad425",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\n\ndef put(t, key, value):\n    return {'op':'put', 't':t, 'key':key, 'value':value}\ndef get(t, key):\n    return {'op':'get', 't':t, 'key':key}\ntests=[]\ndef case(capacity, ttl, events, expected):\n    tests.append({'input':{'capacity':capacity,'ttl':ttl,'events':events}, 'expect':expected})\n\n# Empty history and histories without reads.\ncase(1, 0, [], [])\ncase(2, 5, [put(0,'a',1),put(1,'b',2),put(2,'c',3)], [])\ncase(1, 10, [get(0,'missing'),put(0,'a',7),get(0,'a'),get(9,'a'),get(10,'a'),get(11,'a')], [None,7,7,None,None])\n# Zero TTL entries are removed before even another event at the same time.\ncase(2, 0, [put(4,'a',1),get(4,'a'),put(4,'b',2),get(4,'b'),put(5,'a',3),get(5,'a')], [None,None,None])\n# Reads change recency but do not renew expiry.\ncase(2, 100, [put(0,'a',1),put(1,'b',2),get(2,'a'),put(3,'c',3),get(4,'b'),get(4,'a'),get(4,'c')], [1,None,1,3])\ncase(1, 5, [put(10,'a','v'),get(13,'a'),get(14,'a'),get(15,'a'),get(16,'a')], ['v','v',None,None])\n# Replacement changes both recency and expiry without growing the cache.\ncase(2, 100, [put(0,'a',1),put(1,'b',2),put(2,'a',9),put(3,'c',3),get(4,'a'),get(4,'b'),get(4,'c')], [9,None,3])\ncase(1, 5, [put(0,'a','old'),put(4,'a','new'),get(5,'a'),get(8,'a'),get(9,'a')], ['new','new',None])\ncase(2, 5, [put(0,'a',1),put(1,'b',2),put(5,'a',8),get(5,'a'),get(5,'b'),get(6,'b'),get(9,'a'),get(10,'a')], [8,2,None,8,None])\n# Cleanup must find expired entries even when they are most recent.\ncase(2, 5, [put(0,'a',1),put(2,'b',2),get(3,'a'),put(5,'c',3),get(5,'b'),get(5,'a'),get(5,'c')], [1,2,None,3])\ncase(3, 4, [put(0,'a',1),put(0,'b',2),put(0,'c',3),get(2,'a'),put(4,'d',4),get(4,'a'),get(4,'b'),get(4,'c'),get(4,'d')], [1,None,None,None,4])\n# Misses neither insert entries nor affect eviction order.\ncase(2, 100, [put(0,'a',1),put(0,'b',2),get(0,'absent'),put(0,'c',3),get(0,'a'),get(0,'b'),get(0,'c')], [None,None,2,3])\ncase(1, 100, [put(0,'a',1),put(0,'b',2),get(0,'a'),put(0,'c',3),get(0,'b'),get(0,'c')], [None,None,3])\n# Null and other falsy values still count as successful reads for recency.\ncase(2, 100, [put(0,'a',None),put(1,'b',2),get(2,'a'),put(3,'c',3),get(4,'b'),get(4,'a'),get(4,'c')], [None,None,None,3])\ncase(2, 100, [put(0,'a',False),put(1,'b',True),get(2,'a'),put(3,'c',0),get(4,'b'),get(4,'a'),get(4,'c')], [False,None,False,0])\ncase(2, 100, [put(0,'a',''),put(1,'b',0),get(2,'b'),get(2,'a'),put(3,'c',-2.5),get(4,'b'),get(4,'a'),get(4,'c')], [0,'',None,'',-2.5])\n# Keys are arbitrary strings and timestamp zero is not a special case.\ncase(3, 2, [put(0,'',0),put(0,'__proto__','x'),put(0,'雪',True),get(1,''),get(1,'__proto__'),get(1,'雪'),get(2,''),get(2,'__proto__'),get(2,'雪')], [0,'x',True,None,None,None])\ncase(2, 3, [put(-5,'a',1),get(-3,'a'),get(-2,'a'),put(-2,'a',2),get(0,'a'),get(1,'a')], [1,None,2,None])\ncase(1, 2, [put(100000000000000000000,'a',42),get(100000000000000000001,'a'),get(100000000000000000002,'a')], [42,None])\n# Equal timestamps retain event order for puts and recency changes.\ncase(2, 1, [put(7,'a',1),put(7,'b',2),get(7,'a'),put(7,'c',3),get(7,'b'),get(7,'c'),get(7,'a'),get(8,'a'),get(8,'c')], [1,None,3,1,None,None])\ncase(1, 1, [put(0,'a',1),put(0,'a',2),get(0,'a'),put(1,'b',3),get(1,'a'),get(1,'b'),get(2,'b')], [2,None,3,None])\n# Consecutive hits, a miss, and repeated evictions exercise the full LRU order.\ncase(3, 100, [put(0,'a',1),put(0,'b',2),put(0,'c',3),get(1,'a'),get(1,'a'),get(1,'missing'),put(2,'d',4),get(2,'b'),get(2,'c'),put(3,'e',5),get(3,'a'),get(3,'d'),get(3,'c'),get(3,'e')], [1,1,None,None,3,None,4,3,5])\n# Replacing values preserves their exact JSON primitive type.\ncase(1, 10, [put(0,'a',True),get(0,'a'),put(1,'a',1),get(1,'a'),put(2,'a',False),get(2,'a'),put(3,'a',0),get(3,'a'),put(4,'a',None),get(4,'a'),put(5,'a','null'),get(5,'a')], [True,1,False,0,None,'null'])\ncase(2, 3, [put(0,'a',1),put(1,'b',2),get(3,'a'),put(3,'c',3),get(3,'b'),get(3,'c'),get(4,'b'),put(4,'d',4),get(4,'c'),get(4,'d'),get(6,'c'),get(7,'d')], [None,2,3,None,3,4,None,None])\nPath('feedback.json').write_text(json.dumps({'tests':tests}, ensure_ascii=False, indent=2)+'\\\\n')\nprint(f'Wrote {len(tests)} independently specified tests to feedback.json')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-6b7f665472f8931544423d7a80325690",
+      "phase": "repair",
+      "case_id": "deep-merge--tests",
+      "available": true,
+      "sha256": "bbb6d2017e9e293d1dfcaaf1f0a590eeda5e9076b8a7a6b8dfd85d9e81752281",
+      "completed_executor_commands": 1,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-33ecef63-6c35-4b45-8f5c-3c6717242db9",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json && cat feedback.json && cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-d2aaaccefad64e4446e8401b852d0b92",
+      "phase": "repair",
+      "case_id": "deep-merge--review",
+      "available": true,
+      "sha256": "a9249aec7776ac0eb0b5e8406315b68e709d37107edc90121e5a06afc1d9795e",
+      "completed_executor_commands": 4,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-a2647e92-66a9-4f74-9285-c56b71f05ad8",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat feedback.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-fa36ba1e-e453-4937-8be0-7d81d32f13f5",
+          "command": "/bin/bash -lc 'cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-47c6b06d-cda9-4749-a672-27b48cd7a5e9",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom copy import deepcopy\nfrom solution import solve\ncases = [\n    ({'base': {'a': {'x': 1, 'y': 2}}, 'patch': {'a': {'x': None, 'z': 3}}}, {'a': {'y': 2, 'z': 3}}),\n    ({'base': {'a': [1, 2], 'b': 4, 'c': {'x': 1}}, 'patch': {'a': {}, 'b': {}, 'c': {}}}, {'a': {}, 'b': {}, 'c': {'x': 1}}),\n    ({'base': {'a': [1], 'b': 2}, 'patch': {'a': [None, {'x': None}], 'b': None, 'missing': None}}, {'a': [None, {'x': None}]}),\n    ({'base': {'a': 4}, 'patch': {'a': {'x': None, 'y': {'z': 1}}}}, {'a': {'y': {'z': 1}}}),\n]\nfor data, expected in cases:\n    before = deepcopy(data)\n    actual = solve(data)\n    assert actual == expected, (actual, expected)\n    assert data == before\n    actual.clear()\n    assert data == before\nprint('4 focused merge and input-preservation checks passed')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-4ce8ef1e-4a4c-4c41-a49c-161a13019804",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport shutil\np = Path('/workspace/__pycache__')\nif p.exists():\n    shutil.rmtree(p)\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-d9278acdb9bb0b8a6e1a127fc71b17a0",
+      "phase": "repair",
+      "case_id": "timezone-days--tests",
+      "available": true,
+      "sha256": "7ddd7524cae7a28d1ae9cca0fa8e6634397a9baf0824920c2e807d2e94068739",
+      "completed_executor_commands": 1,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-b149dc35-dc61-4b64-96bc-aa3325b71364",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat feedback.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-60d010550c5ab108fb6427d40b6a9c0e",
+      "phase": "repair",
+      "case_id": "timezone-days--review",
+      "available": true,
+      "sha256": "88926d4f364d518a0aa1065d8a89c8e5c54e6721185b8d8e4f7af9c0f0c6f500",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-a208f470-1d3d-411f-bd60-c033a3660a12",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json && cat feedback.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-de2447ce-2b56-4aa0-a47e-ffeebe450e39",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-bcff9524-197d-4cd8-bea7-0af0b93c457f",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nfrom solution import solve\nfrom copy import deepcopy\ncases = [\n    ({'zone': 'UTC', 'events': []}, {}),\n    ({'zone': 'America/New_York', 'events': ['2026-03-08T06:59:59Z', '2026-03-08T07:00:00Z', '2026-03-08T00:30:00+02:00']}, {'2026-03-08': 2, '2026-03-07': 1}),\n    ({'zone': 'America/New_York', 'events': ['2026-11-01T05:30:00Z', '2026-11-01T06:30:00Z']}, {'2026-11-01': 2}),\n    ({'zone': 'Asia/Kathmandu', 'events': ['2026-01-01T23:00:00-03:00']}, {'2026-01-02': 1}),\n]\nfor data, expected in cases:\n    before = deepcopy(data)\n    assert solve(data) == expected\n    assert data == before\nfor timestamp in ['2026-01-01T12:00:00', '2026-02-30T12:00:00Z', '2026-01-01', 'invalid']:\n    data = {'zone': 'UTC', 'events': ['2026-01-01T12:00:00Z', timestamp]}\n    before = deepcopy(data)\n    try:\n        solve(data)\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(timestamp)\n    assert data == before\nprint('Focused checks passed; solution.py preserved.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-f4b9b9a904fc167797dbf128cf64008a",
+      "phase": "repair",
+      "case_id": "safe-path--review",
+      "available": true,
+      "sha256": "ac69d8b55f3e7c7587e6228955dafff4e92abed33489831e14c38d1ae060df34",
+      "completed_executor_commands": 2,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-f2ed31c7-54cd-46eb-bb4b-89a4dd6cf893",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat feedback.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-cea8432c-dd11-4644-a0c5-960a312d27d2",
+          "command": "/bin/bash -lc \"cat check.py; python3 -B - <<'PY'\nfrom solution import solve\nvalid = {'docs/a.txt': 'docs/a.txt', 'a//./b/': 'a/b', '%252e%252e/x': '%2e%2e/x', 'a+b': 'a+b', 'a.../..b': 'a.../..b', 'caf%C3%A9': 'café', 'a/%ZZ': 'a/%ZZ'}\ninvalid = ['', '/a', '%2Fa', 'a%5Cb', 'a%00b', '..', 'a/%2e%2e/b', './', '///', '%FF', '%C0%AF']\nfor path, expected in valid.items():\n    data = {'path': path}\n    assert solve(data) == expected, (path, expected)\n    assert data == {'path': path}\nfor path in invalid:\n    try:\n        solve({'path': path})\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(path)\nprint('Focused contract checks passed; candidate preserved.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-65a296c8fd6375201bd9cdadb2789d9d",
+      "phase": "repair",
+      "case_id": "safe-path--tests",
+      "available": true,
+      "sha256": "a5e4a1cdd2999c81e0123d0f888f599a3b7505bc2cc7d37999dea43ae9bcd9b8",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-d33062a7-b346-4441-8640-c4cea6aa5733",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat feedback.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-2e787af4-931a-4caf-9a1a-7b268984766b",
+          "command": "/bin/bash -lc 'cat solution.py; cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-31d0d454-0b1c-43cf-8d9d-c1f3ef21982a",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nfrom solution import solve\nfor path in ('a/%FF', '%C3%28', '%ED%A0%80'):\n    try:\n        solve({'path': path})\n    except Exception as error:\n        assert type(error) is ValueError, type(error)\n    else:\n        raise AssertionError(path)\nfor path, expected in (('%252e%252e', '%2e%2e'), ('a+b/%2B/%20', 'a+b/+/ '), ('./a//./b///', 'a/b')):\n    data = {'path': path}\n    assert solve(data) == expected\n    assert data == {'path': path}\nprint('Focused decoding and normalization checks passed')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-82d3a29e40549512917f8c65f44a7217",
+      "phase": "repair",
+      "case_id": "retry-plan--tests",
+      "available": true,
+      "sha256": "4b804f3e0091ff8b7170949d9eebe72f0719de32c620128d9959322d247eb62e",
+      "completed_executor_commands": 1,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-092eba33-29f2-4a45-b25c-2753d9e2f739",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json && cat feedback.json && cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-66a95f084a7456efc49c731c5b4e8189",
+      "phase": "repair",
+      "case_id": "retry-plan--review",
+      "available": true,
+      "sha256": "d61fe9e58a876ce3219f1ce2b48ab64bdf416d7eeebace305c5957443afdd7ef",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-dba971b9-35e2-45ea-b2c2-02c3b9dd173d",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat feedback.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-888409ad-da2f-4dff-9515-faec6a90a94f",
+          "command": "/bin/bash -lc 'cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-34a60f20-1018-484c-b515-4850a900b876",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom pathlib import Path\nns = {}\nexec(compile(Path('solution.py').read_text(), 'solution.py', 'exec'), ns)\nsolve = ns['solve']\ncases = [\n    ({'max_attempts': 0, 'base': 1, 'cap': 1, 'budget': 0}, []),\n    ({'max_attempts': 4, 'base': 20, 'cap': 3, 'budget': 6}, [0, 3, 6]),\n    ({'max_attempts': 5, 'base': 2, 'cap': 5, 'budget': 11}, [0, 2, 6, 11]),\n    ({'max_attempts': 100, 'base': 0, 'cap': 7, 'budget': 0}, [0] * 100),\n    ({'max_attempts': 3, 'base': 7, 'cap': 0, 'budget': 0}, [0, 0, 0]),\n]\nfor data, expected in cases:\n    before = data.copy()\n    assert solve(data) == expected\n    assert data == before\nvalid = {'max_attempts': 3, 'base': 2, 'cap': 10, 'budget': 9}\nfor field in valid:\n    for value in (True, False, -1, 1.0, None, '1'):\n        data = dict(valid, **{field: value})\n        try:\n            solve(data)\n        except ValueError:\n            pass\n        else:\n            raise AssertionError((field, value))\n    data = valid.copy()\n    del data[field]\n    try:\n        solve(data)\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(field)\ntry:\n    solve(dict(valid, max_attempts=101))\nexcept ValueError:\n    pass\nelse:\n    raise AssertionError('attempt limit')\nprint('Focused boundary, validation, and input-preservation checks passed.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-7b796ddcfe0c91b9efa0e9827728a2ad",
+      "phase": "repair",
+      "case_id": "rate-limit--tests",
+      "available": true,
+      "sha256": "c4eea1e4d4e6b806cf1d5c562f5d3eaed206fafcc032efc2ea1f49a5f79403f3",
+      "completed_executor_commands": 2,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-37188e55-6fa2-455b-ae78-784374bd7a1b",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json && cat feedback.json && cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-6419f66a-1654-4342-b135-8e9355bd7350",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport json\nfrom pathlib import Path\nprint(Path('solution.py').read_text())\nf = json.loads(Path('feedback.json').read_text())\nprint('Feedback metadata:', {k: v for k, v in f.items() if k not in ('tests', 'initial_candidate_execution')})\nprint('Initial execution passed:', f['initial_candidate_execution']['passed'])\nfor i, test in enumerate(f['tests']):\n    d = test['input']\n    print('Case', i, 'window', d['window'], 'limit', d['limit'], 'events', len(d['events']))\nprint('Large integer and higher-limit cases:', json.dumps(f['tests'][13:16], ensure_ascii=False))\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-57c9ad07992164670c24fd8a470ffbb3",
+      "phase": "repair",
+      "case_id": "rate-limit--review",
+      "available": true,
+      "sha256": "8891af3d9335c479b6efd43f559c0a869ddb7e051b5ea41be03c1c4e35c620a2",
+      "completed_executor_commands": 2,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-14e037cc-8b9b-4f99-9b31-8b6ce9e005bc",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat feedback.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-66a00037-e97b-44f7-b108-acda8e681e9a",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom copy import deepcopy\nfrom solution import solve\n\ndata = {'window': 10, 'limit': 2, 'events': [\n    {'t': 0, 'key': 'a'}, {'t': 0, 'key': 'a'},\n    {'t': 0, 'key': 'a'}, {'t': 0, 'key': 'b'},\n    {'t': 9, 'key': 'a'}, {'t': 10, 'key': 'a'},\n    {'t': 10, 'key': 'a'}, {'t': 10, 'key': 'a'},\n    {'t': 20, 'key': 'a'}]}\nbefore = deepcopy(data)\nexpected = [(True, 0), (True, 0), (False, 10), (True, 0),\n            (False, 1), (True, 0), (True, 0), (False, 10), (True, 0)]\nassert solve(data) == [{'allowed': a, 'retry_after': r} for a, r in expected]\nassert data == before\nassert solve({'window': 1, 'limit': 1, 'events': []}) == []\nprint('Focused boundary, rejection, key isolation, and immutability checks passed.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-46397e34241cf7611b6aefc359c3bd07",
+      "phase": "repair",
+      "case_id": "idempotency--review",
+      "available": true,
+      "sha256": "02680de3899037f92e473048bfb68d36de968c36cc73d46cca7c47627ced5ffa",
+      "completed_executor_commands": 3,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-9631d9dd-f900-4014-bedc-a208ffcd97e8",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json && cat feedback.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-6fedf046-f363-46e0-93c1-3ad06d659f9c",
+          "command": "/bin/bash -lc 'cat solution.py && cat check.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-62c69c68-bf72-4386-9be2-e333ac1f0f40",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nimport copy\nfrom pathlib import Path\nscope = {}\nexec(compile(Path('solution.py').read_text(), 'solution.py', 'exec'), scope)\nsolve = scope['solve']\ncases = [\n    ({'requests': []}, {'statuses': [], 'applied': 0}),\n    ({'requests': [\n        {'key': 'a', 'payload': None, 'ok': False},\n        {'key': 'a', 'payload': {'x': [1, {'b': True}], 'y': None}, 'ok': True},\n        {'key': 'a', 'payload': {'y': None, 'x': [1.0, {'b': True}]}, 'ok': False},\n        {'key': 'a', 'payload': {'x': [1, {'b': 1}], 'y': None}, 'ok': True},\n        {'key': 'b', 'payload': None, 'ok': True},\n        {'key': 'b', 'payload': None, 'ok': False},\n    ]}, {'statuses': ['failed', 'applied', 'duplicate', 'conflict', 'applied', 'duplicate'], 'applied': 2}),\n]\nvalues = [None, False, True, 0, 1, 1.0, '', '1', [], {}, [1, 2], [2, 1], {'a': [False]}, {'a': [0]}]\nfor left in values:\n    for right in values:\n        equal = scope['_json_equal'](left, right)\n        assert equal == scope['_json_equal'](right, left)\n        data = {'requests': [{'key': 'k', 'payload': left, 'ok': True}, {'key': 'k', 'payload': right, 'ok': False}]}\n        before = copy.deepcopy(data)\n        assert solve(data) == {'statuses': ['applied', 'duplicate' if equal else 'conflict'], 'applied': 1}\n        assert data == before\nfor data, expected in cases:\n    before = copy.deepcopy(data)\n    assert solve(data) == expected\n    assert data == before\nassert not scope['_json_equal'](True, 1)\nassert not scope['_json_equal'](0, False)\nassert not scope['_json_equal']([1, 2], [2, 1])\nassert scope['_json_equal'](1, 1.0)\nprint('Focused checks passed; existing solution preserved.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-a76cff72a7b92db6747de549e73a4d0c",
+      "phase": "repair",
+      "case_id": "idempotency--tests",
+      "available": true,
+      "sha256": "f1804a537450e313abf11e98fe820fa9f482d2b966b9fc68a59ae4ea31614461",
+      "completed_executor_commands": 1,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-143ae4fc-f031-41dc-b318-95b5ede8925a",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat feedback.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-7a252029ba723f6b5d46e145ea8b39a0",
+      "phase": "repair",
+      "case_id": "pagination--tests",
+      "available": true,
+      "sha256": "18484fd150d9869590438cf4596c61ce058256cd0eeb9568aa2e124df121a9ca",
+      "completed_executor_commands": 2,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-0cef2484-654e-4e98-98f3-a659ac56672a",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json && cat feedback.json'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-1204717d-2b82-4100-9049-0d964c035334",
+          "command": "/bin/bash -lc \"cat solution.py && cat check.py && python3 - <<'PY'\nimport json\nf=json.load(open('feedback.json'))\nfor k,v in f.items():\n if k=='tests':\n  print('tests:',len(v))\n  for i,t in enumerate(v):\n   print(i, 'rows=',len(t['input'].get('rows',[])), 'limit=',repr(t['input'].get('limit')), 'after=',t['input'].get('after'), 'expect_error=', t.get('expect_error'))\n else:\n  print(k, json.dumps(v)[:3000])\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-80de04c574b87dde6efd94ca84c637cf",
+      "phase": "repair",
+      "case_id": "pagination--review",
+      "available": true,
+      "sha256": "d7aa7f576b79a38fa2459d6862201b46720074740922061335631b4562d3802f",
+      "completed_executor_commands": 2,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-951facf6-ed33-4c83-b508-0b6b05fdb0c1",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat feedback.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-08b65597-4228-4ffc-8d7f-ad9358a1157a",
+          "command": "/bin/bash -lc \"python3 - <<'PY'\nfrom solution import solve\nfrom copy import deepcopy\nrows = [{'id': 4, 'timestamp': 2, 'extra': 'kept'}, {'id': 3, 'timestamp': 1}, {'id': 1, 'timestamp': 1}, {'id': 2, 'timestamp': 1}]\ndata = {'rows': rows, 'limit': 2, 'after': [1, 1]}\nbefore = deepcopy(data)\nassert solve(data) == {'items': [rows[3], rows[1]], 'next': [1, 3]}\nassert data == before\nassert solve({'rows': rows, 'limit': 2, 'after': [1, 2]}) == {'items': [rows[1], rows[0]], 'next': None}\nassert solve({'rows': rows, 'limit': 1, 'after': [2, 4]}) == {'items': [], 'next': None}\nassert solve({'rows': rows, 'limit': 100, 'after': None}) == {'items': [rows[2], rows[3], rows[1], rows[0]], 'next': None}\nfor limit in [True, False, 0, -1, 101, 1.0, '2', None]:\n    try:\n        solve({'rows': [], 'limit': limit})\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(('accepted invalid limit', limit))\nprint('Focused checks passed; solution.py unchanged.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-5a6bc59175d931f1d9ff657200619012",
+      "phase": "repair",
+      "case_id": "ttl-lru--review",
+      "available": true,
+      "sha256": "ffc7d7b2e43f4d11f6c92627c1d619b36dccbc3c0a57d9cf596f513a7fa8b7d3",
+      "completed_executor_commands": 2,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-b9bfbfc1-9330-4fa6-aee3-bd1956dfa70b",
+          "command": "/bin/bash -lc 'pwd; ls -la; cat spec.md; cat public.json; cat feedback.json; cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "id": "exec-04242abc-6e8b-42f8-848c-d29254492954",
+          "command": "/bin/bash -lc \"python3 -B - <<'PY'\nfrom solution import solve\nfrom copy import deepcopy\ncases = [\n    ({'capacity': 2, 'ttl': 5, 'events': [\n        {'op': 'put', 't': 0, 'key': 'a', 'value': 1},\n        {'op': 'put', 't': 1, 'key': 'b', 'value': 2},\n        {'op': 'get', 't': 4, 'key': 'a'},\n        {'op': 'get', 't': 5, 'key': 'a'},\n        {'op': 'get', 't': 5, 'key': 'b'}]}, [1, None, 2]),\n    ({'capacity': 2, 'ttl': 5, 'events': [\n        {'op': 'put', 't': 0, 'key': 'a', 'value': 1},\n        {'op': 'put', 't': 1, 'key': 'b', 'value': 2},\n        {'op': 'put', 't': 2, 'key': 'a', 'value': 3},\n        {'op': 'get', 't': 6, 'key': 'b'},\n        {'op': 'get', 't': 6, 'key': 'a'},\n        {'op': 'get', 't': 7, 'key': 'a'}]}, [None, 3, None]),\n    ({'capacity': 2, 'ttl': 10, 'events': [\n        {'op': 'put', 't': 0, 'key': 'a', 'value': False},\n        {'op': 'put', 't': 0, 'key': 'b', 'value': None},\n        {'op': 'get', 't': 0, 'key': 'a'},\n        {'op': 'put', 't': 0, 'key': 'c', 'value': ''},\n        {'op': 'get', 't': 0, 'key': 'b'},\n        {'op': 'get', 't': 0, 'key': 'c'}]}, [False, None, '']),\n    ({'capacity': 1, 'ttl': 0, 'events': [\n        {'op': 'put', 't': 0, 'key': 'a', 'value': 1},\n        {'op': 'get', 't': 0, 'key': 'a'}]}, [None]),\n]\nfor data, expected in cases:\n    original = deepcopy(data)\n    assert solve(data) == expected\n    assert data == original\nprint('Four focused cases passed; inputs unchanged.')\nPY\"",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "attempt_id": "attempt-2036651bdf38756e9d8e1018649dfad9",
+      "phase": "repair",
+      "case_id": "ttl-lru--tests",
+      "available": true,
+      "sha256": "4e4667a9ac5cd85282478edd9f8d1f4d71af1b147b02c0343b7a208685532b2b",
+      "completed_executor_commands": 1,
+      "unrecorded_commands": 0,
+      "witnesses": [
+        {
+          "id": "exec-4dd4d563-f6c9-4e80-be3d-e19e6472e72e",
+          "command": "/bin/bash -lc 'pwd && ls -la && cat spec.md && cat public.json && cat feedback.json && cat solution.py'",
+          "cwd": "/workspace",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "total_tool_calls": null,
+  "scope": "Executor command-completion events only; this is not a count of all tool types."
+}
