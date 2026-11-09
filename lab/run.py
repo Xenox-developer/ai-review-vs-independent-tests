@@ -35,7 +35,8 @@ def verify_freeze():
 
 
 def initialize(project):
-    cli(project,'init')
+    # INVARIANT 0.3.1 init is a text-only command; --json is not accepted.
+    subprocess.run(['invariant','init'],cwd=project,text=True,capture_output=True,check=True,timeout=120)
     # Local project settings only. No host access, network, downloads or installs.
     for key,value in [('command_network','none'),('resource_mode','manual'),
                       ('limits.cpus','2'),('limits.memory_mib','2048'),

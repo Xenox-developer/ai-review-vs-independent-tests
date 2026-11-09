@@ -8,10 +8,12 @@
     "lab/dataset.py": "216dbba234a22787dd62b9ca927bd61850d08bec918581b7955abd6b8e6a194b",
     "lab/check.py": "ff9deedb1ea4f1dafec9b3518700084130ecc67c59139ef8f86fd08c6a4d032c",
     "lab/prepare.py": "7e0dc566fec3e38c324399ed40388dff6393e0d0502a7fb98d9ff8f7dfe7f164",
-    "lab/run.py": "f07487950b90b815c90e6cab5580af080b4931286a1aec9d561a684adfe23d42",
+    "lab/run.py": "54694937eacfa53d570d74c8409e231eb2c1c07c469afbb5416219b0b927a858",
     "lab/runtime.json": "66817033bee113a38bb8aa2daacfd5f088accb1c8c9155d112a50747a3adc566",
     "lab/report.py": "584c5126ae0adf2e3950a8a4c6970ff5488c5600ebaa37b6bb56ddd02e1a8ef7",
     "tests/test_protocol.py": "071160319ab4c565b482349db625e174649eb7409e266252e4b913aa579d7f27",
     "evidence/tasks.json": "7184e6df7d02313ddc0ab41c5c4978e4ebf5401becc930dd320106c4502372e9"
-  }
+  },
+  "revision": 2,
+  "revision_reason": "Text-only INVARIANT init compatibility, before first study submission or model call"
 }
