@@ -38,6 +38,8 @@ def main():
             ax.text(bar.get_x()+bar.get_width()/2,value+.18,f'{value}/{n}',ha='center',va='bottom',fontweight='bold',fontsize=18)
     fig.savefig(ROOT/'results/correctness.png',dpi=180)
     fig.savefig(ROOT/'results/correctness.svg')
+    svg=ROOT/'results/correctness.svg'
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     plt.close(fig)
 
 

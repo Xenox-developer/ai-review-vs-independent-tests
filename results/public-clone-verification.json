@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "source": "fresh GitHub public clone",
+  "commit": "05a9c6f324400e5c5a5af0134b0c1e53d06adcc9",
+  "unit_tests": 7,
+  "frozen_file_hashes": 9,
+  "all_saved_source_snapshot_hashes": 40,
+  "anonymous_reader_http_status": 200,
+  "note": "Independent Docker scoring was already run on the same source hashes; not repeated in clone."
+}

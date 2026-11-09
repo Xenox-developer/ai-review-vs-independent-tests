@@ -140,3 +140,5 @@ are excluded. Both repair arms began from byte-identical initial patches; all
 INVARIANT's clean source commit matched its public repository.
 
 Exception hierarchy: [Python documentation](https://docs.python.org/3.12/library/exceptions.html#UnicodeError).
+
+English LinkedIn draft: [POST.md](POST.md). Publication status: [DRAFT_STATUS.json](DRAFT_STATUS.json).
