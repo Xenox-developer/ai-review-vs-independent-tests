@@ -141,4 +141,4 @@ INVARIANT's clean source commit matched its public repository.
 
 Exception hierarchy: [Python documentation](https://docs.python.org/3.12/library/exceptions.html#UnicodeError).
 
-English LinkedIn draft: [POST.md](POST.md). Publication status: [DRAFT_STATUS.json](DRAFT_STATUS.json).
+Published LinkedIn post: [View on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7525955340585279488/). Text archive: [POST.md](POST.md). Publication status: [DRAFT_STATUS.json](DRAFT_STATUS.json).

@@ -1,13 +1,19 @@
 {
-  "status": "draft_not_published",
+  "status": "published",
   "language": "English",
   "repository": "https://github.com/Xenox-developer/ai-review-vs-independent-tests",
   "reader_access": "Anonymous raw README returned HTTP 200",
   "image": "results/correctness.png",
   "diagnosis": "Original exact-class 7/7/8; normal Python subclass semantics 8/8/8. No demonstrated superiority claim.",
-  "publication_constraint": "Existing one-post-per-day rule; a November 9 post is already published. November 10 remains the scheduled fresh-news override. This draft is not automatically queued in place of that news post.",
+  "publication_constraint": "Published following explicit November 10 user selection, replacing the scheduled news post. One-post-per-day rule remains.",
   "future_comments": "Off",
   "text_characters": 1780,
   "text_sha256": "3fc05d81322d665802d0a796a6c0d30f1c1f45dc4124f2ad6ed366c71291b35c",
-  "image_sha256": "ce611cc94020203c76337c6f55bef931ed823915e6cf72762e4f6c64d17849fa"
+  "image_sha256": "ce611cc94020203c76337c6f55bef931ed823915e6cf72762e4f6c64d17849fa",
+  "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:7525955340585279488/",
+  "published_date_moscow": "2026-11-10",
+  "verified_at": "2026-11-10T19:20:50.459308+03:00",
+  "comments": "Off",
+  "comments_verified_at": "2026-11-10T19:20:50.459308+03:00",
+  "publication_evidence": "LinkedIn displayed Post successful. Opened the actual activity permalink, verified author Nikita Chindin, complete English text including both score rules and INVARIANT/repository/source links, the full attached factual chart with 7/8 and 8/8 counts, and the notice You have turned comments off on this post."
 }
